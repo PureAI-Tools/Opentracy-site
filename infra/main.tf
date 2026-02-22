@@ -58,8 +58,7 @@ resource "aws_amplify_app" "this" {
   build_spec = file("${path.module}/../amplify.yml")
 
   environment_variables = {
-    AMPLIFY_MONOREPO_APP_ROOT = "."
-    _CUSTOM_IMAGE             = "amplify:al2023"
+    _CUSTOM_IMAGE = "amplify:al2023"
   }
 }
 

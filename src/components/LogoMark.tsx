@@ -13,25 +13,22 @@ export default function LogoMark({ className = "", size = 24 }: LogoMarkProps) {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Outer moon ring */}
+      {/* Outer circle */}
       <circle
         cx="12"
         cy="12"
         r="10"
         stroke="currentColor"
         strokeWidth="1.5"
-        fill="none"
       />
-      {/* Moon phase shadow */}
+      {/* Moon crescent shadow */}
       <path
-        d="M12 2C7.58 2 4 5.58 4 10C4 14.42 7.58 18 12 18C14.21 18 16.21 17.12 17.66 15.66C15.5 16.5 12.5 15.5 11 13C9.5 10.5 10 7 12 5C12.5 4.5 13 4 13.5 3.7C13 2.6 12.5 2 12 2Z"
+        d="M15 6C12.5 7.5 11 10 11 12.5C11 15 12.5 17.5 15 18.5C13.5 19.5 11.5 20 10 20C5.5 20 2 16.5 2 12C2 7.5 5.5 4 10 4C11.5 4 13.5 4.5 15 6Z"
         fill="currentColor"
-        opacity="0.3"
+        opacity="0.2"
       />
-      {/* Inner core */}
+      {/* Center core */}
       <circle cx="12" cy="12" r="3" fill="currentColor" />
-      {/* Core highlight */}
-      <circle cx="11" cy="11" r="1" fill="black" opacity="0.3" />
     </svg>
   );
 }

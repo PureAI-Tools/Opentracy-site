@@ -7,7 +7,12 @@ import CodeBlock from "@/components/CodeBlock";
 import AsciiWindow, { AsciiPanel } from "@/components/AsciiWindow";
 import Stepper from "@/components/Stepper";
 
-const trustedBy = ["Acme Corp", "TechStart", "DataFlow", "CloudBase", "AI Labs"];
+const metrics = [
+  { value: "57%", label: "avg cost reduction" },
+  { value: "<50ms", label: "p99 latency" },
+  { value: "99.9%", label: "uptime SLA" },
+  { value: "10K+", label: "evals per day" },
+];
 
 const pipelineSteps = [
   { number: 1, title: "Data", description: "Connect production traces" },
@@ -88,20 +93,19 @@ export default function Home() {
           </div>
         </Container>
 
-        {/* Trusted By */}
+        {/* Metrics Bar */}
         <div className="mt-20 border-y border-[#333333] py-8 bg-black/50">
           <Container>
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
-              <span className="text-xs uppercase tracking-wider text-[#888888]">
-                Trusted by
-              </span>
-              {trustedBy.map((company) => (
-                <span
-                  key={company}
-                  className="font-mono text-sm text-[#888888] hover:text-white transition-colors"
-                >
-                  {company}
-                </span>
+            <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+              {metrics.map((metric) => (
+                <div key={metric.label} className="text-center">
+                  <span className="font-mono text-lg font-bold text-[#f59e0b]">
+                    {metric.value}
+                  </span>
+                  <span className="ml-2 text-xs uppercase tracking-wider text-[#888888]">
+                    {metric.label}
+                  </span>
+                </div>
               ))}
             </div>
           </Container>
