@@ -5,7 +5,7 @@ import Card from "@/components/Card";
 
 export const metadata: Metadata = {
   title: "Community — Lunar",
-  description: "Join the Lunar community. Connect with developers building Small Language Models.",
+  description: "Join the Lunar community. Connect with developers building and deploying Small Language Models. Contribute, follow the roadmap, and shape the future of AI.",
 };
 
 const communityLinks = [

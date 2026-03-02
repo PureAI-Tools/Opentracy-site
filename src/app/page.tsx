@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Container from "@/components/Container";
 import Button from "@/components/Button";
 import Badge from "@/components/Badge";
@@ -6,6 +7,15 @@ import SectionHeading from "@/components/SectionHeading";
 import CodeBlock from "@/components/CodeBlock";
 import AsciiWindow, { AsciiPanel } from "@/components/AsciiWindow";
 import Stepper from "@/components/Stepper";
+
+export const metadata: Metadata = {
+  title: "Lunar — Cut LLM Costs by 57% with Distilled Small Models",
+  description:
+    "Lunar automates distillation, evaluation, and deployment of Small Language Models from production traces. Connect 12+ providers, reduce inference costs by up to 70%.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 const metrics = [
   { value: "57%", label: "avg cost reduction" },

@@ -6,7 +6,7 @@ import { getAllPosts } from "@/data/posts";
 
 export const metadata: Metadata = {
   title: "Blog — Lunar",
-  description: "Updates, tutorials, and insights on LLM distillation and Small Language Models.",
+  description: "Updates, tutorials, and insights on LLM distillation, Small Language Models, cost optimization, and AI deployment. Learn how to ship smarter with Lunar.",
 };
 
 export default function BlogPage() {

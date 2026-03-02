@@ -5,7 +5,7 @@ import Badge from "@/components/Badge";
 
 export const metadata: Metadata = {
   title: "Pricing — Lunar",
-  description: "Simple, transparent pricing for teams of all sizes. Start free, scale as you grow.",
+  description: "Simple, transparent pricing for LLM distillation and deployment. Start free, scale as you grow. Save up to 57% on inference costs with Lunar.",
 };
 
 const plans = [
@@ -91,9 +91,26 @@ const faqs = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function PricingPage() {
   return (
     <div className="pt-24 pb-16 bg-grid min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Container>
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto">

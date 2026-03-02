@@ -5,7 +5,7 @@ import Card from "@/components/Card";
 
 export const metadata: Metadata = {
   title: "Documentation — Lunar",
-  description: "Learn how to distill, route, and deploy LLMs with Lunar. Connect providers, train models, and ship to production.",
+  description: "Learn how to distill, route, and deploy LLMs with Lunar. Quickstart guides, API reference, evaluation tools, and GPU deployment documentation.",
 };
 
 const DOCS_BASE = "https://docs.lunar-sys.com";
