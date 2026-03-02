@@ -55,7 +55,7 @@ const useCases = [
 
 const devExperience = [
   { title: "SDK", description: "Python & TypeScript", href: "https://docs.lunar-sys.com/lunar/installation" },
-  { title: "CLI", description: "Full workflow control", href: "https://docs.lunar-sys.com/lunar/quickstart" },
+  { title: "Streaming", description: "Real-time responses", href: "https://docs.lunar-sys.com/lunar/guides/streaming" },
   { title: "Templates", description: "Quick start examples", href: "https://docs.lunar-sys.com/lunar/overview" },
   { title: "Self-host", description: "Your infrastructure", href: "https://docs.lunar-sys.com/pricing/instance-tiers" },
   { title: "Cloud", description: "Managed option", href: "https://docs.lunar-sys.com/pricing/overview" },
@@ -70,9 +70,19 @@ const securityFeatures = [
   { title: "GDPR Compliant", checked: true },
 ];
 
-const cliCode = `pip install lunar
-lunar login --api-key $LUNAR_API_KEY
-lunar distill --project support-bot --target small`;
+const sdkCode = `from lunar import Lunar
+
+client = Lunar()  # uses LUNAR_API_KEY env var
+
+response = client.chat.completions.create(
+    model="openai/gpt-4o-mini",
+    messages=[{"role": "user", "content": "Hello!"}],
+    fallbacks=["anthropic/claude-3-haiku"]
+)
+
+print(response.choices[0].message.content)
+print(f"Cost: \${response.usage.total_cost_usd}")`;
+
 
 export default function Home() {
   return (
@@ -246,7 +256,7 @@ export default function Home() {
             subtitle="Everything you need to build, test, and deploy SLMs."
           />
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            <CodeBlock code={cliCode} language="bash" />
+            <CodeBlock code={sdkCode} language="python" />
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {devExperience.map((item) => (
                 <a

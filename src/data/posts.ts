@@ -254,48 +254,73 @@ Lunar exports models in formats compatible with all major serving frameworks. On
     `,
   },
   {
-    slug: "lunar-cli-v2",
-    title: "Lunar CLI v2: Streamlined Workflows for SLM Development",
+    slug: "lunar-sdk-v2",
+    title: "Lunar SDK v2: Fallbacks, Streaming, and Cost Tracking",
     date: "2023-12-15",
     summary:
-      "Announcing Lunar CLI v2 with improved distillation workflows, better evaluation reports, and seamless deployment options.",
-    tags: ["announcement", "cli"],
+      "Announcing Lunar SDK v2 with automatic fallbacks, streaming support, built-in cost tracking, and async clients for Python and TypeScript.",
+    tags: ["announcement", "sdk"],
     content: `
-# Lunar CLI v2: Streamlined Workflows for SLM Development
+# Lunar SDK v2: Fallbacks, Streaming, and Cost Tracking
 
-Today we're releasing Lunar CLI v2, a major update focused on developer experience and workflow improvements.
+Today we're releasing Lunar SDK v2, a major update focused on reliability, real-time responses, and cost visibility.
 
 ## What's New
 
-### Simplified Distillation
+### Automatic Fallbacks
 
-The new \`lunar distill\` command handles the entire pipeline:
+Configure backup models that activate when your primary model fails or is unavailable:
 
-\`\`\`bash
-lunar distill --project my-bot --target small
+\`\`\`python
+from lunar import Lunar
+
+client = Lunar()
+response = client.chat.completions.create(
+    model="openai/gpt-4o",
+    messages=[{"role": "user", "content": "Hello!"}],
+    fallbacks=["anthropic/claude-3-haiku", "openai/gpt-4o-mini"]
+)
 \`\`\`
 
-This single command:
-- Pulls your production traces
-- Curates high-quality examples
-- Trains the distilled model
-- Runs comprehensive evaluation
-- Deploys to your preferred target
+If the primary model fails, Lunar automatically routes to the next available fallback — no retry logic needed.
 
-### Interactive Evaluation
+### Streaming Support
 
-The new evaluation UI shows:
-- Side-by-side comparisons with the teacher
-- Accuracy metrics across categories
-- Latency benchmarks
-- Cost projections
+Get real-time token-by-token responses:
 
-### Multi-Target Deployment
+\`\`\`python
+stream = client.chat.completions.create(
+    model="openai/gpt-4o-mini",
+    messages=[{"role": "user", "content": "Tell me a story"}],
+    stream=True
+)
+for chunk in stream:
+    print(chunk.choices[0].delta.content, end="")
+\`\`\`
 
-Deploy to multiple targets simultaneously:
+### Built-in Cost Tracking
 
-\`\`\`bash
-lunar deploy --targets cloud,edge,local
+Every response includes detailed cost and latency metrics:
+
+\`\`\`python
+print(f"Input: \${response.usage.input_cost_usd}")
+print(f"Output: \${response.usage.output_cost_usd}")
+print(f"Total: \${response.usage.total_cost_usd}")
+print(f"Latency: {response.usage.latency_ms}ms")
+\`\`\`
+
+### Async Client
+
+Full async support for high-throughput applications:
+
+\`\`\`python
+from lunar import AsyncLunar
+
+client = AsyncLunar()
+response = await client.chat.completions.create(
+    model="openai/gpt-4o-mini",
+    messages=[{"role": "user", "content": "Hello!"}]
+)
 \`\`\`
 
 ## Migration Guide
@@ -304,17 +329,16 @@ Upgrading from v1 is simple:
 
 \`\`\`bash
 pip install --upgrade lunar
-lunar migrate
 \`\`\`
 
-The migrate command updates your configuration files automatically.
+The API is backwards-compatible — your existing code will continue to work.
 
 ## What's Next
 
 We're working on:
-- Real-time trace streaming
-- Collaborative project sharing
-- Advanced fine-tuning options
+- More provider integrations
+- Advanced routing strategies
+- Enhanced evaluation tools
 
 Try v2 today and let us know what you think!
     `,

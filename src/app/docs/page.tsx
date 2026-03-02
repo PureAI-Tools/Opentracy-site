@@ -78,20 +78,21 @@ const docCategories = [
   },
 ];
 
-const quickstartCode = `# Install the Lunar CLI
+const quickstartCode = `# Install the Lunar SDK
 pip install lunar
 
-# Authenticate with your API key
-lunar login --api-key $LUNAR_API_KEY
+# Set your API key
+export LUNAR_API_KEY="your-key"
 
-# Start a distillation run
-lunar distill --project my-bot --target small
+# Use the SDK
+from lunar import Lunar
 
-# Check the status
-lunar status --project my-bot
-
-# Deploy when ready
-lunar deploy --project my-bot --target cloud`;
+client = Lunar()
+response = client.chat.completions.create(
+    model="openai/gpt-4o-mini",
+    messages=[{"role": "user", "content": "Hello!"}]
+)
+print(response.choices[0].message.content)`;
 
 export default function DocsPage() {
   return (
@@ -129,28 +130,28 @@ export default function DocsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div>
               <p className="text-[#888888] mb-4">
-                Get up and running with Lunar in under 5 minutes. Install the CLI, authenticate, and start your first distillation run.
+                Get up and running with Lunar in under 5 minutes. Install the SDK, set your API key, and make your first request.
               </p>
               <div className="space-y-3 text-sm">
                 <div className="flex items-start gap-3">
                   <span className="font-mono text-[#f59e0b]">1.</span>
-                  <span>Install the Lunar CLI with pip</span>
+                  <span>Install the Lunar SDK with pip or npm</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="font-mono text-[#f59e0b]">2.</span>
-                  <span>Log in with your API key (get one free at lunar.dev)</span>
+                  <span>Set your API key as an environment variable</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="font-mono text-[#f59e0b]">3.</span>
-                  <span>Run your first distillation on production traces</span>
+                  <span>Create a Lunar client and make your first chat completion</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="font-mono text-[#f59e0b]">4.</span>
-                  <span>Deploy your optimized model</span>
+                  <span>Add fallbacks, streaming, and cost tracking</span>
                 </div>
               </div>
             </div>
-            <CodeBlock code={quickstartCode} language="bash" />
+            <CodeBlock code={quickstartCode} language="python" />
           </div>
         </div>
 
