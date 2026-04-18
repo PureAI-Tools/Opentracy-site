@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Container from "@/components/Container";
-import Badge from "@/components/Badge";
 import { getPostBySlug, getAllPosts } from "@/data/posts";
 
 interface BlogPostPageProps {
@@ -40,30 +39,77 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  // Simple markdown-like rendering
+  const allPosts = getAllPosts();
+  const currentIndex = allPosts.findIndex((p) => p.slug === post.slug);
+  const prevPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
+  const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+
   const renderContent = (content: string) => {
     const lines = content.trim().split("\n");
     const elements: React.ReactNode[] = [];
     let inCodeBlock = false;
     let codeContent: string[] = [];
-    let codeLanguage = "";
+    let inBlockquote = false;
+    let blockquoteContent: string[] = [];
+
+    const processInlineFormatting = (text: string): React.ReactNode[] => {
+      const parts: React.ReactNode[] = [];
+      const regex = /\*\*(.+?)\*\*|`(.+?)`|\[(.+?)\]\((.+?)\)/g;
+      let lastIndex = 0;
+      let match;
+
+      while ((match = regex.exec(text)) !== null) {
+        if (match.index > lastIndex) {
+          parts.push(text.slice(lastIndex, match.index));
+        }
+        if (match[1]) {
+          parts.push(<strong key={match.index}>{match[1]}</strong>);
+        } else if (match[2]) {
+          parts.push(<code key={match.index} className="blog-inline-code">{match[2]}</code>);
+        } else if (match[3] && match[4]) {
+          parts.push(
+            <a key={match.index} href={match[4]} className="blog-link">
+              {match[3]}
+            </a>
+          );
+        }
+        lastIndex = match.index + match[0].length;
+      }
+      if (lastIndex < text.length) {
+        parts.push(text.slice(lastIndex));
+      }
+      return parts.length > 0 ? parts : [text];
+    };
+
+    const flushBlockquote = (index: number) => {
+      if (blockquoteContent.length > 0) {
+        elements.push(
+          <blockquote key={`bq-${index}`} className="blog-blockquote">
+            {blockquoteContent.map((line, i) => (
+              <p key={i}>{processInlineFormatting(line)}</p>
+            ))}
+          </blockquote>
+        );
+        blockquoteContent = [];
+        inBlockquote = false;
+      }
+    };
 
     lines.forEach((line, index) => {
       if (line.startsWith("```")) {
         if (inCodeBlock) {
           elements.push(
-            <pre
-              key={`code-${index}`}
-              className="bg-[#0a0a0a] border border-[#333333] p-4 overflow-x-auto my-4 font-mono text-sm"
-            >
-              <code>{codeContent.join("\n")}</code>
-            </pre>
+            <div key={`code-${index}`} className="blog-code-block">
+              <pre>
+                <code>{codeContent.join("\n")}</code>
+              </pre>
+            </div>
           );
           codeContent = [];
           inCodeBlock = false;
         } else {
+          flushBlockquote(index);
           inCodeBlock = true;
-          codeLanguage = line.slice(3);
         }
         return;
       }
@@ -73,135 +119,144 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         return;
       }
 
+      if (line.startsWith("> ")) {
+        inBlockquote = true;
+        blockquoteContent.push(line.slice(2));
+        return;
+      } else if (inBlockquote) {
+        flushBlockquote(index);
+      }
+
       if (line.startsWith("# ")) {
-        elements.push(
-          <h1
-            key={index}
-            className="font-mono text-2xl font-bold uppercase tracking-tight mt-8 mb-4"
-          >
-            {line.slice(2)}
-          </h1>
-        );
+        return; // Skip h1 since we render title separately
       } else if (line.startsWith("## ")) {
         elements.push(
-          <h2
-            key={index}
-            className="font-mono text-xl font-bold uppercase tracking-tight mt-8 mb-4"
-          >
+          <h2 key={index} className="blog-h2">
             {line.slice(3)}
           </h2>
         );
       } else if (line.startsWith("### ")) {
         elements.push(
-          <h3
-            key={index}
-            className="font-mono text-lg font-bold mt-6 mb-3"
-          >
+          <h3 key={index} className="blog-h3">
             {line.slice(4)}
           </h3>
         );
+      } else if (line.startsWith("- **") && line.includes("**:")) {
+        const boldEnd = line.indexOf("**:", 4);
+        const boldText = line.slice(4, boldEnd);
+        const rest = line.slice(boldEnd + 3);
+        elements.push(
+          <li key={index} className="blog-list-item">
+            <strong>{boldText}:</strong>{rest}
+          </li>
+        );
       } else if (line.startsWith("- ")) {
         elements.push(
-          <li key={index} className="ml-4 text-[#cccccc]">
-            {line.slice(2)}
+          <li key={index} className="blog-list-item">
+            {processInlineFormatting(line.slice(2))}
+          </li>
+        );
+      } else if (/^\d+\.\s/.test(line)) {
+        const text = line.replace(/^\d+\.\s/, "");
+        elements.push(
+          <li key={index} className="blog-list-item blog-list-ordered">
+            {processInlineFormatting(text)}
           </li>
         );
       } else if (line.startsWith("|")) {
-        // Simple table handling
+        if (line.includes("---")) return; // skip separator rows
+        const cells = line.split("|").filter(Boolean).map((c) => c.trim());
+        const isHeader = index > 0 && lines[index + 1]?.includes("---");
         elements.push(
-          <div key={index} className="font-mono text-sm text-[#888888] my-1">
-            {line}
+          <div key={index} className={`blog-table-row ${isHeader ? "blog-table-header" : ""}`}>
+            {cells.map((cell, i) => (
+              <span key={i} className="blog-table-cell">{cell}</span>
+            ))}
           </div>
         );
       } else if (line.trim() === "") {
-        elements.push(<div key={index} className="h-4" />);
+        elements.push(<div key={index} className="h-6" />);
       } else if (line.startsWith("**") && line.endsWith("**")) {
         elements.push(
-          <p key={index} className="font-bold my-2">
+          <p key={index} className="blog-bold-line">
             {line.slice(2, -2)}
           </p>
         );
       } else {
         elements.push(
-          <p key={index} className="text-[#cccccc] leading-relaxed">
-            {line}
+          <p key={index} className="blog-paragraph">
+            {processInlineFormatting(line)}
           </p>
         );
       }
     });
 
+    flushBlockquote(lines.length);
     return elements;
   };
 
   return (
-    <div className="pt-24 pb-16 bg-grid min-h-screen">
+    <div className="pt-24 pb-16 min-h-screen">
       <Container>
-        <article className="max-w-3xl mx-auto">
+        <article className="blog-article">
           {/* Back link */}
-          <Link
-            href="/blog"
-            className="font-mono text-xs uppercase tracking-wider text-[#888888] hover:text-white transition-colors"
-          >
-            ← Back to blog
+          <Link href="/blog" className="blog-back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M19 12H5"/><path d="m12 19-7-7 7-7"/>
+            </svg>
+            Back to blog
           </Link>
 
           {/* Header */}
-          <header className="mt-8">
-            <div className="flex flex-wrap items-center gap-3 mb-4">
-              <time className="font-mono text-xs text-[#888888]">
+          <header className="blog-header">
+            <h1 className="blog-title">{post.title}</h1>
+            <div className="blog-meta">
+              <span className="blog-author">OpenTracy Team</span>
+              <span className="blog-meta-sep">/</span>
+              <time className="blog-date">
                 {new Date(post.date).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
                 })}
               </time>
-              {post.tags.map((tag) => (
-                <Badge key={tag}>{tag}</Badge>
-              ))}
+              <span className="blog-meta-sep">/</span>
+              <div className="blog-tags">
+                {post.tags.map((tag) => (
+                  <span key={tag} className="blog-tag">{tag}</span>
+                ))}
+              </div>
             </div>
-            <h1 className="font-mono text-2xl sm:text-3xl font-bold uppercase tracking-tight">
-              {post.title}
-            </h1>
-            <p className="mt-4 text-lg text-[#888888]">{post.summary}</p>
+            <p className="blog-summary">{post.summary}</p>
           </header>
 
+          {/* Divider */}
+          <hr className="blog-divider" />
+
           {/* Content */}
-          <div className="mt-12 border-t border-[#333333] pt-12">
+          <div className="blog-content">
             {renderContent(post.content)}
           </div>
 
-          {/* Footer */}
-          <footer className="mt-16 border-t border-[#333333] pt-8">
-            <div className="flex items-center justify-between">
-              <Link
-                href="/blog"
-                className="font-mono text-xs uppercase tracking-wider text-[#888888] hover:text-white transition-colors"
-              >
-                ← All posts
+          {/* Prev / Next navigation */}
+          <nav className="blog-nav">
+            {prevPost ? (
+              <Link href={`/blog/${prevPost.slug}`} className="blog-nav-link blog-nav-prev">
+                <span className="blog-nav-label">Previous</span>
+                <span className="blog-nav-title">{prevPost.title}</span>
               </Link>
-              <div className="flex items-center gap-4">
-                <span className="text-xs text-[#888888]">Share:</span>
-                <a
-                  href="#"
-                  className="text-[#888888] hover:text-white transition-colors"
-                  aria-label="Share on Twitter"
-                >
-                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  className="text-[#888888] hover:text-white transition-colors"
-                  aria-label="Share on LinkedIn"
-                >
-                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </footer>
+            ) : (
+              <div />
+            )}
+            {nextPost ? (
+              <Link href={`/blog/${nextPost.slug}`} className="blog-nav-link blog-nav-next">
+                <span className="blog-nav-label">Next</span>
+                <span className="blog-nav-title">{nextPost.title}</span>
+              </Link>
+            ) : (
+              <div />
+            )}
+          </nav>
         </article>
       </Container>
     </div>

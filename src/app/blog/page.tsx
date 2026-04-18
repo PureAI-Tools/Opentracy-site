@@ -1,88 +1,55 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/Container";
-import Badge from "@/components/Badge";
 import { getAllPosts } from "@/data/posts";
 
 export const metadata: Metadata = {
   title: "Blog — OpenTracy",
-  description: "Updates, tutorials, and insights on LLM distillation, Small Language Models, cost optimization, and AI deployment. Learn how to ship smarter with OpenTracy.",
+  description: "Updates, tutorials, and insights on LLM routing, cost optimization, and AI infrastructure.",
 };
 
 export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <div className="pt-24 pb-16 bg-grid min-h-screen">
+    <div className="pt-24 pb-16 min-h-screen">
       <Container>
-        {/* Header */}
-        <div className="max-w-2xl">
-          <h1 className="font-mono text-3xl sm:text-4xl font-bold uppercase tracking-tight">
-            Blog
-          </h1>
-          <p className="mt-4 text-[#888888]">
-            Updates, tutorials, and insights on LLM distillation and Small Language Models.
-          </p>
-        </div>
+        <div className="blog-list-container">
+          <header className="blog-list-header">
+            <h1 className="blog-list-title">Writing</h1>
+            <p className="blog-list-subtitle">
+              Thoughts on LLM infrastructure, cost optimization, and building with AI.
+            </p>
+          </header>
 
-        {/* Posts */}
-        <div className="mt-12 space-y-8">
-          {posts.map((post, index) => (
-            <article
-              key={post.slug}
-              className={`border-b border-[#333333] pb-8 ${
-                index === 0 ? "border-t pt-8" : ""
-              }`}
-            >
-              <div className="flex flex-wrap items-center gap-3 mb-3">
-                <time className="font-mono text-xs text-[#888888]">
-                  {new Date(post.date).toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </time>
-                {post.tags.map((tag) => (
-                  <Badge key={tag}>{tag}</Badge>
-                ))}
-              </div>
-              <Link href={`/blog/${post.slug}`} className="group">
-                <h2 className="font-mono text-xl font-bold uppercase tracking-tight group-hover:text-[#f59e0b] transition-colors">
-                  {post.title}
-                </h2>
-              </Link>
-              <p className="mt-3 text-[#888888]">{post.summary}</p>
+          <div className="blog-list">
+            {posts.map((post) => (
               <Link
+                key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="mt-4 inline-block font-mono text-xs uppercase tracking-wider text-[#888888] hover:text-white transition-colors"
+                className="blog-list-item-link"
               >
-                Read more →
+                <article className="blog-list-entry">
+                  <time className="blog-list-date">
+                    {new Date(post.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </time>
+                  <div className="blog-list-content">
+                    <h2 className="blog-list-entry-title">{post.title}</h2>
+                    <p className="blog-list-entry-summary">{post.summary}</p>
+                    <div className="blog-list-tags">
+                      {post.tags.map((tag) => (
+                        <span key={tag} className="blog-tag">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </article>
               </Link>
-            </article>
-          ))}
-        </div>
-
-        {/* Newsletter */}
-        <div className="mt-16 border border-[#333333] p-8">
-          <h3 className="font-mono text-lg font-bold uppercase">
-            Subscribe to updates
-          </h3>
-          <p className="mt-2 text-sm text-[#888888]">
-            Get the latest posts delivered to your inbox. No spam, unsubscribe anytime.
-          </p>
-          <form className="mt-4 flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              placeholder="your@email.com"
-              className="flex-1 bg-[#0a0a0a] border border-[#333333] px-4 py-2 font-mono text-sm placeholder:text-[#888888] focus:outline-none focus:border-white"
-            />
-            <button
-              type="submit"
-              className="btn btn-primary"
-            >
-              Subscribe
-            </button>
-          </form>
+            ))}
+          </div>
         </div>
       </Container>
     </div>
