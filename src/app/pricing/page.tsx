@@ -21,12 +21,13 @@ const plans = [
       "Community support",
     ],
     cta: "Get started",
+    ctaHref: "https://app.opentracy.com",
     ctaVariant: "secondary" as const,
     highlighted: false,
   },
   {
-    name: "Pro",
-    price: "$299",
+    name: "Starter",
+    price: "$10",
     period: "/mo",
     description: "For teams running LLMs in production.",
     features: [
@@ -40,6 +41,7 @@ const plans = [
       "Custom routing rules",
     ],
     cta: "Start free trial",
+    ctaHref: "https://app.opentracy.com",
     ctaVariant: "primary" as const,
     highlighted: true,
   },
@@ -48,7 +50,7 @@ const plans = [
     price: "Custom",
     description: "For organizations with security and compliance needs.",
     features: [
-      "Everything in Pro",
+      "Everything in Starter",
       "VPC deployment",
       "SSO / SAML",
       "Audit logs",
@@ -57,7 +59,8 @@ const plans = [
       "On-premise option",
       "BYOK encryption",
     ],
-    cta: "Talk to us",
+    cta: "Schedule a meeting",
+    ctaHref: "https://cal.com/opentracy/enterprise",
     ctaVariant: "secondary" as const,
     highlighted: false,
   },
@@ -78,7 +81,7 @@ const faqs = [
   },
   {
     question: "How does the free trial work?",
-    answer: "14 days of Pro features, no credit card required. After the trial, you move to the Free plan automatically.",
+    answer: "14 days of Starter features, no credit card required. After the trial, you move to the Free plan automatically.",
   },
   {
     question: "Is my data secure?",
@@ -132,7 +135,7 @@ export default function PricingPage() {
             >
               {plan.highlighted && (
                 <Badge variant="accent" className="mb-4">
-                  Most Popular
+                  Best Value
                 </Badge>
               )}
               <h2 className="text-xl font-bold">
@@ -155,7 +158,7 @@ export default function PricingPage() {
               </ul>
               <div className="mt-8">
                 <Button
-                  href="https://app.opentracy.com"
+                  href={plan.ctaHref}
                   variant={plan.ctaVariant}
                   className="w-full justify-center"
                 >
