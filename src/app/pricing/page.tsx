@@ -73,7 +73,7 @@ const faqs = [
   },
   {
     question: "Can I self-host OpenTracy?",
-    answer: "Yes. OpenTracy is open source (MIT). You can self-host the full stack with Docker. Pro and Enterprise plans add managed features on top.",
+    answer: "Yes. OpenTracy is open source (MIT). You can self-host the full stack with Docker. Starter and Enterprise plans add managed features on top.",
   },
   {
     question: "Which providers are supported?",
