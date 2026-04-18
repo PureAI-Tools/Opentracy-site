@@ -1,39 +1,46 @@
 import Link from "next/link";
 import LogoMark from "./LogoMark";
+import type { Locale, Dictionary } from "@/i18n/config";
 
-const footerLinks = {
-  Product: [
-    { name: "Features", href: "/#features" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "Docs", href: "/docs" },
-    { name: "Security", href: "/security" },
-  ],
-  Resources: [
-    { name: "Blog", href: "/blog" },
-    { name: "Community", href: "/community" },
-    { name: "GitHub", href: "https://github.com/PureAI-Tools/opentracy" },
-    { name: "Discord", href: "https://discord.gg/thyZx5GkFV" },
-  ],
-  Legal: [
-    { name: "Privacy", href: "/privacy" },
-    { name: "Terms", href: "/terms" },
-  ],
-};
+export default function Footer({
+  locale,
+  dict,
+}: {
+  locale: Locale;
+  dict: Dictionary;
+}) {
+  const footerLinks = {
+    [dict.footer.product]: [
+      { name: dict.footer.features, href: `/${locale}#features` },
+      { name: dict.footer.pricing, href: `/${locale}/pricing` },
+      { name: dict.footer.docs, href: `/${locale}/docs` },
+      { name: dict.footer.security, href: `/${locale}/security` },
+    ],
+    [dict.footer.resources]: [
+      { name: dict.footer.blog, href: `/${locale}/blog` },
+      { name: dict.footer.community, href: `/${locale}/community` },
+      { name: dict.footer.github, href: "https://github.com/PureAI-Tools/opentracy" },
+      { name: dict.footer.discord, href: "https://discord.gg/thyZx5GkFV" },
+    ],
+    [dict.footer.legal]: [
+      { name: dict.footer.privacy, href: `/${locale}/privacy` },
+      { name: dict.footer.terms, href: `/${locale}/terms` },
+    ],
+  };
 
-export default function Footer() {
   return (
     <footer className="border-t border-[#e5e5e5] bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href={`/${locale}`} className="flex items-center gap-2">
               <LogoMark size={20} />
               <span className="text-sm font-semibold tracking-tight">
                 OpenTracy
               </span>
             </Link>
             <p className="mt-4 text-sm text-[#666666] max-w-xs leading-relaxed">
-              One API for every LLM. Route, observe, evaluate, and optimize your AI infrastructure.
+              {dict.footer.tagline}
             </p>
           </div>
           {Object.entries(footerLinks).map(([category, links]) => (
@@ -58,7 +65,7 @@ export default function Footer() {
         </div>
         <div className="mt-16 pt-8 border-t border-[#e5e5e5] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-[#666666]">
-            &copy; {new Date().getFullYear()} OpenTracy. MIT License.
+            &copy; {new Date().getFullYear()} {dict.footer.copyright}
           </p>
           <div className="flex items-center gap-4">
             <Link href="https://github.com/PureAI-Tools/opentracy" className="text-[#666666] hover:text-[#111] transition-colors" aria-label="GitHub">

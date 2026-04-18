@@ -1,0 +1,239 @@
+{
+  "nav": {
+    "features": "Recursos",
+    "docs": "Docs",
+    "pricing": "Precos",
+    "blog": "Blog",
+    "github": "GitHub",
+    "getStarted": "Comecar",
+    "toggleMenu": "Abrir menu"
+  },
+  "hero": {
+    "badge": "SDK v2 lancado — fallbacks, streaming e rastreamento de custos",
+    "title": "Uma API para",
+    "titleHighlight": "todos os LLMs.",
+    "subtitle": "Conecte-se a 13+ provedores, acompanhe custos, meça qualidade e otimize seu stack de IA. Tudo por um unico endpoint.",
+    "ctaPrimary": "Comecar gratis",
+    "ctaSecondary": "Ler a documentacao",
+    "footnote": "Codigo aberto. Licenca MIT. Sem cartao de credito."
+  },
+  "providers": {
+    "heading": "Compativel com todos os principais provedores",
+    "plusMore": "+10 mais"
+  },
+  "howItWorks": {
+    "title": "Como funciona",
+    "subtitle": "Seu app se conecta ao OpenTracy. O OpenTracy se conecta a todos os provedores de LLM.",
+    "yourApp": "Seu App",
+    "yourAppSub": "Uma unica chamada de API",
+    "opentracy": "OpenTracy",
+    "opentracySub": "Roteamento + Traces + Eval"
+  },
+  "metrics": {
+    "providers": "13+",
+    "providersLabel": "Provedores de LLM",
+    "models": "70+",
+    "modelsLabel": "Modelos",
+    "overhead": "<2ms",
+    "overheadLabel": "Latencia de roteamento",
+    "license": "MIT",
+    "licenseLabel": "Codigo aberto"
+  },
+  "features": {
+    "title": "Tudo que voce precisa para gerenciar LLMs",
+    "subtitle": "Do roteamento a avaliacao e destilacao. Uma unica plataforma.",
+    "oneApi": {
+      "title": "Uma API, todos os modelos",
+      "description": "Envie requisicoes para OpenAI, Anthropic, Google, Mistral e mais 9 provedores por um unico endpoint."
+    },
+    "realTimeTraces": {
+      "title": "Traces em tempo real",
+      "description": "Cada requisicao registrada com entrada, saida, custo e latencia completos. Consulte milhoes de traces instantaneamente."
+    },
+    "costTracking": {
+      "title": "Rastreamento de custos",
+      "description": "Precificacao automatica por token para 70+ modelos. Veja exatamente para onde vai seu dinheiro."
+    },
+    "smartRouting": {
+      "title": "Roteamento inteligente",
+      "description": "Direcione prompts simples para modelos baratos e os complexos para modelos potentes. Fallbacks automaticos."
+    },
+    "qualityMonitoring": {
+      "title": "Monitoramento de qualidade",
+      "description": "Agentes de IA escaneiam traces em busca de alucinacoes e quedas de qualidade. Receba alertas antes que os usuarios percebam."
+    },
+    "modelDistillation": {
+      "title": "Destilacao de modelos",
+      "description": "Treine modelos menores, mais rapidos e mais baratos com seus dados de producao. Seus modelos, seu controle."
+    }
+  },
+  "sdk": {
+    "title": "Simples por design",
+    "subtitle": "Se voce ja usou o SDK da OpenAI, voce ja conhece o OpenTracy.",
+    "openaiCompatible": {
+      "title": "Compativel com OpenAI",
+      "description": "O mesmo formato que voce ja usa. Mude uma linha para comecar."
+    },
+    "automaticFallbacks": {
+      "title": "Fallbacks automaticos",
+      "description": "Se um provedor cair, o OpenTracy muda para seu backup."
+    },
+    "costOnResponse": {
+      "title": "Custo em cada resposta",
+      "description": "Cada resposta inclui o custo exato. Sem mais adivinhacao."
+    },
+    "fullStreaming": {
+      "title": "Streaming completo",
+      "description": "Todos os provedores, incluindo traducao SSE do Anthropic."
+    }
+  },
+  "cta": {
+    "title": "Codigo aberto.",
+    "titleHighlight": "Self-host ou nuvem.",
+    "subtitle": "Execute na sua propria infraestrutura com controle total, ou use nossa nuvem gerenciada. Licenca MIT, sem vendor lock-in.",
+    "ctaPrimary": "Comecar gratis",
+    "ctaSecondary": "Ver no GitHub",
+    "footnote": "Plano gratuito disponivel. Sem cartao de credito."
+  },
+  "dashboard": {
+    "title": "OpenTracy — Painel",
+    "requestsToday": "Requisicoes hoje",
+    "totalCost": "Custo total",
+    "avgQuality": "Qualidade media",
+    "recentTraces": "Traces recentes"
+  },
+  "pricing": {
+    "title": "Precos simples e previsiveis",
+    "subtitle": "Comece gratis. Escale quando precisar. Sem surpresas.",
+    "bestValue": "Melhor custo-beneficio",
+    "plans": {
+      "free": {
+        "name": "Gratis",
+        "description": "Para desenvolvedores explorando roteamento e observabilidade de LLMs.",
+        "cta": "Comecar",
+        "features": [
+          "Ate 10.000 requisicoes/mes",
+          "3 execucoes de destilacao/mes",
+          "Todos os 13+ provedores",
+          "Registro completo de traces",
+          "Suporte da comunidade"
+        ]
+      },
+      "starter": {
+        "name": "Starter",
+        "description": "Para equipes rodando LLMs em producao.",
+        "cta": "Iniciar teste gratuito",
+        "features": [
+          "Requisicoes ilimitadas",
+          "Destilacao ilimitada",
+          "Avaliacoes avancadas",
+          "Escaneamento de qualidade com IA",
+          "Suporte prioritario",
+          "Colaboracao em equipe",
+          "Opcao de self-host",
+          "Regras de roteamento personalizadas"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "Para organizacoes com necessidades de seguranca e conformidade.",
+        "cta": "Agendar uma reuniao",
+        "features": [
+          "Tudo do plano Starter",
+          "Deploy em VPC",
+          "SSO / SAML",
+          "Logs de auditoria",
+          "Suporte dedicado",
+          "SLAs personalizados",
+          "Opcao on-premise",
+          "Criptografia BYOK"
+        ]
+      }
+    },
+    "billingNote": "Todos os precos em USD. Cobranca mensal ou anual (economize 20%).",
+    "faqTitle": "Perguntas frequentes",
+    "faqs": [
+      {
+        "question": "O que conta como uma requisicao?",
+        "answer": "Cada chamada de API pelo OpenTracy conta como uma requisicao. Tanto chamadas bem-sucedidas quanto com falha sao contabilizadas."
+      },
+      {
+        "question": "Posso fazer self-host do OpenTracy?",
+        "answer": "Sim. O OpenTracy e codigo aberto (MIT). Voce pode hospedar todo o stack com Docker. Os planos Starter e Enterprise adicionam recursos gerenciados."
+      },
+      {
+        "question": "Quais provedores sao suportados?",
+        "answer": "OpenAI, Anthropic, Google Gemini, Mistral, Groq, AWS Bedrock, Azure OpenAI, Cohere, DeepSeek, Together AI, Fireworks, Ollama e OpenRouter."
+      },
+      {
+        "question": "Como funciona o teste gratuito?",
+        "answer": "14 dias de recursos Starter, sem cartao de credito. Apos o teste, voce migra para o plano Gratis automaticamente."
+      },
+      {
+        "question": "Meus dados estao seguros?",
+        "answer": "Sim. Certificacao SOC 2 Type II, conformidade com GDPR. Planos Enterprise incluem deploy em VPC e criptografia BYOK."
+      },
+      {
+        "question": "Posso trocar de plano a qualquer momento?",
+        "answer": "Sim. Faca upgrade ou downgrade a qualquer momento. As mudancas entram em vigor no proximo ciclo de cobranca."
+      }
+    ],
+    "ctaTitle": "Pronto para simplificar seu stack de IA?",
+    "ctaSubtitle": "Comece gratis hoje. Sem cartao de credito.",
+    "ctaPrimary": "Comecar",
+    "ctaSecondary": "Self-host"
+  },
+  "docs": {
+    "title": "Documentacao",
+    "subtitle": "Tudo que voce precisa para comecar com o OpenTracy.",
+    "quickstart": "Inicio rapido",
+    "exploreTitle": "Explorar a documentacao",
+    "categories": {
+      "gettingStarted": {
+        "title": "Primeiros passos",
+        "description": "Instale o OpenTracy, configure sua primeira rota e envie sua primeira requisicao."
+      },
+      "modelsProviders": {
+        "title": "Modelos e provedores",
+        "description": "Veja todos os 13 provedores e 70+ modelos. Aprenda a adicionar os seus."
+      },
+      "routingStrategies": {
+        "title": "Estrategias de roteamento",
+        "description": "Balanceamento de carga, fallbacks, roteamento semantico e roteamento por custo."
+      },
+      "observability": {
+        "title": "Observabilidade",
+        "description": "Traces no ClickHouse, rastreamento de custos, monitoramento de latencia e paineis."
+      },
+      "evaluations": {
+        "title": "Avaliacoes",
+        "description": "Compare modelos, use IA como avaliador e acompanhe a qualidade ao longo do tempo."
+      },
+      "selfHosting": {
+        "title": "Self-Hosting",
+        "description": "Faca deploy de todo o stack com Docker. ClickHouse, engine em Go, API em Python e UI."
+      }
+    }
+  },
+  "blog": {
+    "title": "Artigos",
+    "subtitle": "Reflexoes sobre infraestrutura de LLMs, otimizacao de custos e desenvolvimento com IA."
+  },
+  "footer": {
+    "tagline": "Uma API para todos os LLMs. Roteie, observe, avalie e otimize sua infraestrutura de IA.",
+    "product": "Produto",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "features": "Recursos",
+    "pricing": "Precos",
+    "docs": "Docs",
+    "security": "Seguranca",
+    "blog": "Blog",
+    "community": "Comunidade",
+    "github": "GitHub",
+    "discord": "Discord",
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "copyright": "OpenTracy. Licenca MIT."
+  }
+}

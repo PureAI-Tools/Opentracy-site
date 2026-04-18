@@ -3,21 +3,22 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Container from "@/components/Container";
 import { getPostBySlug, getAllPosts } from "@/data/posts";
+import { i18n } from "@/i18n/config";
 
 interface BlogPostPageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  return i18n.locales.flatMap((locale) =>
+    posts.map((post) => ({ locale, slug: post.slug }))
+  );
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const resolvedParams = await params;
-  const post = getPostBySlug(resolvedParams.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     return {
@@ -32,8 +33,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const resolvedParams = await params;
-  const post = getPostBySlug(resolvedParams.slug);
+  const { locale, slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -200,7 +201,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <Container>
         <article className="blog-article">
           {/* Back link */}
-          <Link href="/blog" className="blog-back-link">
+          <Link href={`/${locale}/blog`} className="blog-back-link">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M19 12H5"/><path d="m12 19-7-7 7-7"/>
             </svg>
@@ -214,7 +215,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <span className="blog-author">OpenTracy Team</span>
               <span className="blog-meta-sep">/</span>
               <time className="blog-date">
-                {new Date(post.date).toLocaleDateString("en-US", {
+                {new Date(post.date).toLocaleDateString(locale, {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
@@ -241,7 +242,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           {/* Prev / Next navigation */}
           <nav className="blog-nav">
             {prevPost ? (
-              <Link href={`/blog/${prevPost.slug}`} className="blog-nav-link blog-nav-prev">
+              <Link href={`/${locale}/blog/${prevPost.slug}`} className="blog-nav-link blog-nav-prev">
                 <span className="blog-nav-label">Previous</span>
                 <span className="blog-nav-title">{prevPost.title}</span>
               </Link>
@@ -249,7 +250,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <div />
             )}
             {nextPost ? (
-              <Link href={`/blog/${nextPost.slug}`} className="blog-nav-link blog-nav-next">
+              <Link href={`/${locale}/blog/${nextPost.slug}`} className="blog-nav-link blog-nav-next">
                 <span className="blog-nav-label">Next</span>
                 <span className="blog-nav-title">{nextPost.title}</span>
               </Link>

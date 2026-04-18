@@ -1,0 +1,239 @@
+{
+  "nav": {
+    "features": "Features",
+    "docs": "Docs",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "github": "GitHub",
+    "getStarted": "Get Started",
+    "toggleMenu": "Toggle menu"
+  },
+  "hero": {
+    "badge": "SDK v2 is out — fallbacks, streaming, and cost tracking",
+    "title": "One API for",
+    "titleHighlight": "every LLM.",
+    "subtitle": "Route to 13+ providers, track costs, measure quality, and optimize your AI stack. All through a single endpoint.",
+    "ctaPrimary": "Start for free",
+    "ctaSecondary": "Read the docs",
+    "footnote": "Open source. MIT Licensed. No credit card required."
+  },
+  "providers": {
+    "heading": "Works with every major provider",
+    "plusMore": "+10 more"
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "subtitle": "Your app talks to OpenTracy. OpenTracy talks to every LLM provider.",
+    "yourApp": "Your App",
+    "yourAppSub": "Single API call",
+    "opentracy": "OpenTracy",
+    "opentracySub": "Route + Trace + Eval"
+  },
+  "metrics": {
+    "providers": "13+",
+    "providersLabel": "LLM Providers",
+    "models": "70+",
+    "modelsLabel": "Models",
+    "overhead": "<2ms",
+    "overheadLabel": "Routing Overhead",
+    "license": "MIT",
+    "licenseLabel": "Open Source"
+  },
+  "features": {
+    "title": "Everything you need to manage LLMs",
+    "subtitle": "From routing to evaluation to distillation. One platform.",
+    "oneApi": {
+      "title": "One API, Every Model",
+      "description": "Send requests to OpenAI, Anthropic, Google, Mistral, and 9 more through a single endpoint."
+    },
+    "realTimeTraces": {
+      "title": "Real-Time Traces",
+      "description": "Every request logged with full input, output, cost, and latency. Query millions of traces instantly."
+    },
+    "costTracking": {
+      "title": "Cost Tracking",
+      "description": "Automatic per-token pricing for 70+ models. See exactly where your money goes."
+    },
+    "smartRouting": {
+      "title": "Smart Routing",
+      "description": "Route simple prompts to cheap models, complex ones to powerful ones. Automatic fallbacks."
+    },
+    "qualityMonitoring": {
+      "title": "Quality Monitoring",
+      "description": "AI agents scan traces for hallucinations and quality drops. Get alerts before users notice."
+    },
+    "modelDistillation": {
+      "title": "Model Distillation",
+      "description": "Train smaller, faster, cheaper models from your production data. Own your models."
+    }
+  },
+  "sdk": {
+    "title": "Simple by design",
+    "subtitle": "If you've used the OpenAI SDK, you already know OpenTracy.",
+    "openaiCompatible": {
+      "title": "OpenAI-compatible",
+      "description": "Same format you already use. Change one line to start."
+    },
+    "automaticFallbacks": {
+      "title": "Automatic fallbacks",
+      "description": "If a provider goes down, OpenTracy switches to your backup."
+    },
+    "costOnResponse": {
+      "title": "Cost on every response",
+      "description": "Every response includes exact cost. No more guessing."
+    },
+    "fullStreaming": {
+      "title": "Full streaming",
+      "description": "All providers including Anthropic SSE translation."
+    }
+  },
+  "cta": {
+    "title": "Open source.",
+    "titleHighlight": "Self-host or cloud.",
+    "subtitle": "Run on your own infrastructure with full control, or use our managed cloud. MIT licensed, no vendor lock-in.",
+    "ctaPrimary": "Start for free",
+    "ctaSecondary": "View on GitHub",
+    "footnote": "Free tier available. No credit card required."
+  },
+  "dashboard": {
+    "title": "OpenTracy — Dashboard",
+    "requestsToday": "Requests Today",
+    "totalCost": "Total Cost",
+    "avgQuality": "Avg Quality",
+    "recentTraces": "Recent Traces"
+  },
+  "pricing": {
+    "title": "Simple, predictable pricing",
+    "subtitle": "Start free. Scale when you need to. No surprises.",
+    "bestValue": "Best Value",
+    "plans": {
+      "free": {
+        "name": "Free",
+        "description": "For developers exploring LLM routing and observability.",
+        "cta": "Get started",
+        "features": [
+          "Up to 10,000 requests/month",
+          "3 distillation runs/month",
+          "All 13+ providers",
+          "Full trace logging",
+          "Community support"
+        ]
+      },
+      "starter": {
+        "name": "Starter",
+        "description": "For teams running LLMs in production.",
+        "cta": "Start free trial",
+        "features": [
+          "Unlimited requests",
+          "Unlimited distillation",
+          "Advanced evaluations",
+          "AI quality scanning",
+          "Priority support",
+          "Team collaboration",
+          "Self-host option",
+          "Custom routing rules"
+        ]
+      },
+      "enterprise": {
+        "name": "Enterprise",
+        "description": "For organizations with security and compliance needs.",
+        "cta": "Schedule a meeting",
+        "features": [
+          "Everything in Starter",
+          "VPC deployment",
+          "SSO / SAML",
+          "Audit logs",
+          "Dedicated support",
+          "Custom SLAs",
+          "On-premise option",
+          "BYOK encryption"
+        ]
+      }
+    },
+    "billingNote": "All prices in USD. Billed monthly or annually (save 20%).",
+    "faqTitle": "Frequently asked questions",
+    "faqs": [
+      {
+        "question": "What counts as a request?",
+        "answer": "Each API call through OpenTracy counts as one request. Both successful and failed calls are counted."
+      },
+      {
+        "question": "Can I self-host OpenTracy?",
+        "answer": "Yes. OpenTracy is open source (MIT). You can self-host the full stack with Docker. Starter and Enterprise plans add managed features on top."
+      },
+      {
+        "question": "Which providers are supported?",
+        "answer": "OpenAI, Anthropic, Google Gemini, Mistral, Groq, AWS Bedrock, Azure OpenAI, Cohere, DeepSeek, Together AI, Fireworks, Ollama, and OpenRouter."
+      },
+      {
+        "question": "How does the free trial work?",
+        "answer": "14 days of Starter features, no credit card required. After the trial, you move to the Free plan automatically."
+      },
+      {
+        "question": "Is my data secure?",
+        "answer": "Yes. SOC 2 Type II certified, GDPR compliant. Enterprise plans include VPC deployment and BYOK encryption."
+      },
+      {
+        "question": "Can I switch plans anytime?",
+        "answer": "Yes. Upgrade or downgrade at any time. Changes take effect on your next billing cycle."
+      }
+    ],
+    "ctaTitle": "Ready to simplify your AI stack?",
+    "ctaSubtitle": "Start free today. No credit card required.",
+    "ctaPrimary": "Get started",
+    "ctaSecondary": "Self-host"
+  },
+  "docs": {
+    "title": "Documentation",
+    "subtitle": "Everything you need to get started with OpenTracy.",
+    "quickstart": "Quickstart",
+    "exploreTitle": "Explore the docs",
+    "categories": {
+      "gettingStarted": {
+        "title": "Getting Started",
+        "description": "Install OpenTracy, set up your first route, and send your first request."
+      },
+      "modelsProviders": {
+        "title": "Models & Providers",
+        "description": "See all 13 providers and 70+ models. Learn how to add your own."
+      },
+      "routingStrategies": {
+        "title": "Routing Strategies",
+        "description": "Load balancing, fallbacks, semantic routing, and cost-based routing."
+      },
+      "observability": {
+        "title": "Observability",
+        "description": "ClickHouse traces, cost tracking, latency monitoring, and dashboards."
+      },
+      "evaluations": {
+        "title": "Evaluations",
+        "description": "Run model comparisons, use AI-as-judge, and track quality over time."
+      },
+      "selfHosting": {
+        "title": "Self-Hosting",
+        "description": "Deploy the full stack with Docker. ClickHouse, Go engine, Python API, and UI."
+      }
+    }
+  },
+  "blog": {
+    "title": "Writing",
+    "subtitle": "Thoughts on LLM infrastructure, cost optimization, and building with AI."
+  },
+  "footer": {
+    "tagline": "One API for every LLM. Route, observe, evaluate, and optimize your AI infrastructure.",
+    "product": "Product",
+    "resources": "Resources",
+    "legal": "Legal",
+    "features": "Features",
+    "pricing": "Pricing",
+    "docs": "Docs",
+    "security": "Security",
+    "blog": "Blog",
+    "community": "Community",
+    "github": "GitHub",
+    "discord": "Discord",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "copyright": "OpenTracy. MIT License."
+  }
+}

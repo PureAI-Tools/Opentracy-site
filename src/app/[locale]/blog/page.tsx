@@ -1,14 +1,16 @@
-import { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/Container";
 import { getAllPosts } from "@/data/posts";
+import { getDictionary } from "@/i18n/getDictionary";
+import type { Locale } from "@/i18n/config";
 
-export const metadata: Metadata = {
-  title: "Blog — OpenTracy",
-  description: "Updates, tutorials, and insights on LLM routing, cost optimization, and AI infrastructure.",
-};
-
-export default function BlogPage() {
+export default async function BlogPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const dict = await getDictionary(locale as Locale);
   const posts = getAllPosts();
 
   return (
@@ -16,9 +18,9 @@ export default function BlogPage() {
       <Container>
         <div className="blog-list-container">
           <header className="blog-list-header">
-            <h1 className="blog-list-title">Writing</h1>
+            <h1 className="blog-list-title">{dict.blog.title}</h1>
             <p className="blog-list-subtitle">
-              Thoughts on LLM infrastructure, cost optimization, and building with AI.
+              {dict.blog.subtitle}
             </p>
           </header>
 
@@ -26,12 +28,12 @@ export default function BlogPage() {
             {posts.map((post) => (
               <Link
                 key={post.slug}
-                href={`/blog/${post.slug}`}
+                href={`/${locale}/blog/${post.slug}`}
                 className="blog-list-item-link"
               >
                 <article className="blog-list-entry">
                   <time className="blog-list-date">
-                    {new Date(post.date).toLocaleDateString("en-US", {
+                    {new Date(post.date).toLocaleDateString(locale, {
                       year: "numeric",
                       month: "short",
                       day: "numeric",

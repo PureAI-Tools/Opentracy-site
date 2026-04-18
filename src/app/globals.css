@@ -500,26 +500,86 @@ body {
   border-radius: 4px;
 }
 
-/* Fade in */
-.fade-in {
-  animation: fadeIn 0.6s ease-out;
+/* Card hover glow */
+.card-hover-glow {
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+.card-hover-glow:hover {
+  box-shadow: 0 8px 30px rgba(0, 112, 243, 0.08), 0 0 0 1px rgba(0, 112, 243, 0.06);
 }
 
-/* Stagger */
-.stagger > * {
-  animation: fadeIn 0.5s ease-out both;
+/* Feature icon pulse on card hover */
+.card-hover-glow:hover .feature-icon {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
-.stagger > *:nth-child(1) { animation-delay: 0s; }
-.stagger > *:nth-child(2) { animation-delay: 0.08s; }
-.stagger > *:nth-child(3) { animation-delay: 0.16s; }
-.stagger > *:nth-child(4) { animation-delay: 0.24s; }
-.stagger > *:nth-child(5) { animation-delay: 0.32s; }
-.stagger > *:nth-child(6) { animation-delay: 0.4s; }
+
+/* SDK feature card hover */
+.sdk-feature-card {
+  transition: all 0.25s ease;
+}
+
+.sdk-feature-card:hover {
+  background: rgba(0, 112, 243, 0.02);
+  border-color: rgba(0, 112, 243, 0.15);
+}
+
+/* Smooth gradient line animation */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+  background-size: 200% 100%;
+}
+
+/* Flow node hover */
+.flow-node {
+  transition: all 0.25s ease;
+}
+
+.flow-node:hover {
+  border-color: #bbb;
+  transform: translateY(-1px);
+}
+
+.flow-node-accent:hover {
+  border-color: rgba(0, 112, 243, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 112, 243, 0.08);
+}
+
+/* Metric card hover glow */
+.metric-card {
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  border-color: #ddd;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* Badge hover animation */
+.badge-new {
+  transition: all 0.3s ease;
+}
+
+.badge-new:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Button hover enhancement */
+.btn-primary {
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 4px 24px rgba(0, 112, 243, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-1px);
+}
 
 /* Checkmark */
 .checkmark { color: var(--color-success); }
