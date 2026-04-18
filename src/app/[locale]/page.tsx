@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import Button from "@/components/Button";
+import Badge from "@/components/Badge";
 import Card from "@/components/Card";
 import SectionHeading from "@/components/SectionHeading";
 import CodeBlock from "@/components/CodeBlock";
@@ -429,6 +430,99 @@ export default async function Home({
               ))}
             </StaggerContainer>
           </div>
+        </Container>
+      </section>
+
+      <div className="section-divider" />
+
+      {/* Pricing */}
+      <section className="py-24 section-glow-orange">
+        <Container>
+          <FadeIn>
+            <SectionHeading
+              title={dict.pricing.title}
+              subtitle={dict.pricing.subtitle}
+            />
+          </FadeIn>
+          <StaggerContainer className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {/* Free */}
+            <StaggerItem>
+              <HoverCard>
+                <div className="card p-8">
+                  <h3 className="text-lg font-bold">{dict.pricing.plans.free.name}</h3>
+                  <div className="mt-4">
+                    <span className="text-4xl font-bold">$0</span>
+                  </div>
+                  <p className="mt-3 text-sm text-[#6b6b6b]">{dict.pricing.plans.free.description}</p>
+                  <ul className="mt-6 space-y-2.5">
+                    {dict.pricing.plans.free.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2.5 text-sm">
+                        <span className="checkmark mt-0.5">&#10003;</span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-8">
+                    <Button href="https://app.opentracy.com" variant="secondary" className="w-full justify-center">
+                      {dict.pricing.plans.free.cta}
+                    </Button>
+                  </div>
+                </div>
+              </HoverCard>
+            </StaggerItem>
+            {/* Starter */}
+            <StaggerItem>
+              <HoverCard>
+                <div className="card p-8 border-[var(--color-accent)] ring-1 ring-[var(--color-accent)]/10">
+                  <Badge variant="accent" className="mb-4">{dict.pricing.bestValue}</Badge>
+                  <h3 className="text-lg font-bold">{dict.pricing.plans.starter.name}</h3>
+                  <div className="mt-4">
+                    <span className="text-4xl font-bold">$10</span>
+                    <span className="text-[#6b6b6b]">/mo</span>
+                  </div>
+                  <p className="mt-3 text-sm text-[#6b6b6b]">{dict.pricing.plans.starter.description}</p>
+                  <ul className="mt-6 space-y-2.5">
+                    {dict.pricing.plans.starter.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2.5 text-sm">
+                        <span className="checkmark mt-0.5">&#10003;</span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-8">
+                    <Button href="https://app.opentracy.com" variant="primary" className="w-full justify-center">
+                      {dict.pricing.plans.starter.cta}
+                    </Button>
+                  </div>
+                </div>
+              </HoverCard>
+            </StaggerItem>
+            {/* Enterprise */}
+            <StaggerItem>
+              <HoverCard>
+                <div className="card p-8">
+                  <h3 className="text-lg font-bold">{dict.pricing.plans.enterprise.name}</h3>
+                  <div className="mt-4">
+                    <span className="text-4xl font-bold">Custom</span>
+                  </div>
+                  <p className="mt-3 text-sm text-[#6b6b6b]">{dict.pricing.plans.enterprise.description}</p>
+                  <ul className="mt-6 space-y-2.5">
+                    {dict.pricing.plans.enterprise.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2.5 text-sm">
+                        <span className="checkmark mt-0.5">&#10003;</span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-8">
+                    <Button href="https://cal.com/opentracy/enterprise" variant="secondary" className="w-full justify-center">
+                      {dict.pricing.plans.enterprise.cta}
+                    </Button>
+                  </div>
+                </div>
+              </HoverCard>
+            </StaggerItem>
+          </StaggerContainer>
         </Container>
       </section>
 
