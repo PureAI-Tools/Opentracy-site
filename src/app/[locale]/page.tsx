@@ -95,8 +95,8 @@ export default async function Home({
               <img
                 src="/lunar-site/tracy/tracy-default.png"
                 alt="Tracy — OpenTracy mascot"
-                width={120}
-                height={120}
+                width={200}
+                height={200}
                 className="mx-auto mb-6 drop-shadow-lg"
               />
             </FadeIn>
@@ -242,7 +242,7 @@ export default async function Home({
             </FadeIn>
             <SlideIn direction="up" delay={0.3}>
               <div className="flow-node flow-node-accent">
-                <img src="/lunar-site/tracy/tracy-routing.png" alt="Tracy routing" width={36} height={36} className="mx-auto mb-1" />
+                <img src="/lunar-site/tracy/tracy-routing.png" alt="Tracy routing" width={64} height={64} className="mx-auto mb-1" />
                 <div className="text-sm font-semibold" style={{ color: "#22c55e" }}>{dict.howItWorks.opentracy}</div>
                 <div className="text-xs text-[var(--color-muted)] mt-1">{dict.howItWorks.opentracySub}</div>
               </div>
@@ -325,8 +325,8 @@ export default async function Home({
                       <img
                         src={feature.tracy}
                         alt={dict.features[feature.key].title}
-                        width={48}
-                        height={48}
+                        width={72}
+                        height={72}
                         className="object-contain"
                       />
                       <h3 className="text-base font-semibold tracking-tight">
@@ -562,8 +562,8 @@ export default async function Home({
               <img
                 src="/lunar-site/tracy/tracy-zen.png"
                 alt="Tracy zen"
-                width={64}
-                height={64}
+                width={120}
+                height={120}
                 className="mx-auto mb-6"
               />
             </FadeIn>
