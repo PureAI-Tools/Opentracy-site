@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import LogoMark from "./LogoMark";
 import Button from "./Button";
+import ThemeToggle from "./ThemeToggle";
 import type { Locale, Dictionary } from "@/i18n/config";
 import { i18n } from "@/i18n/config";
 
@@ -46,7 +47,7 @@ export default function Navbar({
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-sm text-[#666] hover:text-[#111] transition-colors"
+                  className="text-sm text-[var(--color-muted)] hover:text-[var(--color-foreground)] transition-colors"
                 >
                   {item.name}
                 </Link>
@@ -63,13 +64,14 @@ export default function Navbar({
                   className={`text-xs px-2 py-1 rounded transition-colors ${
                     loc === locale
                       ? "bg-[var(--color-accent)] text-white"
-                      : "text-[#888] hover:text-[#111] hover:bg-[#f0f0f0]"
+                      : "text-[var(--color-muted)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-surface)]"
                   }`}
                 >
                   {localeLabels[loc]}
                 </Link>
               ))}
             </div>
+            <ThemeToggle />
             {/* GitHub with star count */}
             <Link
               href="https://github.com/lunar-org-ai/lunar-router"
@@ -91,7 +93,7 @@ export default function Navbar({
           </div>
           <button
             type="button"
-            className="md:hidden p-2 text-[#666] hover:text-[#111]"
+            className="md:hidden p-2 text-[var(--color-muted)] hover:text-[var(--color-foreground)]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={dict.nav.toggleMenu}
           >
@@ -125,7 +127,7 @@ export default function Navbar({
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-sm text-[#666] hover:text-[#111] py-1"
+                  className="text-sm text-[var(--color-muted)] hover:text-[var(--color-foreground)] py-1"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -139,7 +141,7 @@ export default function Navbar({
                     className={`text-xs px-2 py-1 rounded transition-colors ${
                       loc === locale
                         ? "bg-[var(--color-accent)] text-white"
-                        : "text-[#888] hover:text-[#111] hover:bg-[#f0f0f0]"
+                        : "text-[var(--color-muted)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-surface)]"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
@@ -147,6 +149,7 @@ export default function Navbar({
                   </Link>
                 ))}
               </div>
+              <ThemeToggle />
               <Button
                 href="https://app.opentracy.com"
                 variant="primary"

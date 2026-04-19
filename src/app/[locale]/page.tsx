@@ -94,10 +94,10 @@ export default async function Home({
   ];
 
   const sdkFeatures = [
-    { key: "openaiCompatible" as const, color: "#d97706" },
-    { key: "automaticFallbacks" as const, color: "#ea580c" },
+    { key: "openaiCompatible" as const, color: "#22c55e" },
+    { key: "automaticFallbacks" as const, color: "#16a34a" },
     { key: "costOnResponse" as const, color: "#2563eb" },
-    { key: "fullStreaming" as const, color: "#d97706" },
+    { key: "fullStreaming" as const, color: "#22c55e" },
   ];
 
   return (
@@ -109,11 +109,20 @@ export default async function Home({
         <Container>
           <div className="max-w-3xl mx-auto text-center relative z-10">
             <FadeIn delay={0} y={16}>
-              <a href="https://github.com/lunar-org-ai/lunar-router" className="badge badge-new inline-flex items-center gap-2 mb-6 hover:border-[#bbb] transition-colors">
+              <a href="https://github.com/lunar-org-ai/lunar-router" className="badge badge-new inline-flex items-center gap-2 mb-6 hover:border-[var(--color-muted)] transition-colors">
                 <span className="badge-new-dot" />
                 <span>{dict.hero.badge}</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </a>
+            </FadeIn>
+            <FadeIn delay={0.1} y={12}>
+              <img
+                src="/lunar-site/tracy/tracy-default.png"
+                alt="Tracy — OpenTracy mascot"
+                width={80}
+                height={80}
+                className="mx-auto mb-6"
+              />
             </FadeIn>
             <TextReveal delay={0.15}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.1]">
@@ -129,7 +138,7 @@ export default async function Home({
               </h1>
             </TextReveal>
             <TextReveal delay={0.3}>
-              <p className="mt-6 text-lg text-[#666] max-w-xl mx-auto leading-relaxed">
+              <p className="mt-6 text-lg text-[var(--color-muted)] max-w-xl mx-auto leading-relaxed">
                 {dict.hero.subtitle}
               </p>
             </TextReveal>
@@ -144,7 +153,7 @@ export default async function Home({
               </div>
             </FadeIn>
             <FadeIn delay={0.55} y={8}>
-              <p className="mt-4 text-xs text-[#888]">{dict.hero.footnote}</p>
+              <p className="mt-4 text-xs text-[var(--color-muted)]">{dict.hero.footnote}</p>
             </FadeIn>
           </div>
         </Container>
@@ -169,10 +178,10 @@ export default async function Home({
       </section>
 
       {/* Provider Logo Wall */}
-      <section className="py-16 border-y border-[#e5e5e5]">
+      <section className="py-16 border-y border-[var(--color-border)]">
         <Container>
           <FadeIn>
-            <p className="text-center text-xs uppercase tracking-widest text-[#888] mb-10">
+            <p className="text-center text-xs uppercase tracking-widest text-[var(--color-muted)] mb-10">
               {dict.providers.heading}
             </p>
           </FadeIn>
@@ -248,7 +257,7 @@ export default async function Home({
             <SlideIn direction="left" delay={0.1}>
               <div className="flow-node">
                 <div className="text-sm font-semibold">{dict.howItWorks.yourApp}</div>
-                <div className="text-xs text-[#666] mt-1">{dict.howItWorks.yourAppSub}</div>
+                <div className="text-xs text-[var(--color-muted)] mt-1">{dict.howItWorks.yourAppSub}</div>
               </div>
             </SlideIn>
             <FadeIn delay={0.2}>
@@ -258,7 +267,7 @@ export default async function Home({
             <SlideIn direction="up" delay={0.3}>
               <div className="flow-node flow-node-accent">
                 <div className="text-sm font-semibold" style={{ color: "#0070f3" }}>{dict.howItWorks.opentracy}</div>
-                <div className="text-xs text-[#666] mt-1">{dict.howItWorks.opentracySub}</div>
+                <div className="text-xs text-[var(--color-muted)] mt-1">{dict.howItWorks.opentracySub}</div>
               </div>
             </SlideIn>
             <FadeIn delay={0.4}>
@@ -277,7 +286,7 @@ export default async function Home({
                   <div className="text-xs">Google</div>
                 </div>
                 <div className="flow-node py-2 px-4">
-                  <div className="text-xs text-[#666]">{dict.providers.plusMore}</div>
+                  <div className="text-xs text-[var(--color-muted)]">{dict.providers.plusMore}</div>
                 </div>
               </div>
             </SlideIn>
@@ -294,25 +303,25 @@ export default async function Home({
             <StaggerItem>
               <HoverCard className="metric-card">
                 <CountUp value={dict.metrics.providers} className="metric-value metric-value-blue" />
-                <div className="text-sm text-[#666] mt-2">{dict.metrics.providersLabel}</div>
+                <div className="text-sm text-[var(--color-muted)] mt-2">{dict.metrics.providersLabel}</div>
               </HoverCard>
             </StaggerItem>
             <StaggerItem>
               <HoverCard className="metric-card">
                 <CountUp value={dict.metrics.models} className="metric-value metric-value-orange" />
-                <div className="text-sm text-[#666] mt-2">{dict.metrics.modelsLabel}</div>
+                <div className="text-sm text-[var(--color-muted)] mt-2">{dict.metrics.modelsLabel}</div>
               </HoverCard>
             </StaggerItem>
             <StaggerItem>
               <HoverCard className="metric-card">
                 <CountUp value={dict.metrics.overhead} className="metric-value metric-value-blue" />
-                <div className="text-sm text-[#666] mt-2">{dict.metrics.overheadLabel}</div>
+                <div className="text-sm text-[var(--color-muted)] mt-2">{dict.metrics.overheadLabel}</div>
               </HoverCard>
             </StaggerItem>
             <StaggerItem>
               <HoverCard className="metric-card">
                 <CountUp value={dict.metrics.license} className="metric-value metric-value-orange" />
-                <div className="text-sm text-[#666] mt-2">{dict.metrics.licenseLabel}</div>
+                <div className="text-sm text-[var(--color-muted)] mt-2">{dict.metrics.licenseLabel}</div>
               </HoverCard>
             </StaggerItem>
           </StaggerContainer>
@@ -341,7 +350,7 @@ export default async function Home({
                     <h3 className="text-base font-semibold tracking-tight">
                       {dict.features[feature.key].title}
                     </h3>
-                    <p className="mt-2 text-sm text-[#888] leading-relaxed">
+                    <p className="mt-2 text-sm text-[var(--color-muted)] leading-relaxed">
                       {dict.features[feature.key].description}
                     </p>
                   </Card>
@@ -376,7 +385,7 @@ export default async function Home({
                         <div className="w-2 h-2 rounded-full" style={{ background: sf.color }} />
                         <h3 className="font-semibold text-sm">{dict.sdk[sf.key].title}</h3>
                       </div>
-                      <p className="text-sm text-[#888] pl-5">{dict.sdk[sf.key].description}</p>
+                      <p className="text-sm text-[var(--color-muted)] pl-5">{dict.sdk[sf.key].description}</p>
                     </div>
                   </HoverCard>
                 </StaggerItem>
@@ -406,7 +415,7 @@ export default async function Home({
                   <div className="mt-4">
                     <span className="text-4xl font-bold">$0</span>
                   </div>
-                  <p className="mt-3 text-sm text-[#6b6b6b]">{dict.pricing.plans.free.description}</p>
+                  <p className="mt-3 text-sm text-[var(--color-muted)]">{dict.pricing.plans.free.description}</p>
                   <ul className="mt-6 space-y-2.5">
                     {dict.pricing.plans.free.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5 text-sm">
@@ -431,9 +440,9 @@ export default async function Home({
                   <h3 className="text-lg font-bold">{dict.pricing.plans.starter.name}</h3>
                   <div className="mt-4">
                     <span className="text-4xl font-bold">$10</span>
-                    <span className="text-[#6b6b6b]">/mo</span>
+                    <span className="text-[var(--color-muted)]">/mo</span>
                   </div>
-                  <p className="mt-3 text-sm text-[#6b6b6b]">{dict.pricing.plans.starter.description}</p>
+                  <p className="mt-3 text-sm text-[var(--color-muted)]">{dict.pricing.plans.starter.description}</p>
                   <ul className="mt-6 space-y-2.5">
                     {dict.pricing.plans.starter.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5 text-sm">
@@ -458,7 +467,7 @@ export default async function Home({
                   <div className="mt-4">
                     <span className="text-4xl font-bold">Custom</span>
                   </div>
-                  <p className="mt-3 text-sm text-[#6b6b6b]">{dict.pricing.plans.enterprise.description}</p>
+                  <p className="mt-3 text-sm text-[var(--color-muted)]">{dict.pricing.plans.enterprise.description}</p>
                   <ul className="mt-6 space-y-2.5">
                     {dict.pricing.plans.enterprise.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5 text-sm">
@@ -502,7 +511,7 @@ export default async function Home({
                       </div>
                       <div className="testimonial-author">
                         <div className="font-semibold text-sm">{item.name}</div>
-                        <div className="text-xs text-[#888]">{item.role}, {item.company}</div>
+                        <div className="text-xs text-[var(--color-muted)]">{item.role}, {item.company}</div>
                       </div>
                     </div>
                   </div>
@@ -529,19 +538,19 @@ export default async function Home({
               <StaggerItem>
                 <div className="community-card text-center">
                   <div className="community-stat-value">1.2k</div>
-                  <div className="text-xs text-[#888] mt-1">{dict.community.stats.githubStars}</div>
+                  <div className="text-xs text-[var(--color-muted)] mt-1">{dict.community.stats.githubStars}</div>
                 </div>
               </StaggerItem>
               <StaggerItem>
                 <div className="community-card text-center">
                   <div className="community-stat-value">48</div>
-                  <div className="text-xs text-[#888] mt-1">{dict.community.stats.contributors}</div>
+                  <div className="text-xs text-[var(--color-muted)] mt-1">{dict.community.stats.contributors}</div>
                 </div>
               </StaggerItem>
               <StaggerItem>
                 <div className="community-card text-center">
                   <div className="community-stat-value">850+</div>
-                  <div className="text-xs text-[#888] mt-1">{dict.community.stats.discordMembers}</div>
+                  <div className="text-xs text-[var(--color-muted)] mt-1">{dict.community.stats.discordMembers}</div>
                 </div>
               </StaggerItem>
             </StaggerContainer>
@@ -566,6 +575,15 @@ export default async function Home({
         <div className="cta-mesh" />
         <Container>
           <div className="max-w-2xl mx-auto text-center relative z-10">
+            <FadeIn y={12}>
+              <img
+                src="/lunar-site/tracy/tracy-zen.png"
+                alt="Tracy zen"
+                width={64}
+                height={64}
+                className="mx-auto mb-6"
+              />
+            </FadeIn>
             <TextReveal>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
                 {dict.cta.title}{" "}
@@ -573,7 +591,7 @@ export default async function Home({
               </h2>
             </TextReveal>
             <FadeIn delay={0.15}>
-              <p className="mt-4 text-[#888] leading-relaxed">
+              <p className="mt-4 text-[var(--color-muted)] leading-relaxed">
                 {dict.cta.subtitle}
               </p>
             </FadeIn>
@@ -588,7 +606,7 @@ export default async function Home({
               </div>
             </FadeIn>
             <FadeIn delay={0.4} y={8}>
-              <p className="mt-6 text-sm text-[#888]">
+              <p className="mt-6 text-sm text-[var(--color-muted)]">
                 {dict.cta.footnote}
               </p>
             </FadeIn>
