@@ -137,14 +137,18 @@
       },
       "enterprise": {
         "name": "Enterprise",
-        "description": "Para organizacoes com necessidades de seguranca e conformidade.",
+        "description": "Para empresas que querem infraestrutura de IA pronta, com acompanhamento especializado.",
         "cta": "Agendar uma reuniao",
         "features": [
           "Tudo do plano Starter",
+          "Suporte 24/7 dedicado",
+          "Setup completo feito por nos",
+          "Consultoria de implementacao",
+          "Onboarding dedicado",
+          "Review personalizado da sua arquitetura",
           "Deploy em VPC",
           "SSO / SAML",
           "Logs de auditoria",
-          "Suporte dedicado",
           "SLAs personalizados",
           "Opcao on-premise",
           "Criptografia BYOK"

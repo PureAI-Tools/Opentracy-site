@@ -137,14 +137,18 @@
       },
       "enterprise": {
         "name": "Enterprise",
-        "description": "For organizations with security and compliance needs.",
+        "description": "For organizations that want a turnkey AI infrastructure with hands-on guidance.",
         "cta": "Schedule a meeting",
         "features": [
           "Everything in Starter",
+          "24/7 dedicated support",
+          "Full setup done for you",
+          "Implementation consulting",
+          "Dedicated onboarding",
+          "Custom API architecture review",
           "VPC deployment",
           "SSO / SAML",
           "Audit logs",
-          "Dedicated support",
           "Custom SLAs",
           "On-premise option",
           "BYOK encryption"
