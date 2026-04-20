@@ -70,7 +70,7 @@ export default async function PricingPage({
   };
 
   return (
-    <div className="pt-24 pb-16 bg-grid min-h-screen">
+    <div className="pt-24 pb-16 min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
