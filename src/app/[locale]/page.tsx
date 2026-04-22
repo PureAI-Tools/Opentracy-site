@@ -99,7 +99,8 @@ export default async function Home({
                   {dict.hero.ctaPrimary}
                 </Button>
                 <Button
-                  href="https://opentracy.mintlify.app"
+                  href="https://opentracy.mintlify.app/"
+                  newTab
                   variant="secondary"
                 >
                   {dict.hero.ctaSecondary}
@@ -550,7 +551,8 @@ export default async function Home({
                   </p>
                   <div className="mt-8">
                     <Button
-                      href="https://opentracy.mintlify.app"
+                      href="https://opentracy.mintlify.app/"
+                      newTab
                       variant="secondary"
                     >
                       {dict.hero.ctaSecondary}
@@ -736,15 +738,10 @@ export default async function Home({
                   <p className="testimonial-quote flex-1">
                     &ldquo;{item.quote}&rdquo;
                   </p>
-                  <div className="mt-6 flex items-center gap-3">
-                    <div className="testimonial-avatar">
-                      {item.name.charAt(0)}
-                    </div>
-                    <div>
-                      <div className="font-semibold text-sm">{item.name}</div>
-                      <div className="text-xs text-muted">
-                        {item.role}, {item.company}
-                      </div>
+                  <div className="mt-6">
+                    <div className="font-semibold text-sm">{item.name}</div>
+                    <div className="text-xs text-muted">
+                      {item.role}, {item.company}
                     </div>
                   </div>
                 </div>

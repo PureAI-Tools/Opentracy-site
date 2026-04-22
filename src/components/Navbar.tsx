@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Button from "./Button";
 import ThemeToggle from "./ThemeToggle";
 import type { Locale, Dictionary } from "@/i18n/config";
@@ -22,6 +23,7 @@ export default function Navbar({
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [starCount, setStarCount] = useState<string>("...");
+  const pathname = usePathname();
 
   useEffect(() => {
     let cancelled = false;
@@ -63,10 +65,31 @@ export default function Navbar({
   const navigation = [
     { name: dict.nav.features, href: `/${locale}#features` },
     { name: dict.nav.platform, href: `/${locale}/platform` },
-    { name: dict.nav.docs, href: "/docs" },
+    {
+      name: dict.nav.docs,
+      href: "https://opentracy.mintlify.app/",
+      newTab: true,
+    },
     { name: dict.nav.pricing, href: `/${locale}/pricing` },
     { name: dict.nav.blog, href: `/${locale}/blog` },
   ];
+
+  const normalizePath = (value: string) => value.replace(/\/+$/, "") || "/";
+
+  const isActiveNavItem = (href: string) => {
+    if (href.startsWith("http")) return false;
+
+    const targetPath = normalizePath(href.split("#")[0]);
+    const currentPath = normalizePath(pathname || "/");
+
+    if (targetPath === `/${locale}`) {
+      return currentPath === targetPath;
+    }
+
+    return (
+      currentPath === targetPath || currentPath.startsWith(`${targetPath}/`)
+    );
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 nav-glass">
@@ -83,15 +106,24 @@ export default function Navbar({
               />
             </Link>
             <div className="hidden md:flex items-center gap-6">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm text-muted hover:text-foreground transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navigation.map((item) => {
+                const isActive = isActiveNavItem(item.href);
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    target={item.newTab ? "_blank" : undefined}
+                    rel={item.newTab ? "noopener noreferrer" : undefined}
+                    className={`text-sm transition-colors ${
+                      isActive
+                        ? "text-foreground font-medium"
+                        : "text-muted hover:text-foreground"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
             </div>
           </div>
           <div className="hidden md:flex items-center gap-3">
@@ -167,16 +199,25 @@ export default function Navbar({
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-border py-4">
             <div className="flex flex-col gap-3">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-sm text-muted hover:text-foreground py-1"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navigation.map((item) => {
+                const isActive = isActiveNavItem(item.href);
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    target={item.newTab ? "_blank" : undefined}
+                    rel={item.newTab ? "noopener noreferrer" : undefined}
+                    className={`text-sm py-1 transition-colors ${
+                      isActive
+                        ? "text-foreground font-medium"
+                        : "text-muted hover:text-foreground"
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
               <div className="flex items-center gap-1 py-2">
                 {i18n.locales.map((loc) => (
                   <Link

@@ -4,6 +4,7 @@ interface ButtonProps {
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "ghost";
   href?: string;
+  newTab?: boolean;
   className?: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
@@ -13,6 +14,7 @@ export default function Button({
   children,
   variant = "primary",
   href,
+  newTab = false,
   className = "",
   onClick,
   type = "button",
@@ -28,7 +30,12 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className={combinedClassName}>
+      <Link
+        href={href}
+        className={combinedClassName}
+        target={newTab ? "_blank" : undefined}
+        rel={newTab ? "noopener noreferrer" : undefined}
+      >
         {children}
       </Link>
     );

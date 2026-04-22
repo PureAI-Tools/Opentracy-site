@@ -263,7 +263,8 @@ export default async function PlatformPage({
                   {dict.platform.cta.primary}
                 </Button>
                 <Button
-                  href="https://opentracy.mintlify.app"
+                  href="https://opentracy.mintlify.app/"
+                  newTab
                   variant="secondary"
                 >
                   Docs
