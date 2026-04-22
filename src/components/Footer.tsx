@@ -14,7 +14,7 @@ export default function Footer({
       { name: dict.footer.features, href: `/${locale}#features` },
       { name: dict.footer.platform, href: `/${locale}/platform` },
       { name: dict.footer.pricing, href: `/${locale}/pricing` },
-      { name: dict.footer.docs, href: "https://opentracy.mintlify.app" },
+      { name: dict.footer.docs, href: "/docs" },
       { name: dict.footer.security, href: `/${locale}/security` },
     ],
     [dict.footer.resources]: [

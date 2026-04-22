@@ -25,7 +25,7 @@ export default function Navbar({
   const navigation = [
     { name: dict.nav.features, href: `/${locale}#features` },
     { name: dict.nav.platform, href: `/${locale}/platform` },
-    { name: dict.nav.docs, href: "https://opentracy.mintlify.app" },
+    { name: dict.nav.docs, href: "/docs" },
     { name: dict.nav.pricing, href: `/${locale}/pricing` },
     { name: dict.nav.blog, href: `/${locale}/blog` },
   ];
