@@ -15,6 +15,7 @@ import {
 } from "@/components/motion/StaggerChildren";
 import { LogoWallContainer, LogoWallItem } from "@/components/motion/LogoWall";
 import ImageCarousel from "@/components/motion/ImageCarousel";
+import FullscreenImage from "@/components/FullscreenImage";
 import { Fireworks, Gemini, ProviderIcon } from "@lobehub/icons";
 
 const sdkCode = `import opentracy as ot
@@ -273,8 +274,8 @@ export default async function Home({
           <div className="space-y-5 max-w-360 mx-auto">
             {/* Feature 1: One API */}
             <FadeIn y={24}>
-              <div className="rounded-2xl border border-border overflow-hidden bg-surface grid grid-cols-1 lg:grid-cols-2">
-                <div className="px-8 py-7 lg:px-10 lg:py-8 flex flex-col justify-center">
+              <div className="rounded-2xl border border-border overflow-hidden bg-surface grid grid-cols-1 lg:grid-cols-[40%_60%]">
+                <div className="px-8 py-5 lg:px-10 lg:py-6 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-5">
                     <img
                       src="/tracy/tracy-default.png"
@@ -320,7 +321,7 @@ export default async function Home({
                   <CodeBlock
                     code={sdkCode}
                     language="python"
-                    className="h-full rounded-none border-0"
+                    className="feature-code-block rounded-none border-0"
                   />
                 </div>
               </div>
@@ -328,15 +329,15 @@ export default async function Home({
 
             {/* Feature 2: Smart Routing */}
             <FadeIn y={24}>
-              <div className="rounded-2xl border border-border overflow-hidden bg-surface grid grid-cols-1 lg:grid-cols-2">
-                <div className="feature-media-panel overflow-hidden order-2 lg:order-1">
-                  <img
+              <div className="rounded-2xl border border-border overflow-hidden bg-surface grid grid-cols-1 lg:grid-cols-[60%_40%]">
+                <div className="feature-media-panel feature-media-panel-image overflow-hidden order-2 lg:order-1">
+                  <FullscreenImage
                     src="/screenshots/cost-baseline.png"
                     alt="Smart Routing — cost baseline comparison"
                     className="feature-showcase-image"
                   />
                 </div>
-                <div className="px-8 py-7 lg:px-10 lg:py-8 flex flex-col justify-center order-1 lg:order-2">
+                <div className="px-8 py-5 lg:px-10 lg:py-6 flex flex-col justify-center order-1 lg:order-2">
                   <div className="flex items-center gap-4 mb-5">
                     <img
                       src="/tracy/tracy-routing.png"
@@ -366,8 +367,8 @@ export default async function Home({
             </FadeIn>
 
             <FadeIn y={24}>
-              <div className="rounded-2xl border border-border overflow-hidden bg-surface grid grid-cols-1 lg:grid-cols-2">
-                <div className="px-8 py-7 lg:px-10 lg:py-8 flex flex-col justify-center">
+              <div className="rounded-2xl border border-border overflow-hidden bg-surface grid grid-cols-1 lg:grid-cols-[40%_60%]">
+                <div className="px-8 py-5 lg:px-10 lg:py-6 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-5">
                     <img
                       src="/tracy/tracy-cost.png"
@@ -401,8 +402,8 @@ export default async function Home({
                     </Button>
                   </div>
                 </div>
-                <div className="feature-media-panel overflow-hidden order-last">
-                  <img
+                <div className="feature-media-panel feature-media-panel-image overflow-hidden order-last">
+                  <FullscreenImage
                     src="/screenshots/cost-trends.png"
                     alt="Cost Tracking — savings trend over time"
                     className="feature-showcase-image"
@@ -412,15 +413,15 @@ export default async function Home({
             </FadeIn>
 
             <FadeIn y={24}>
-              <div className="rounded-2xl border border-border overflow-hidden bg-surface grid grid-cols-1 lg:grid-cols-2">
-                <div className="feature-media-panel overflow-hidden order-2 lg:order-1">
-                  <img
+              <div className="rounded-2xl border border-border overflow-hidden bg-surface grid grid-cols-1 lg:grid-cols-[60%_40%]">
+                <div className="feature-media-panel feature-media-panel-image overflow-hidden order-2 lg:order-1">
+                  <FullscreenImage
                     src="/screenshots/intelligence-overview.png"
                     alt="Real-time observability dashboard"
                     className="feature-showcase-image"
                   />
                 </div>
-                <div className="px-8 py-7 lg:px-10 lg:py-8 flex flex-col justify-center order-1 lg:order-2">
+                <div className="px-8 py-5 lg:px-10 lg:py-6 flex flex-col justify-center order-1 lg:order-2">
                   <div className="flex items-center gap-4 mb-5">
                     <img
                       src="/tracy/tracy-alert.png"
@@ -450,8 +451,8 @@ export default async function Home({
             </FadeIn>
 
             <FadeIn y={24}>
-              <div className="rounded-2xl border border-border overflow-hidden bg-surface grid grid-cols-1 lg:grid-cols-2">
-                <div className="px-8 py-7 lg:px-10 lg:py-8 flex flex-col justify-center">
+              <div className="rounded-2xl border border-border overflow-hidden bg-surface grid grid-cols-1 lg:grid-cols-[40%_60%]">
+                <div className="px-8 py-5 lg:px-10 lg:py-6 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-5">
                     <img
                       src="/tracy/tracy-zen.png"
@@ -485,8 +486,8 @@ export default async function Home({
                     </Button>
                   </div>
                 </div>
-                <div className="feature-media-panel overflow-hidden order-last">
-                  <img
+                <div className="feature-media-panel feature-media-panel-image overflow-hidden order-last">
+                  <FullscreenImage
                     src="/screenshots/eval-list.png"
                     alt="Model Distillation — evaluation runs"
                     className="feature-showcase-image"
@@ -496,15 +497,15 @@ export default async function Home({
             </FadeIn>
 
             <FadeIn y={24}>
-              <div className="rounded-2xl border border-border overflow-hidden bg-surface grid grid-cols-1 lg:grid-cols-2">
-                <div className="feature-media-panel overflow-hidden order-2 lg:order-1">
-                  <img
+              <div className="rounded-2xl border border-border overflow-hidden bg-surface grid grid-cols-1 lg:grid-cols-[55%_45%]">
+                <div className="feature-media-panel feature-media-panel-image overflow-hidden order-2 lg:order-1">
+                  <FullscreenImage
                     src="/screenshots/eval-overview.png"
                     alt="Quality Monitoring — evaluation overview"
                     className="feature-showcase-image"
                   />
                 </div>
-                <div className="px-8 py-7 lg:px-10 lg:py-8 flex flex-col justify-center order-1 lg:order-2">
+                <div className="px-8 py-5 lg:px-10 lg:py-6 flex flex-col justify-center order-1 lg:order-2">
                   <div className="flex items-center gap-4 mb-5">
                     <img
                       src="/tracy/tracy-security.png"
