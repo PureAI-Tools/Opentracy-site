@@ -674,8 +674,8 @@ s .code-block pre {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(1.5rem, 4vw, 3rem);
-  min-height: 380px;
+  padding: clamp(0.35rem, 1.2vw, 0.9rem);
+  min-height: clamp(260px, 25vw, 360px);
   background:
     radial-gradient(
       ellipse 80% 80% at 50% 30%,
@@ -698,7 +698,7 @@ html.dark .feature-media-panel {
 .feature-showcase-image {
   display: block;
   width: 100%;
-  max-width: 960px;
+  max-width: 100%;
   height: auto;
   margin: 0 auto;
   border-radius: 14px;
@@ -732,8 +732,13 @@ html.dark .feature-showcase-image {
 }
 
 @media (max-width: 768px) {
+  .feature-media-panel {
+    min-height: 220px;
+    padding: 0.5rem;
+  }
+
   .feature-showcase-image {
-    max-width: 100%;
+    width: 100%;
   }
 
   .mascot-image {

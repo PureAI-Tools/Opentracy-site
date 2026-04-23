@@ -206,7 +206,7 @@ export default async function Home({
         </Container>
       </section>
 
-      <section id="features" className="py-24 bg-surface-alt">
+      <section id="features" className="py-20 bg-surface-alt">
         <Container>
           <FadeIn>
             <div className="max-w-3xl mx-auto text-center mb-6">
@@ -270,11 +270,11 @@ export default async function Home({
             </StaggerContainer>
           </FadeIn>
 
-          <div className="space-y-6 max-w-7xl mx-auto">
+          <div className="space-y-5 max-w-360 mx-auto">
             {/* Feature 1: One API */}
             <FadeIn y={24}>
               <div className="rounded-2xl border border-border overflow-hidden bg-surface grid grid-cols-1 lg:grid-cols-2">
-                <div className="p-10 lg:p-14 flex flex-col justify-center">
+                <div className="px-8 py-7 lg:px-10 lg:py-8 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-5">
                     <img
                       src="/tracy/tracy-default.png"
@@ -336,7 +336,7 @@ export default async function Home({
                     className="feature-showcase-image"
                   />
                 </div>
-                <div className="p-10 lg:p-14 flex flex-col justify-center order-1 lg:order-2">
+                <div className="px-8 py-7 lg:px-10 lg:py-8 flex flex-col justify-center order-1 lg:order-2">
                   <div className="flex items-center gap-4 mb-5">
                     <img
                       src="/tracy/tracy-routing.png"
@@ -367,7 +367,7 @@ export default async function Home({
 
             <FadeIn y={24}>
               <div className="rounded-2xl border border-border overflow-hidden bg-surface grid grid-cols-1 lg:grid-cols-2">
-                <div className="p-10 lg:p-14 flex flex-col justify-center">
+                <div className="px-8 py-7 lg:px-10 lg:py-8 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-5">
                     <img
                       src="/tracy/tracy-cost.png"
@@ -420,7 +420,7 @@ export default async function Home({
                     className="feature-showcase-image"
                   />
                 </div>
-                <div className="p-10 lg:p-14 flex flex-col justify-center order-1 lg:order-2">
+                <div className="px-8 py-7 lg:px-10 lg:py-8 flex flex-col justify-center order-1 lg:order-2">
                   <div className="flex items-center gap-4 mb-5">
                     <img
                       src="/tracy/tracy-alert.png"
@@ -451,7 +451,7 @@ export default async function Home({
 
             <FadeIn y={24}>
               <div className="rounded-2xl border border-border overflow-hidden bg-surface grid grid-cols-1 lg:grid-cols-2">
-                <div className="p-10 lg:p-14 flex flex-col justify-center">
+                <div className="px-8 py-7 lg:px-10 lg:py-8 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-5">
                     <img
                       src="/tracy/tracy-zen.png"
@@ -504,7 +504,7 @@ export default async function Home({
                     className="feature-showcase-image"
                   />
                 </div>
-                <div className="p-10 lg:p-14 flex flex-col justify-center order-1 lg:order-2">
+                <div className="px-8 py-7 lg:px-10 lg:py-8 flex flex-col justify-center order-1 lg:order-2">
                   <div className="flex items-center gap-4 mb-5">
                     <img
                       src="/tracy/tracy-security.png"
