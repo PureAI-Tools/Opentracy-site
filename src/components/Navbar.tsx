@@ -62,13 +62,12 @@ export default function Navbar({
     };
   }, []);
 
-  const navigation = [
+  const navigation: Array<{ name: string; href: string; newTab?: boolean }> = [
     { name: dict.nav.features, href: `/${locale}#features` },
     { name: dict.nav.platform, href: `/${locale}/platform` },
     {
       name: dict.nav.docs,
-      href: "https://opentracy.mintlify.app/",
-      newTab: true,
+      href: "https://opentracy.com/docs",
     },
     { name: dict.nav.pricing, href: `/${locale}/pricing` },
     { name: dict.nav.blog, href: `/${locale}/blog` },

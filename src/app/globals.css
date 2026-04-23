@@ -657,9 +657,8 @@ body::before {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
-}s
-
-.code-block pre {
+}
+s .code-block pre {
   margin: 0;
   padding: 1.5rem;
 }
@@ -774,7 +773,7 @@ html.dark .feature-showcase-image {
   border-radius: 12px;
   border: 1px solid transparent;
   font-size: 0.8125rem;
-  color: #666;
+  color: #888888;
   transition: all 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
   cursor: default;
 }
