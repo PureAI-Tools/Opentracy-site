@@ -18,7 +18,7 @@ export default function Footer({
       { name: dict.footer.pricing, href: `/${locale}/pricing` },
       {
         name: dict.footer.docs,
-        href: "https://opentracy.com/docs",
+        href: "/docs",
       },
       { name: dict.footer.security, href: `/${locale}/security` },
     ],

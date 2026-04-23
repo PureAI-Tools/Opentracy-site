@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/docs",
-      "destination": "https://opentracy.com/docs"
+      "destination": "https://opentracy.mintlify.app"
     },
     {
-      "source": "/docs/:match*",
-      "destination": "https://opentracy.com/docs/:match*"
+      "source": "/docs/:path*",
+      "destination": "https://opentracy.mintlify.app/:path*"
     }
   ]
 }

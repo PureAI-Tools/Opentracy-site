@@ -100,7 +100,7 @@ export default async function Home({
                 <Button href="https://app.opentracy.com" variant="primary">
                   {dict.hero.ctaPrimary}
                 </Button>
-                <Button href="https://opentracy.com/docs" variant="secondary">
+                <Button href="/docs" variant="secondary">
                   {dict.hero.ctaSecondary}
                 </Button>
               </div>
@@ -478,10 +478,7 @@ export default async function Home({
                     own — at a fraction of the inference cost.
                   </p>
                   <div className="mt-8">
-                    <Button
-                      href="https://opentracy.com/docs"
-                      variant="secondary"
-                    >
+                    <Button href="/docs" variant="secondary">
                       {dict.hero.ctaSecondary}
                     </Button>
                   </div>

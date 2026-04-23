@@ -67,7 +67,7 @@ export default function Navbar({
     { name: dict.nav.platform, href: `/${locale}/platform` },
     {
       name: dict.nav.docs,
-      href: "https://opentracy.com/docs",
+      href: "/docs",
     },
     { name: dict.nav.pricing, href: `/${locale}/pricing` },
     { name: dict.nav.blog, href: `/${locale}/blog` },

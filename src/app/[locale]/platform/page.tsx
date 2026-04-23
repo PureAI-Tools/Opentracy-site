@@ -262,7 +262,7 @@ export default async function PlatformPage({
                 <Button href="https://app.opentracy.com" variant="primary">
                   {dict.platform.cta.primary}
                 </Button>
-                <Button href="https://opentracy.com/docs" variant="secondary">
+                <Button href="/docs" variant="secondary">
                   Docs
                 </Button>
                 <Button
