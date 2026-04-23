@@ -8,15 +8,17 @@ export default function Footer({
   locale: Locale;
   dict: Dictionary;
 }) {
-  const footerLinks = {
+  const footerLinks: Record<
+    string,
+    Array<{ name: string; href: string; newTab?: boolean }>
+  > = {
     [dict.footer.product]: [
       { name: dict.footer.features, href: `/${locale}#features` },
       { name: dict.footer.platform, href: `/${locale}/platform` },
       { name: dict.footer.pricing, href: `/${locale}/pricing` },
       {
         name: dict.footer.docs,
-        href: "https://opentracy.mintlify.app/",
-        newTab: true,
+        href: "https://opentracy.com/docs",
       },
       { name: dict.footer.security, href: `/${locale}/security` },
     ],

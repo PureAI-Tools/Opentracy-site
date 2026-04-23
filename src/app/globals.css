@@ -657,7 +657,7 @@ body::before {
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
-}
+}s
 
 .code-block pre {
   margin: 0;
