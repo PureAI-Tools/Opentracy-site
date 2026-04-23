@@ -62,7 +62,7 @@ export default async function Home({
                   height="12"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="currentColor"
+                  className="hero-mascot mx-auto mb-3 drop-shadow-md"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -77,9 +77,9 @@ export default async function Home({
               <img
                 src="/tracy/tracy-default.png"
                 alt="Tracy"
-                width={48}
-                height={48}
-                className="hero-mascot mx-auto mb-6 drop-shadow-md"
+                width={72}
+                height={72}
+                className="hero-mascot mx-auto mb-6 -mt-0.5 drop-shadow-md"
               />
             </FadeIn>
 
@@ -280,9 +280,9 @@ export default async function Home({
                     <img
                       src="/tracy/tracy-default.png"
                       alt="Tracy"
-                      width={48}
-                      height={48}
-                      className="mascot-image shrink-0"
+                      width={74}
+                      height={74}
+                      className="mascot-image shrink-0 -mt-0.5"
                     />
                     <div>
                       <span className="text-xs font-semibold text-accent uppercase tracking-wider">
@@ -342,9 +342,9 @@ export default async function Home({
                     <img
                       src="/tracy/tracy-routing.png"
                       alt="Tracy routing"
-                      width={80}
-                      height={80}
-                      className="mascot-image shrink-0"
+                      width={78}
+                      height={78}
+                      className="mascot-image shrink-0 -mt-0.5"
                     />
                     <div>
                       <span className="text-xs font-semibold text-accent uppercase tracking-wider">
@@ -373,9 +373,9 @@ export default async function Home({
                     <img
                       src="/tracy/tracy-cost.png"
                       alt="Tracy cost"
-                      width={80}
-                      height={80}
-                      className="mascot-image shrink-0"
+                      width={66}
+                      height={66}
+                      className="mascot-image shrink-0 -mt-0.5"
                     />
                     <div>
                       <span className="text-xs font-semibold text-accent uppercase tracking-wider">
@@ -426,9 +426,9 @@ export default async function Home({
                     <img
                       src="/tracy/tracy-alert.png"
                       alt="Tracy alert"
-                      width={80}
-                      height={80}
-                      className="mascot-image shrink-0"
+                      width={78}
+                      height={78}
+                      className="mascot-image shrink-0 -mt-1"
                     />
                     <div>
                       <span className="text-xs font-semibold text-accent uppercase tracking-wider">
@@ -457,9 +457,9 @@ export default async function Home({
                     <img
                       src="/tracy/tracy-zen.png"
                       alt="Tracy zen"
-                      width={80}
-                      height={80}
-                      className="mascot-image shrink-0"
+                      width={78}
+                      height={78}
+                      className="mascot-image shrink-0 -mt-1"
                     />
                     <div>
                       <span className="text-xs font-semibold text-accent uppercase tracking-wider">
@@ -507,9 +507,9 @@ export default async function Home({
                     <img
                       src="/tracy/tracy-security.png"
                       alt="Tracy security"
-                      width={80}
-                      height={80}
-                      className="mascot-image shrink-0"
+                      width={78}
+                      height={78}
+                      className="mascot-image shrink-0 -mt-1"
                     />
                     <div>
                       <span className="text-xs font-semibold text-accent uppercase tracking-wider">

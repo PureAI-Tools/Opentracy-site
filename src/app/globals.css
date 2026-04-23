@@ -735,16 +735,12 @@ html.dark .feature-showcase-image {
 }
 
 .mascot-image {
-  width: 80px;
-  height: 80px;
   object-fit: contain;
   flex-shrink: 0;
   display: block;
 }
 
 .hero-mascot {
-  width: 160px;
-  height: 160px;
   object-fit: contain;
 }
 
@@ -768,16 +764,6 @@ html.dark .feature-showcase-image {
 
   .feature-showcase-image {
     width: 100%;
-  }
-
-  .mascot-image {
-    width: 68px;
-    height: 68px;
-  }
-
-  .hero-mascot {
-    width: 136px;
-    height: 136px;
   }
 
   .navbar-brand-mark {
