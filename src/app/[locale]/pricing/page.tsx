@@ -42,7 +42,7 @@ const planConfig = [
   {
     key: "enterprise" as const,
     price: "Custom",
-    ctaHref: "https://cal.com/opentracy/enterprise",
+    ctaHref: "https://cal.com/opentracy/30min-demo",
     ctaVariant: "secondary" as const,
     highlighted: false,
   },

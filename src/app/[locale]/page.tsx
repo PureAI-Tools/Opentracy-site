@@ -636,7 +636,7 @@ export default async function Home({
                   </ul>
                   <div className="mt-8">
                     <Button
-                      href="https://cal.com/opentracy/enterprise"
+                      href="https://cal.com/opentracy/30min-demo"
                       variant="secondary"
                       className="w-full justify-center"
                     >
