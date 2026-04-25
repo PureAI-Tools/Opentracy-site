@@ -46,7 +46,16 @@
     "subtitle": "Roteie, rastreie, avalie e destile — uma plataforma, todos os provedores, sem lock-in de fornecedor.",
     "oneApi": {
       "title": "Uma API, todos os modelos",
-      "description": "Envie requisições para OpenAI, Anthropic, Google, Mistral e mais 9 provedores por um único endpoint."
+      "description": "Envie requisições para OpenAI, Anthropic, Google, Mistral e mais 9 provedores por um único endpoint.",
+      "modelPills": [
+        "OpenAI",
+        "Anthropic",
+        "Google",
+        "Mistral",
+        "Groq",
+        "Azure"
+      ],
+      "andMore": "mais"
     },
     "realTimeTraces": {
       "title": "Traces em tempo real",

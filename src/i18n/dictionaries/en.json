@@ -46,7 +46,16 @@
     "subtitle": "Route, trace, evaluate, and distill — one platform, every provider, zero vendor lock-in.",
     "oneApi": {
       "title": "One API, Every Model",
-      "description": "Send requests to OpenAI, Anthropic, Google, Mistral, and 9 more through a single endpoint."
+      "description": "Send requests to OpenAI, Anthropic, Google, Mistral, and 9 more through a single endpoint.",
+      "modelPills": [
+        "OpenAI",
+        "Anthropic",
+        "Google",
+        "Mistral",
+        "Groq",
+        "Azure"
+      ],
+      "andMore": "more"
     },
     "realTimeTraces": {
       "title": "Real-Time Traces",

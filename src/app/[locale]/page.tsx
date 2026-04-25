@@ -369,14 +369,26 @@ export default async function Home({
                     keep you online when things go sideways.
                   </p>
                   <div className="feat-pills">
-                    {["OpenAI", "Anthropic", "Google", "Mistral", "Groq"].map(
-                      (provider) => (
+                    {dict.features.oneApi.modelPills
+                      .slice(0, 6)
+                      .map((provider) => (
                         <span key={provider} className="feat-pill">
                           {provider}
                         </span>
-                      ),
-                    )}
-                    <span className="feat-pill accent">+ 67 more</span>
+                      ))}
+                    <span className="feat-pill accent inline-flex items-center gap-1.5">
+                      <svg
+                        className="h-3.5 w-3.5"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        aria-hidden="true"
+                      >
+                        <path d="M8 3.2v9.6M3.2 8h9.6" strokeLinecap="round" />
+                      </svg>
+                      {dict.features.oneApi.andMore}
+                    </span>
                   </div>
                 </div>
                 <div className="feat-code">

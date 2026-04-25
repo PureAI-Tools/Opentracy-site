@@ -46,7 +46,16 @@
     "subtitle": "Enruta, rastrea, evalúa y destila — una plataforma, todos los proveedores, sin dependencia de proveedor.",
     "oneApi": {
       "title": "Una API, todos los modelos",
-      "description": "Envía solicitudes a OpenAI, Anthropic, Google, Mistral y 9 más a través de un solo endpoint."
+      "description": "Envía solicitudes a OpenAI, Anthropic, Google, Mistral y 9 más a través de un solo endpoint.",
+      "modelPills": [
+        "OpenAI",
+        "Anthropic",
+        "Google",
+        "Mistral",
+        "Groq",
+        "Azure"
+      ],
+      "andMore": "más"
     },
     "realTimeTraces": {
       "title": "Trazas en tiempo real",

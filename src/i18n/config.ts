@@ -54,6 +54,8 @@ export type Dictionary = {
     oneApi: {
       title: string;
       description: string;
+      modelPills: string[];
+      andMore: string;
     };
     realTimeTraces: {
       title: string;
