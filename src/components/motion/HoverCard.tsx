@@ -12,7 +12,7 @@ export default function HoverCard({
 }) {
   return (
     <motion.div
-      whileHover={{ y: -4, scale: 1.01 }}
+      whileHover={{ y: -4 }}
       transition={{ duration: 0.2, ease: "easeOut" }}
       className={className}
     >

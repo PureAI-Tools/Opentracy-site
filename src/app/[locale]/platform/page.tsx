@@ -235,8 +235,8 @@ export default async function PlatformPage({
   const dict = await getDictionary(locale as Locale);
 
   return (
-    <div className="pt-32 pb-20 min-h-screen">
-      <section className="pb-16 border-b border-border">
+    <div className="pt-32 pb-24 min-h-screen">
+      <section className="border-b border-border">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
             <FadeIn delay={0} y={16}>
@@ -254,17 +254,17 @@ export default async function PlatformPage({
             </FadeIn>
 
             <FadeIn delay={0.16} y={8}>
-              <p className="mt-6 text-xl text-muted max-w-3xl mx-auto leading-relaxed">
+              <p className="mt-6 text-xl text-muted max-w-2xl mx-auto leading-relaxed">
                 {dict.platform.subtitle}
               </p>
             </FadeIn>
 
             <FadeIn delay={0.24} y={8}>
-              <div className="mt-7 flex flex-wrap items-center justify-center gap-2 text-[11px] uppercase tracking-[0.16em] text-muted font-mono">
+              <div className="mt-6 sm:mt-7 flex flex-wrap items-center justify-center gap-2 text-[10px] sm:text-[11px] uppercase tracking-[0.16em] text-muted font-mono">
                 {dict.platform.pills.map((pill) => (
                   <span
                     key={pill}
-                    className="px-2.5 py-1 rounded-md border border-border/70 bg-background/50"
+                    className="px-2 py-1 sm:px-2.5 rounded-md border border-border/70 bg-background/50"
                   >
                     {pill}
                   </span>
@@ -273,25 +273,25 @@ export default async function PlatformPage({
             </FadeIn>
 
             <FadeIn delay={0.32} y={10}>
-              <div className="mt-10 flex w-full flex-col sm:flex-row items-center justify-center gap-3">
+              <div className="mt-10 mx-auto flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center">
                 <Button
                   href="https://app.opentracy.com"
                   variant="primary"
-                  className="w-full sm:w-auto sm:min-w-46"
+                  className="w-full justify-center sm:w-auto"
                 >
                   {dict.platform.cta.primary}
                 </Button>
                 <Button
                   href="/docs"
                   variant="secondary"
-                  className="w-full sm:w-auto sm:min-w-46"
+                  className="w-full justify-center sm:w-auto"
                 >
                   {dict.nav.docs}
                 </Button>
                 <Button
                   href="https://github.com/lunar-org-ai/lunar-router"
                   variant="secondary"
-                  className="w-full sm:w-auto sm:min-w-46"
+                  className="w-full justify-center sm:w-auto"
                 >
                   {dict.platform.cta.secondary}
                 </Button>
@@ -301,7 +301,7 @@ export default async function PlatformPage({
         </Container>
       </section>
 
-      <section className="py-20 border-b border-border bg-surface-alt">
+      <section className="py-24 border-t border-border bg-surface-alt">
         <Container>
           <FadeIn>
             <div className="section-header max-w-3xl mx-auto text-center">
@@ -317,14 +317,14 @@ export default async function PlatformPage({
             </div>
           </FadeIn>
 
-          <StaggerContainer className="platform-page-grid mt-12">
+          <StaggerContainer className="platform-page-grid mt-16">
             {sectionKeys.map((key) => {
               const section = dict.platform.sections[key];
               const codeExample = codeBySection[key];
 
               return (
-                <StaggerItem key={key}>
-                  <HoverCard className="h-full">
+                <StaggerItem key={key} className="min-w-0">
+                  <HoverCard className="h-full min-w-0">
                     <article
                       id={key}
                       className="platform-page-card h-full scroll-mt-24"
@@ -341,27 +341,23 @@ export default async function PlatformPage({
                       </p>
 
                       {codeExample ? (
-                        <div className="platform-page-code-wrap">
-                          <div className="feat-code">
-                            <div className="code-header">
-                              <div
-                                className="code-dot"
-                                style={{ background: "#ff5f56" }}
-                              />
-                              <div
-                                className="code-dot"
-                                style={{ background: "#ffbd2e" }}
-                              />
-                              <div
-                                className="code-dot"
-                                style={{ background: "#27c93f" }}
-                              />
-                            </div>
-                            <div className="code-body">
-                              <pre>
-                                <code>{codeExample}</code>
-                              </pre>
-                            </div>
+                        <div className="feat-code platform-page-code">
+                          <div className="code-header">
+                            <div
+                              className="code-dot"
+                              style={{ background: "#ff5f56" }}
+                            />
+                            <div
+                              className="code-dot"
+                              style={{ background: "#ffbd2e" }}
+                            />
+                            <div
+                              className="code-dot"
+                              style={{ background: "#27c93f" }}
+                            />
+                          </div>
+                          <div className="code-body">
+                            <pre>{codeExample}</pre>
                           </div>
                         </div>
                       ) : null}
@@ -397,7 +393,7 @@ export default async function PlatformPage({
         </Container>
       </section>
 
-      <section className="py-24">
+      <section className="py-24 border-t border-border">
         <Container>
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto">
@@ -409,14 +405,14 @@ export default async function PlatformPage({
                 <Button
                   href="https://app.opentracy.com"
                   variant="primary"
-                  className="w-full sm:w-auto sm:min-w-46"
+                  className="w-full justify-center sm:w-auto"
                 >
                   {dict.platform.cta.primary}
                 </Button>
                 <Button
                   href="https://github.com/lunar-org-ai/lunar-router"
                   variant="secondary"
-                  className="w-full sm:w-auto sm:min-w-46"
+                  className="w-full justify-center sm:w-auto"
                 >
                   {dict.platform.cta.secondary}
                 </Button>
