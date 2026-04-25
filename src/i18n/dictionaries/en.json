@@ -31,7 +31,7 @@
     "opentracySub": "Route + Trace + Eval"
   },
   "metrics": {
-    "providers": "70+",
+    "providers": "10+",
     "providersLabel": "AI providers",
     "models": "300+",
     "modelsLabel": "Models supported",
@@ -54,7 +54,7 @@
     },
     "costTracking": {
       "title": "Cost Tracking",
-      "description": "Automatic per-token pricing for 70+ models. See exactly where your money goes."
+      "description": "Automatic per-token pricing for 300+ models. See exactly where your money goes."
     },
     "smartRouting": {
       "title": "Smart Routing",
@@ -114,7 +114,7 @@
         "description": "Perfect for side projects and experimentation.",
         "cta": "Get started free",
         "features": [
-          "70+ providers",
+          "10+ providers",
           "10k requests/month",
           "Basic analytics",
           "Community support"
@@ -190,7 +190,7 @@
       },
       "modelsProviders": {
         "title": "Models & Providers",
-        "description": "See all 13 providers and 70+ models. Learn how to add your own."
+        "description": "See all 13 providers and 300+ models. Learn how to add your own."
       },
       "routingStrategies": {
         "title": "Routing Strategies",
@@ -263,11 +263,11 @@
     "sections": {
       "gateway": {
         "title": "Unified Gateway",
-        "subtitle": "One OpenAI-compatible API that routes to 13 providers and 70+ models. Change one line of code to start.",
+        "subtitle": "One OpenAI-compatible API that routes to 13 providers and 300+ models. Change one line of code to start.",
         "features": [
           "OpenAI-compatible API -- drop-in replacement, same SDK, same format",
           "13 providers: OpenAI, Anthropic, Google Gemini, Mistral, Groq, DeepSeek, Perplexity, Cerebras, SambaNova, Together, Fireworks, Cohere, AWS Bedrock",
-          "70+ models with automatic per-token pricing baked in",
+          "300+ models with automatic per-token pricing baked in",
           "Full streaming support for all providers including Anthropic SSE translation",
           "Vision and multimodal support (base64 or URL images)",
           "Tool calling with cross-provider format translation"
@@ -299,7 +299,7 @@
         "title": "Cost Intelligence",
         "subtitle": "Automatic per-token pricing for every model. See exactly where your money goes and how much smart routing saves you.",
         "features": [
-          "Automatic per-token pricing for 70+ models (continuously updated pricing database)",
+          "Automatic per-token pricing for 300+ models (continuously updated pricing database)",
           "Cost attached to every response -- no more guessing or manual calculation",
           "Baseline vs actual cost comparison: see what you'd pay with the most expensive model vs smart routing",
           "Net savings calculation with monthly projections",

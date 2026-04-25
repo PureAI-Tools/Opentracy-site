@@ -465,7 +465,7 @@ export default async function Home({
               <div className="feat-tag">Cost Tracking</div>
               <h3 className="feat-title">Know where every dollar goes.</h3>
               <p className="feat-desc">
-                Per-token pricing on 70+ models, broken down by model, user, or
+                Per-token pricing on 300+ models, broken down by model, user, or
                 feature. Set budget alerts and hard caps - no more end-of-month
                 surprises.
               </p>

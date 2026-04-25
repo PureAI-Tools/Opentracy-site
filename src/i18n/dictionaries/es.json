@@ -31,7 +31,7 @@
     "opentracySub": "Ruteo + Trazas + Eval"
   },
   "metrics": {
-    "providers": "70+",
+    "providers": "10+",
     "providersLabel": "Proveedores de IA",
     "models": "300+",
     "modelsLabel": "Modelos soportados",
@@ -54,7 +54,7 @@
     },
     "costTracking": {
       "title": "Seguimiento de costos",
-      "description": "Precios automáticos por token para 70+ modelos. Mira exactamente a dónde va tu dinero."
+      "description": "Precios automáticos por token para 300+ modelos. Mira exactamente a dónde va tu dinero."
     },
     "smartRouting": {
       "title": "Ruteo inteligente",
@@ -114,7 +114,7 @@
         "description": "Perfecto para proyectos paralelos y experimentación.",
         "cta": "Empezar gratis",
         "features": [
-          "70+ proveedores",
+          "10+ proveedores",
           "10k solicitudes/mes",
           "Análisis básico",
           "Soporte de la comunidad"
@@ -190,7 +190,7 @@
       },
       "modelsProviders": {
         "title": "Modelos y proveedores",
-        "description": "Consulta los 13 proveedores y 70+ modelos. Aprende a agregar los tuyos."
+        "description": "Consulta los 13 proveedores y 300+ modelos. Aprende a agregar los tuyos."
       },
       "routingStrategies": {
         "title": "Estrategias de ruteo",
@@ -263,11 +263,11 @@
     "sections": {
       "gateway": {
         "title": "Gateway Unificado",
-        "subtitle": "Una API compatible con OpenAI que rutea a 13 proveedores y 70+ modelos. Cambia una línea de código para empezar.",
+        "subtitle": "Una API compatible con OpenAI que rutea a 13 proveedores y 300+ modelos. Cambia una línea de código para empezar.",
         "features": [
           "API compatible con OpenAI -- reemplazo directo, mismo SDK, mismo formato",
           "13 proveedores: OpenAI, Anthropic, Google Gemini, Mistral, Groq, DeepSeek, Perplexity, Cerebras, SambaNova, Together, Fireworks, Cohere, AWS Bedrock",
-          "70+ modelos con precios automáticos por token integrados",
+          "300+ modelos con precios automáticos por token integrados",
           "Streaming completo para todos los proveedores incluida traducción SSE de Anthropic",
           "Soporte de visión y multimodal (imágenes base64 o URL)",
           "Llamadas a herramientas con traducción de formato entre proveedores"
@@ -299,7 +299,7 @@
         "title": "Inteligencia de Costos",
         "subtitle": "Precios automáticos por token para cada modelo. Mira exactamente a dónde va tu dinero y cuánto te ahorra el ruteo inteligente.",
         "features": [
-          "Precios automáticos por token para 70+ modelos (base de datos de precios actualizada continuamente)",
+          "Precios automáticos por token para 300+ modelos (base de datos de precios actualizada continuamente)",
           "Costo adjunto a cada respuesta -- sin adivinanzas ni cálculo manual",
           "Comparación baseline vs real: ve lo que pagarías con el modelo más caro vs ruteo inteligente",
           "Cálculo de ahorro neto con proyecciones mensuales",

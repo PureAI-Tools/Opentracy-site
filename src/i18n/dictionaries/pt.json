@@ -31,7 +31,7 @@
     "opentracySub": "Roteamento + Traces + Eval"
   },
   "metrics": {
-    "providers": "70+",
+    "providers": "10+",
     "providersLabel": "Provedores de IA",
     "models": "300+",
     "modelsLabel": "Modelos suportados",
@@ -54,7 +54,7 @@
     },
     "costTracking": {
       "title": "Rastreamento de custos",
-      "description": "Precificação automática por token para 70+ modelos. Veja exatamente para onde vai seu dinheiro."
+      "description": "Precificação automática por token para 300+ modelos. Veja exatamente para onde vai seu dinheiro."
     },
     "smartRouting": {
       "title": "Roteamento inteligente",
@@ -114,7 +114,8 @@
         "description": "Perfeito para projetos paralelos e experimentação.",
         "cta": "Começar grátis",
         "features": [
-          "70+ provedores",
+          "13 provedores",
+          "300+ modelos",
           "10k requisições/mês",
           "Análises básicas",
           "Suporte da comunidade"
@@ -190,7 +191,7 @@
       },
       "modelsProviders": {
         "title": "Modelos e provedores",
-        "description": "Veja todos os 13 provedores e 70+ modelos. Aprenda a adicionar os seus."
+        "description": "Veja todos os 13 provedores e 300+ modelos. Aprenda a adicionar os seus."
       },
       "routingStrategies": {
         "title": "Estratégias de roteamento",
@@ -263,11 +264,11 @@
     "sections": {
       "gateway": {
         "title": "Gateway Unificado",
-        "subtitle": "Uma API compatível com OpenAI que roteia para 13 provedores e 70+ modelos. Mude uma linha de código para começar.",
+        "subtitle": "Uma API compatível com OpenAI que roteia para 13 provedores e 300+ modelos. Mude uma linha de código para começar.",
         "features": [
           "API compatível com OpenAI -- substituição direta, mesmo SDK, mesmo formato",
           "13 provedores: OpenAI, Anthropic, Google Gemini, Mistral, Groq, DeepSeek, Perplexity, Cerebras, SambaNova, Together, Fireworks, Cohere, AWS Bedrock",
-          "70+ modelos com precificação automática por token integrada",
+          "300+ modelos com precificação automática por token integrada",
           "Streaming completo para todos os provedores incluindo tradução SSE do Anthropic",
           "Suporte a visão e multimodal (imagens base64 ou URL)",
           "Chamadas de ferramentas com tradução de formato entre provedores"
@@ -299,7 +300,7 @@
         "title": "Inteligência de Custos",
         "subtitle": "Precificação automática por token para cada modelo. Veja exatamente para onde vai seu dinheiro e quanto o roteamento inteligente economiza.",
         "features": [
-          "Precificação automática por token para 70+ modelos (banco de dados de preços atualizado continuamente)",
+          "Precificação automática por token para 300+ modelos (banco de dados de preços atualizado continuamente)",
           "Custo anexado a cada resposta -- sem adivinhação ou cálculo manual",
           "Comparação baseline vs real: veja o que você pagaria com o modelo mais caro vs roteamento inteligente",
           "Cálculo de economia líquida com projeções mensais",
