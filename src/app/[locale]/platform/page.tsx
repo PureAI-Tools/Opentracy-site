@@ -236,7 +236,7 @@ export default async function PlatformPage({
 
   return (
     <div className="pt-32 pb-24 min-h-screen">
-      <section className="border-b border-border">
+      <section className="pb-16 lg:pb-24 border-b border-border">
         <Container>
           <div className="max-w-4xl mx-auto text-center">
             <FadeIn delay={0} y={16}>
@@ -393,26 +393,28 @@ export default async function PlatformPage({
         </Container>
       </section>
 
-      <section className="py-24 border-t border-border">
+      <section className="py-28 border-t border-border bg-surface-alt">
         <Container>
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
+              <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
                 {dict.platform.cta.title}
               </h2>
-              <p className="mt-4 text-muted">{dict.platform.cta.subtitle}</p>
-              <div className="mt-8 flex w-full flex-col sm:flex-row items-center justify-center gap-3">
+              <p className="mt-5 text-lg text-muted leading-relaxed">
+                {dict.platform.cta.subtitle}
+              </p>
+              <div className="mt-10 mx-auto grid w-full max-w-md grid-cols-1 gap-3 sm:max-w-xl sm:grid-cols-2">
                 <Button
                   href="https://app.opentracy.com"
                   variant="primary"
-                  className="w-full justify-center sm:w-auto"
+                  className="w-full justify-center"
                 >
                   {dict.platform.cta.primary}
                 </Button>
                 <Button
                   href="https://github.com/lunar-org-ai/lunar-router"
                   variant="secondary"
-                  className="w-full justify-center sm:w-auto"
+                  className="w-full justify-center"
                 >
                   {dict.platform.cta.secondary}
                 </Button>

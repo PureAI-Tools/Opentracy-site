@@ -22,6 +22,9 @@ export default function Navbar({
 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [starCount, setStarCount] = useState<string>("...");
+  const [activeHomeSection, setActiveHomeSection] = useState<string | null>(
+    null,
+  );
   const pathname = usePathname();
   const router = useRouter();
 
@@ -95,6 +98,73 @@ export default function Navbar({
   ];
 
   const normalizePath = (value: string) => value.replace(/\/+$/, "") || "/";
+  const currentPath = normalizePath(pathname || "/");
+  const homePath = `/${locale}`;
+
+  const getSectionFromHref = (href: string) => {
+    if (!href.includes("#")) return null;
+    const [, hash] = href.split("#");
+    return hash || null;
+  };
+
+  useEffect(() => {
+    if (currentPath !== homePath) {
+      setActiveHomeSection(null);
+      return;
+    }
+
+    const sectionIds = ["features", "pricing", "community"] as const;
+
+    const updateFromScrollPosition = () => {
+      const triggerY = window.scrollY + 160;
+      let nextActiveSection: string | null = null;
+
+      for (const id of sectionIds) {
+        const element = document.getElementById(id);
+        if (!element) continue;
+        if (triggerY >= element.offsetTop) {
+          nextActiveSection = id;
+        }
+      }
+
+      setActiveHomeSection(nextActiveSection);
+    };
+
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        updateFromScrollPosition();
+        ticking = false;
+      });
+    };
+
+    updateFromScrollPosition();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [currentPath, homePath]);
+
+  const isNavItemActive = (href: string) => {
+    const section = getSectionFromHref(href);
+    if (section) {
+      return currentPath === homePath && activeHomeSection === section;
+    }
+
+    const [targetPath] = href.split("#");
+    const normalizedTarget = normalizePath(targetPath || "/");
+
+    if (normalizedTarget === `/${locale}/platform`) {
+      return currentPath === normalizedTarget;
+    }
+
+    return currentPath === normalizedTarget;
+  };
 
   const getLocalePath = (targetLocale: Locale) => {
     const currentPath = normalizePath(pathname || "/");
@@ -133,17 +203,26 @@ export default function Navbar({
               />
             </Link>
             <div className="nav-links hidden lg:flex">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  target={item.newTab ? "_blank" : undefined}
-                  rel={item.newTab ? "noopener noreferrer" : undefined}
-                  className="nav-link"
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navigation.map((item) => {
+                const isActive = isNavItemActive(item.href);
+
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    target={item.newTab ? "_blank" : undefined}
+                    rel={item.newTab ? "noopener noreferrer" : undefined}
+                    className={`nav-link ${isActive ? "nav-link-active" : ""}`}
+                    aria-current={isActive ? "page" : undefined}
+                    onClick={() => {
+                      const section = getSectionFromHref(item.href);
+                      if (section) setActiveHomeSection(section);
+                    }}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
             </div>
           </div>
           <div className="hidden lg:flex items-center gap-3">
@@ -300,18 +379,31 @@ export default function Navbar({
 
             <div className="mt-4 flex-1 overflow-y-auto pr-1">
               <div className="flex flex-col gap-3">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    target={item.newTab ? "_blank" : undefined}
-                    rel={item.newTab ? "noopener noreferrer" : undefined}
-                    className="px-1 py-1.5 text-[1.05rem] leading-none text-muted hover:text-foreground transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+                {navigation.map((item) => {
+                  const isActive = isNavItemActive(item.href);
+
+                  return (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      target={item.newTab ? "_blank" : undefined}
+                      rel={item.newTab ? "noopener noreferrer" : undefined}
+                      className={`px-1 py-1.5 text-[1.05rem] leading-none transition-colors ${
+                        isActive
+                          ? "text-muted font-semibold"
+                          : "text-muted hover:text-foreground"
+                      }`}
+                      aria-current={isActive ? "page" : undefined}
+                      onClick={() => {
+                        const section = getSectionFromHref(item.href);
+                        if (section) setActiveHomeSection(section);
+                        setMobileMenuOpen(false);
+                      }}
+                    >
+                      {item.name}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
 
