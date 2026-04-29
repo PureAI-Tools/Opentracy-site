@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import Button from "@/components/Button";
+import TrackedAnchor from "@/components/TrackedAnchor";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
 import { i18n } from "@/i18n/config";
@@ -240,13 +241,17 @@ export default async function PlatformPage({
         <Container>
           <div className="max-w-4xl mx-auto text-center">
             <FadeIn delay={0} y={16}>
-              <a
+              <TrackedAnchor
                 href="https://github.com/lunar-org-ai/lunar-router"
                 className="badge badge-new inline-flex items-center gap-2 mb-8 hover:border-muted transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                posthogEvent="hero_badge_clicked"
+                posthogProps={{ source: "platform_hero" }}
               >
                 <span className="badge-new-dot" />
                 <span>{dict.platform.badge}</span>
-              </a>
+              </TrackedAnchor>
             </FadeIn>
 
             <FadeIn delay={0.08} y={10}>
