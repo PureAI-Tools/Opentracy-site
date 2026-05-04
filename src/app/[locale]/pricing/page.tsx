@@ -34,7 +34,7 @@ const planConfig = [
     key: "starter" as const,
     price: "$10",
     period: "/mo",
-    ctaHref: "https://app.opentracy.com",
+    ctaHref: "https://opentracy.cloud/traces",
     ctaVariant: "primary" as const,
     highlighted: true,
   },
@@ -121,10 +121,11 @@ export default async function PricingPage({
                   <Button
                     href={
                       plan.key === "starter"
-                        ? `/${locale}/start-free-trial`
+                        ? "https://opentracy.cloud/traces"
                         : plan.ctaHref
                     }
                     variant={plan.ctaVariant}
+                    newTab={plan.key === "starter"}
                     className="w-full h-12 justify-center text-lg font-semibold rounded-xl"
                   >
                     {planDict.cta}
@@ -146,14 +147,23 @@ export default async function PricingPage({
           <p className="mt-4 text-muted">{dict.pricing.ctaSubtitle}</p>
           <div className="mt-8 flex items-center justify-center gap-3">
             <Button
-              href="https://github.com/lunar-org-ai/lunar-router"
+              href="https://opentracy.cloud/traces"
               variant="primary"
+              newTab
+              posthogProps={{
+                destination: "console",
+                source: "pricing_bottom_cta",
+              }}
             >
               {dict.pricing.ctaPrimary}
             </Button>
             <Button
               href="https://github.com/lunar-org-ai/lunar-router"
               variant="secondary"
+              posthogProps={{
+                destination: "github",
+                source: "pricing_bottom_cta",
+              }}
             >
               {dict.pricing.ctaSecondary}
             </Button>

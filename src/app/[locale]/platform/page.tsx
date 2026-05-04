@@ -280,9 +280,14 @@ export default async function PlatformPage({
             <FadeIn delay={0.32} y={10}>
               <div className="mt-10 mx-auto flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center">
                 <Button
-                  href="https://app.opentracy.com"
+                  href="https://opentracy.cloud/traces"
                   variant="primary"
+                  newTab
                   className="w-full justify-center sm:w-auto"
+                  posthogProps={{
+                    destination: "console",
+                    source: "platform_hero",
+                  }}
                 >
                   {dict.platform.cta.primary}
                 </Button>
@@ -410,9 +415,14 @@ export default async function PlatformPage({
               </p>
               <div className="mt-10 mx-auto grid w-full max-w-md grid-cols-1 gap-3 sm:max-w-xl sm:grid-cols-2">
                 <Button
-                  href="https://app.opentracy.com"
+                  href="https://opentracy.cloud/traces"
                   variant="primary"
+                  newTab
                   className="w-full justify-center"
+                  posthogProps={{
+                    destination: "console",
+                    source: "platform_bottom_cta",
+                  }}
                 >
                   {dict.platform.cta.primary}
                 </Button>

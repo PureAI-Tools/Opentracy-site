@@ -11,6 +11,7 @@ interface ButtonProps {
   className?: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
+  posthogProps?: Record<string, string | number | boolean | null>;
 }
 
 export default function Button({
@@ -21,6 +22,7 @@ export default function Button({
   className = "",
   onClick,
   type = "button",
+  posthogProps,
 }: ButtonProps) {
   const posthog = usePostHog();
   const baseStyles = "btn inline-flex items-center justify-center gap-2";
@@ -30,6 +32,7 @@ export default function Button({
       label,
       href: href ?? null,
       variant,
+      ...posthogProps,
     });
   }
   const variantStyles = {

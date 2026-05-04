@@ -16,7 +16,8 @@
     "subtitle": "Una API compatible con OpenAI para enrutar, rastrear y evaluar cada solicitud — con todos los proveedores principales. Envía más inteligente, paga menos.",
     "ctaPrimary": "Star en GitHub",
     "ctaSecondary": "Explorar funciones",
-    "footnote": "Gratis para siempre · Sin tarjeta de crédito · Self-hostable"
+    "ctaConsole": "Abrir consola",
+    "footnote": "Gratis para siempre · Sin tarjeta de crédito · Cloud o self-host"
   },
   "providers": {
     "heading": "Compatible con todos los proveedores principales",

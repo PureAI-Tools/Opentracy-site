@@ -154,10 +154,34 @@ export default async function Home({
             <FadeIn delay={0.4} y={10}>
               <div className="mt-10 mx-auto flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center">
                 <Button
-                  href="https://github.com/lunar-org-ai/lunar-router"
+                  href="https://opentracy.cloud/traces"
                   variant="primary"
                   newTab
                   className="w-full justify-center sm:w-auto"
+                  posthogProps={{ destination: "console", source: "home_hero" }}
+                >
+                  {dict.hero.ctaConsole}
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </Button>
+                <Button
+                  href="https://github.com/lunar-org-ai/lunar-router"
+                  variant="secondary"
+                  newTab
+                  className="w-full justify-center sm:w-auto"
+                  posthogProps={{ destination: "github", source: "home_hero" }}
                 >
                   <svg
                     width="16"
@@ -172,13 +196,6 @@ export default async function Home({
                   {githubStats.stars !== null
                     ? ` — ${githubStats.stars >= 1000 ? `${(githubStats.stars / 1000).toFixed(1)}k` : githubStats.stars} ★`
                     : ""}
-                </Button>
-                <Button
-                  href={`/${locale}#features`}
-                  variant="secondary"
-                  className="w-full justify-center sm:w-auto"
-                >
-                  {dict.hero.ctaSecondary}
                 </Button>
               </div>
             </FadeIn>
@@ -510,6 +527,30 @@ export default async function Home({
                     and model metadata. AI-powered scanning detects
                     hallucinations before your users do.
                   </p>
+                  <TrackedAnchor
+                    href="https://opentracy.cloud/traces"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm text-accent hover:underline"
+                    posthogEvent="console_link_clicked"
+                    posthogProps={{ source: "features_observability_card" }}
+                  >
+                    Explore live traces
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14" />
+                      <path d="m12 5 7 7-7 7" />
+                    </svg>
+                  </TrackedAnchor>
                 </div>
                 <div className="feat-image">
                   <FullscreenImage
@@ -608,8 +649,9 @@ export default async function Home({
                   </ul>
                   <div className="pricing-cta">
                     <Button
-                      href="https://github.com/lunar-org-ai/lunar-router"
+                      href="https://opentracy.cloud/traces"
                       variant="secondary"
+                      newTab
                       className="w-full justify-center"
                     >
                       {dict.pricing.plans.free.cta}
@@ -653,8 +695,9 @@ export default async function Home({
                   </ul>
                   <div className="pricing-cta">
                     <Button
-                      href={`/${locale}/start-free-trial`}
+                      href="https://opentracy.cloud/traces"
                       variant="primary"
+                      newTab
                       className="w-full justify-center"
                     >
                       {dict.pricing.plans.starter.cta}
@@ -846,8 +889,9 @@ export default async function Home({
             <FadeIn delay={0.3} y={12}>
               <div className="mt-10 mx-auto grid w-full max-w-md grid-cols-1 gap-3 sm:max-w-xl sm:grid-cols-2">
                 <Button
-                  href="https://github.com/lunar-org-ai/lunar-router"
+                  href="https://opentracy.cloud/traces"
                   variant="primary"
+                  newTab
                   className="w-full justify-center"
                 >
                   {dict.cta.ctaPrimary}
@@ -855,7 +899,12 @@ export default async function Home({
                 <Button
                   href="https://github.com/lunar-org-ai/lunar-router"
                   variant="secondary"
+                  newTab
                   className="w-full justify-center"
+                  posthogProps={{
+                    destination: "github",
+                    source: "home_bottom_cta",
+                  }}
                 >
                   {dict.cta.ctaSecondary}
                 </Button>

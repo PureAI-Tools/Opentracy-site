@@ -16,7 +16,8 @@
     "subtitle": "Uma API compatível com OpenAI para rotear, rastrear e avaliar cada requisição — com todos os principais provedores. Envie mais inteligente, pague menos.",
     "ctaPrimary": "Star no GitHub",
     "ctaSecondary": "Explorar recursos",
-    "footnote": "Gratuito para sempre · Sem cartão de crédito · Self-hostable"
+    "ctaConsole": "Abrir console",
+    "footnote": "Gratuito para sempre · Sem cartão de crédito · Cloud ou self-host"
   },
   "providers": {
     "heading": "Compatível com todos os principais provedores",

@@ -16,7 +16,8 @@
     "subtitle": "One OpenAI-compatible API to route, trace, and evaluate every AI request — across every major provider. Ship smarter, pay less.",
     "ctaPrimary": "Star on GitHub",
     "ctaSecondary": "Explore features",
-    "footnote": "Free forever · No credit card · Self-hostable"
+    "ctaConsole": "Open Console",
+    "footnote": "Free forever · No credit card · Cloud or self-host"
   },
   "providers": {
     "heading": "Works with every major provider",

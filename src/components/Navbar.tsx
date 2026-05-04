@@ -290,10 +290,12 @@ export default function Navbar({
               </span>
             </Link>
             <Link
-              href="https://github.com/lunar-org-ai/lunar-router"
+              href="https://opentracy.cloud/traces"
               className="nav-cta"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() =>
-                posthog?.capture("github_cta_clicked", {
+                posthog?.capture("console_cta_clicked", {
                   source: "navbar_get_started",
                 })
               }

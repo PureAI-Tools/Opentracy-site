@@ -216,7 +216,15 @@ export default async function EnterprisePage({
             </FadeIn>
             <FadeIn delay={0.36} y={10}>
               <div className="ep-hero-actions mt-8">
-                <Button href={DEMO_URL} variant="primary" newTab>
+                <Button
+                  href="https://opentracy.cloud/traces"
+                  variant="primary"
+                  newTab
+                  posthogProps={{
+                    destination: "console",
+                    source: "enterprise_hero",
+                  }}
+                >
                   {e.hero.ctaPrimary}
                 </Button>
                 <Button href="#core-delivery" variant="secondary">
@@ -488,10 +496,14 @@ export default async function EnterprisePage({
             <FadeIn delay={0.26}>
               <div className="enterprise-final-cta-buttons">
                 <Button
-                  href={DEMO_URL}
+                  href="https://opentracy.cloud/traces"
                   variant="primary"
                   newTab
                   className="sm:min-w-56"
+                  posthogProps={{
+                    destination: "console",
+                    source: "enterprise_final_cta",
+                  }}
                 >
                   {e.cta.primary}
                   <span className="ml-1 inline-flex h-4 w-4">{arrowIcon}</span>

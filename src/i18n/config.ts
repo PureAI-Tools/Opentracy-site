@@ -23,6 +23,7 @@ export type Dictionary = {
     subtitle: string;
     ctaPrimary: string;
     ctaSecondary: string;
+    ctaConsole: string;
     footnote: string;
   };
   providers: {
