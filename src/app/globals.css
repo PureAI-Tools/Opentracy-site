@@ -195,7 +195,7 @@ body::before {
      HERO H1 — matches reference design
      ============================================ */
 .hero-h1 {
-  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-size: clamp(2.5rem, 5.5vw, 4.5rem);
   font-weight: 900;
   line-height: 0.95;
   letter-spacing: -0.045em;

@@ -141,7 +141,7 @@ export default async function Home({
               <h1 className="hero-h1">
                 {dict.hero.title}
                 <br />
-                <span className="hero-underline">62% faster</span>.
+                {dict.hero.titleHighlight}
               </h1>
             </TextReveal>
 
@@ -214,28 +214,20 @@ export default async function Home({
               <ImageCarousel
                 images={[
                   {
-                    src: "/screenshots/intelligence-overview.png",
-                    alt: "Intelligence & Observability — requests routed, cost savings, model distribution",
+                    src: "/screenshots/v2-evolution-home.png",
+                    alt: "Evolution — self-improving agent overview",
                   },
                   {
-                    src: "/screenshots/eval-overview.png",
-                    alt: "Distill Evaluations — overview with activity and model leaderboard",
+                    src: "/screenshots/v2-versions.png",
+                    alt: "Model versions — iteration history",
                   },
                   {
-                    src: "/screenshots/eval-list.png",
-                    alt: "Evaluations list — running, completed, and failed evaluation runs",
+                    src: "/screenshots/v2-polices.png",
+                    alt: "Policies — agent improvement policies",
                   },
                   {
-                    src: "/screenshots/cost-baseline.png",
-                    alt: "Cost Analysis — baseline model comparison, latency distribution, router efficiency",
-                  },
-                  {
-                    src: "/screenshots/cost-trends.png",
-                    alt: "Cost Analysis — savings trend, cost over time, baseline comparison",
-                  },
-                  {
-                    src: "/screenshots/cost-details.png",
-                    alt: "Cost Analysis — cost by model, cost by provider, most expensive requests",
+                    src: "/screenshots/v2-auto-evaluation.png",
+                    alt: "Auto-evaluation — automatic model scoring",
                   },
                 ]}
                 interval={5000}

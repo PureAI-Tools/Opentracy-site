@@ -11,8 +11,8 @@
   },
   "hero": {
     "badge": "SDK v2 lançado — fallbacks, streaming e rastreamento de custos",
-    "title": "Reduza custos LLM em",
-    "titleHighlight": "",
+    "title": "Crie um",
+    "titleHighlight": "Self-Improving Agent",
     "subtitle": "Uma API compatível com OpenAI para rotear, rastrear e avaliar cada requisição — com todos os principais provedores. Envie mais inteligente, pague menos.",
     "ctaPrimary": "Star no GitHub",
     "ctaSecondary": "Explorar recursos",

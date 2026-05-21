@@ -11,8 +11,8 @@
   },
   "hero": {
     "badge": "SDK v2 is out — fallbacks, streaming, and cost tracking",
-    "title": "Cut LLM costs by",
-    "titleHighlight": "",
+    "title": "Build a",
+    "titleHighlight": "Self-Improving Agent",
     "subtitle": "One OpenAI-compatible API to route, trace, and evaluate every AI request — across every major provider. Ship smarter, pay less.",
     "ctaPrimary": "Star on GitHub",
     "ctaSecondary": "Explore features",
