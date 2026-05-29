@@ -217,7 +217,7 @@ export default async function EnterprisePage({
             <FadeIn delay={0.36} y={10}>
               <div className="ep-hero-actions mt-8">
                 <Button
-                  href="https://opentracy.cloud/traces"
+                  href="https://cal.com/opentracy/30min-demo"
                   variant="primary"
                   newTab
                   posthogProps={{
