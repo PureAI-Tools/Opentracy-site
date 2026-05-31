@@ -154,7 +154,7 @@ export default async function Home({
             <FadeIn delay={0.4} y={10}>
               <div className="mt-10 mx-auto flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center">
                 <Button
-                  href="https://opentracy.cloud/traces"
+                  href="https://app.opentracy.cloud/traces"
                   variant="primary"
                   newTab
                   className="w-full justify-center sm:w-auto"
@@ -520,7 +520,7 @@ export default async function Home({
                     hallucinations before your users do.
                   </p>
                   <TrackedAnchor
-                    href="https://opentracy.cloud/traces"
+                    href="https://app.opentracy.cloud/traces"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-4 inline-flex items-center gap-1.5 text-sm text-accent hover:underline"
@@ -641,7 +641,7 @@ export default async function Home({
                   </ul>
                   <div className="pricing-cta">
                     <Button
-                      href="https://opentracy.cloud/traces"
+                      href="https://app.opentracy.cloud/traces"
                       variant="secondary"
                       newTab
                       className="w-full justify-center"
@@ -687,7 +687,7 @@ export default async function Home({
                   </ul>
                   <div className="pricing-cta">
                     <Button
-                      href="https://opentracy.cloud/traces"
+                      href="https://app.opentracy.cloud/traces"
                       variant="primary"
                       newTab
                       className="w-full justify-center"
@@ -881,7 +881,7 @@ export default async function Home({
             <FadeIn delay={0.3} y={12}>
               <div className="mt-10 mx-auto grid w-full max-w-md grid-cols-1 gap-3 sm:max-w-xl sm:grid-cols-2">
                 <Button
-                  href="https://opentracy.cloud/traces"
+                  href="https://app.opentracy.cloud/traces"
                   variant="primary"
                   newTab
                   className="w-full justify-center"

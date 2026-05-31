@@ -290,7 +290,7 @@ export default function Navbar({
               </span>
             </Link>
             <Link
-              href="https://opentracy.cloud/traces"
+              href="https://app.opentracy.cloud/traces"
               className="nav-cta"
               target="_blank"
               rel="noopener noreferrer"

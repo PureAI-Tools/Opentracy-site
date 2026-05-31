@@ -496,7 +496,7 @@ export default async function EnterprisePage({
             <FadeIn delay={0.26}>
               <div className="enterprise-final-cta-buttons">
                 <Button
-                  href="https://opentracy.cloud/traces"
+                  href="https://app.opentracy.cloud/traces"
                   variant="primary"
                   newTab
                   className="sm:min-w-56"

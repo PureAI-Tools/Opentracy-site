@@ -34,7 +34,7 @@ const planConfig = [
     key: "starter" as const,
     price: "$10",
     period: "/mo",
-    ctaHref: "https://opentracy.cloud/traces",
+    ctaHref: "https://app.opentracy.cloud/traces",
     ctaVariant: "primary" as const,
     highlighted: true,
   },
@@ -121,7 +121,7 @@ export default async function PricingPage({
                   <Button
                     href={
                       plan.key === "starter"
-                        ? "https://opentracy.cloud/traces"
+                        ? "https://app.opentracy.cloud/traces"
                         : plan.ctaHref
                     }
                     variant={plan.ctaVariant}
@@ -147,7 +147,7 @@ export default async function PricingPage({
           <p className="mt-4 text-muted">{dict.pricing.ctaSubtitle}</p>
           <div className="mt-8 flex items-center justify-center gap-3">
             <Button
-              href="https://opentracy.cloud/traces"
+              href="https://app.opentracy.cloud/traces"
               variant="primary"
               newTab
               posthogProps={{
