@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Container from "@/components/Container";
 import BlogList from "@/components/BlogList";
 import { getAllPosts } from "../../../data/posts";
 import { getDictionary } from "@/i18n/getDictionary";
 import type { Locale } from "@/i18n/config";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const dict = await getDictionary(locale as Locale);
+  return { title: `${dict.blog.title} — Lunar`, description: dict.blog.subtitle };
+}
 
 export default async function BlogPage({
   params,

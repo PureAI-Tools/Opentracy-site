@@ -1,0 +1,169 @@
+/* The AI lab is the offer; the software is supporting engineering. */
+.lab-home .hero-content { grid-template-columns: 1.04fr 1fr; gap: 56px; padding-bottom: 60px; }
+.lab-home .hero-copy h1 { font-size: clamp(43px, 4.2vw, 58px); letter-spacing: -.055em; line-height: 1.12; }
+.lab-home .hero-intro { max-width: 500px; font-size: 16px; line-height: 1.8; }
+.lab-home .hero-actions { flex-wrap: wrap; }
+.lab-home .hero-note { font-size: 11px; line-height: 1.7; max-width: 430px; margin-top: 17px; }
+.lab-hero-trust { list-style: none; padding: 0; display: grid; gap: 9px; margin-top: 25px; color: #71687c; font-size: 11px; }
+.lab-hero-trust li { display: flex; align-items: center; gap: 7px; }
+.lab-hero-trust svg { color: #68826a; }
+.lab-project { position: relative; border: 1px solid #e3dbe9; border-radius: 12px; background: white; box-shadow: 0 0 0 12px #f5f1fa, 0 12px 35px #40324b09; }
+.lab-project-top { display: flex; justify-content: space-between; gap: 14px; padding: 15px 18px; align-items: center; border-bottom: 1px solid #eee9f2; }
+.lab-project-top > span:first-child { display: flex; gap: 8px; align-items: center; font-size: 11px; font-weight: 650; }
+.lab-project-example { font-size: 9px; color: #73657e; background: #f5f1fa; border: 1px solid #e9e0f1; border-radius: 4px; padding: 3px 6px; }
+.lab-project-tabs { display: flex; gap: 19px; padding: 0 19px; border-bottom: 1px solid #eee9f2; }
+.lab-project-tabs button { font-size: 10px; color: #786c83; border: 0; border-bottom: 2px solid transparent; background: none; min-height: 44px; padding: 10px 0; }
+.lab-project-tabs button[aria-selected="true"] { color: #594668; border-bottom-color: #b196c6; font-weight: 650; }
+.lab-project-tabs button:hover { color: #29202f; }
+.lab-project-content { padding: 24px 20px 20px; min-height: 406px; }
+.lab-home .lab-project h2 { font-size: 19px; line-height: 1.4; letter-spacing: -.6px; font-weight: 650; text-wrap: pretty; }
+.lab-project-goal { margin: 12px 0 20px; font-size: 11px; line-height: 1.7; color: #71687c; }
+.lab-project-goal > span { font-weight: 600; color: #4a4054; margin-right: 7px; }
+.lab-project-flow { display: grid; gap: 16px; }
+.lab-project-flow > div { position: relative; display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid #e9e4ee; border-radius: 7px; background: #fcfbfd; }
+.lab-project-flow > div:not(:last-child)::after { content: ""; position: absolute; top: 100%; left: 30px; height: 17px; width: 1px; background: #d8ccdf; }
+.lab-project-flow > .lab-flow-build { background: #fff9e9; border-color: #ecdeb8; }
+.lab-flow-icon { display: grid; place-items: center; width: 32px; height: 32px; flex-shrink: 0; color: #887194; }
+.lab-project-flow > div > div > span { font-size: 9px; color: #7b6b87; }
+.lab-project-flow p { margin: 4px 0 0; font-size: 11px; line-height: 1.6; font-weight: 500; }
+.lab-project-criteria { margin-top: 22px; padding-top: 15px; border-top: 1px dashed #e2dbe9; }
+.lab-project-criteria > span { font-size: 10px; font-weight: 600; }
+.lab-project-criteria > div { display: flex; gap: 7px 13px; margin-top: 9px; flex-wrap: wrap; }
+.lab-project-criteria > div > span { display: flex; align-items: center; gap: 4px; font-size: 9px; color: #71687c; }
+.lab-project-criteria svg { color: #708767; }
+.lab-project-foot { display: flex; align-items: center; gap: 7px; padding: 12px 18px; background: #faf8fc; color: #776b81; border-top: 1px solid #eee9f2; font-size: 9px; border-radius: 0 0 12px 12px; }
+.lab-scope { padding: 30px 0 37px; border-top: 1px solid #e9e4ef; }
+.lab-scope > p { text-align: center; font-size: 11px; color: #71687c; margin-bottom: 24px; }
+.lab-scope > div { display: flex; justify-content: center; align-items: center; gap: 60px; }
+.lab-scope > div > span { display: flex; gap: 10px; align-items: center; font-size: 14px; font-weight: 550; color: #595260; }
+.lab-scope svg { color: #9a86a7; }
+.lab-home .lunar-section-heading { max-width: 740px; }
+.lab-home .lunar-section-heading p { max-width: 630px; font-size: 14px; }
+.lab-home .lunar-feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.lab-home .lab-capability { padding: 32px; }
+.lab-capability-label { display: flex; align-items: center; gap: 12px; margin-bottom: 21px; }
+.lab-capability-label > span:last-child { font-size: 11px; font-weight: 600; color: #776484; }
+.lab-capability .lunar-feature-icon { margin: 0; padding: 8px; }
+.lab-capability h3 { font-size: 21px; line-height: 1.4; text-wrap: pretty; }
+.lab-capability > p { font-size: 13px; color: #71687c; line-height: 1.9; }
+.lab-capability > ul { list-style: none; display: grid; gap: 10px; margin: auto 0 0; padding: 22px 0 0; border-top: 1px solid #eee8f2; width: 100%; }
+.lab-capability > ul > li { display: flex; align-items: flex-start; gap: 7px; font-size: 11px; color: #65596f; line-height: 1.7; }
+.lab-capability > ul svg { margin-top: 3px; color: #9880a7; }
+.lab-capabilities-link { display: flex; justify-content: center; margin-top: 28px; }
+.lab-capabilities-link .lunar-text-link { font-size: 12px; }
+.lab-services { border-top: 1px solid #e7dfed; padding-top: 38px; margin-top: 44px; }
+.lab-services > h3 { font-size: 20px; font-weight: 600; letter-spacing: -.6px; margin-bottom: 30px; }
+.lab-services > div { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px 25px; }
+.lab-services article { display: flex; align-items: flex-start; gap: 12px; }
+.lab-services article > svg { color: #93819d; margin-top: 2px; }
+.lab-services h4 { font-size: 12px; font-weight: 650; line-height: 1.6; }
+.lab-services article p { font-size: 11px; color: #71687c; line-height: 1.8; margin-top: 7px; }
+.lab-process { display: grid; grid-template-columns: 1.05fr 1fr; gap: 85px; align-items: center; }
+.lab-process .workflow-intro { font-size: 14px; max-width: 490px; }
+.lab-process .lunar-steps { gap: 25px; margin-top: 32px; margin-bottom: 0; }
+.lab-process .lunar-steps h3 { font-size: 14px; }
+.lab-process .lunar-steps p { font-size: 12px; max-width: 420px; }
+.lab-handoff { border: 1px solid #e6dcc6; background: #fffdf5; border-radius: 9px; padding: 27px 30px; box-shadow: 7px 7px 0 #f6f1e6; transform: rotate(1deg); }
+.lab-handoff-top { display: flex; align-items: center; gap: 8px; color: #8b7851; border-bottom: 1px solid #eee5cf; padding-bottom: 20px; font-size: 11px; }
+.lab-handoff-top > span:last-child { font-size: 24px; margin-left: auto; line-height: 1; }
+.lab-handoff h3 { font-size: 24px; line-height: 1.4; letter-spacing: -.7px; font-weight: 600; margin: 25px 0 20px; }
+.lab-handoff ul { padding: 0; margin: 0; list-style: none; display: grid; gap: 17px; }
+.lab-handoff li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: #645b4b; }
+.lab-handoff li > span { display: grid; place-items: center; border: 1px solid #dfd4b7; background: #fff9e6; border-radius: 4px; width: 21px; height: 21px; flex-shrink: 0; }
+.lab-handoff > p { margin-top: 27px; padding-top: 19px; border-top: 1px solid #eee5cf; color: #7b6e57; font-size: 11px; line-height: 1.8; }
+.lab-infrastructure-panel { background: #f5f0fa; border: 1px solid #e5dcec; border-radius: 12px; padding: 42px 50px; display: flex; gap: 30px; align-items: flex-start; }
+.lab-infrastructure-icon { display: grid; place-items: center; padding: 18px; border: 1px solid #e0d2e9; border-radius: 15px; background: #fffaff; color: #8f759d; }
+.lab-home .lab-infrastructure h2 { font-size: 30px; line-height: 1.4; }
+.lab-infrastructure p { font-size: 14px; color: #71687c; line-height: 1.9; max-width: 870px; margin-top: 14px; }
+.lab-infrastructure ul { list-style: none; display: flex; flex-wrap: wrap; gap: 13px 25px; margin-top: 21px; padding: 0; }
+.lab-infrastructure li { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #6f5e7b; }
+.lab-technology { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: center; }
+.lab-technology > div > p { font-size: 14px; color: #71687c; line-height: 1.9; margin: 19px 0 23px; }
+.lab-technology-image { border: 1px solid #d8cce3; border-radius: 10px; padding: 7px; background: #ede6f5; }
+.lab-technology .lunar-product-image { aspect-ratio: 1537 / 799; }
+.lab-technology figcaption { margin-top: 13px; font-size: 10px; color: #71687c; text-align: center; }
+.lab-faq { padding-top: 0; }
+.lab-home .lunar-last-cta p { max-width: 580px; margin-inline: auto; line-height: 1.9; font-size: 14px; }
+.lab-home .lunar-last-cta .lab-cta-note { font-size: 11px; margin: 20px auto 0; }
+@media (max-width: 1100px) {
+  .lab-home .hero-content { gap: 38px; }
+  .lab-home .hero-copy h1 { font-size: 51px; }
+  .lab-home .hero-intro { font-size: 14px; }
+  .lab-scope > div { gap: 30px; }
+  .lab-scope > div > span { font-size: 12px; }
+  .lab-project-top { flex-wrap: wrap; gap: 7px; }
+  .lab-project-tabs { gap: 15px; padding-inline: 15px; }
+  .lab-project-content { padding-inline: 17px; }
+  .lab-process { gap: 45px; }
+  .lab-technology { gap: 40px; }
+}
+@media (max-width: 820px) {
+  .lab-home .hero-copy h1 { font-size: 44px; }
+  .lab-home .hero-content { gap: 28px; }
+  .lab-project-tabs { gap: 12px; padding-inline: 12px; }
+  .lab-project-tabs button { font-size: 9px; }
+  .lab-project-content { padding-inline: 14px; }
+  .lab-home .lab-project h2 { font-size: 17px; }
+  .lab-project-flow p { font-size: 10px; }
+  .lab-project-flow > div { padding: 8px; gap: 8px; }
+  .lab-scope > div { gap: 20px; flex-wrap: wrap; }
+  .lab-capability h3 { font-size: 18px; }
+  .lab-capability-label { flex-wrap: wrap; }
+  .lab-services > div { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .lab-home .lunar-feature-grid { grid-template-columns: 1fr; gap: 18px; }
+  .lab-home .lab-capability { padding: 26px; }
+  .lab-home .hero-content { grid-template-columns: 1fr; gap: 85px; padding-bottom: 45px; }
+  .lab-home .hero-copy h1 { font-size: clamp(43px, 8vw, 58px); }
+  .lab-home .hero-intro { font-size: 15px; }
+  .lab-home .hero-actions { flex-wrap: wrap; }
+  .lab-hero-trust { font-size: 12px; }
+  .lab-home .hero-note { font-size: 11px; }
+  .lab-project { box-shadow: 0 0 0 8px #f5f1fa; }
+  .lab-project-top { padding: 13px 14px; }
+  .lab-project-top > span:first-child { font-size: 11px; }
+  .lab-project-tabs { padding-inline: 14px; gap: 18px; }
+  .lab-project-tabs button { font-size: 10px; }
+  .lab-project-content { min-height: 415px; padding: 22px 16px; }
+  .lab-home .lab-project h2 { font-size: 19px; }
+  .lab-project-goal { font-size: 12px; }
+  .lab-project-flow p { font-size: 12px; }
+  .lab-project-flow > div { padding: 10px; }
+  .lab-project-flow > div > div > span { font-size: 10px; }
+  .lab-project-criteria > div > span { font-size: 10px; }
+  .lab-project-foot { font-size: 10px; padding: 12px 14px; line-height: 1.7; }
+  .lab-scope { padding-bottom: 30px; }
+  .lab-scope > p { text-align: left; max-width: 310px; line-height: 1.8; }
+  .lab-scope > div { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 14px; }
+  .lab-scope > div > span { font-size: 11px; gap: 7px; }
+  .lab-scope svg { width: 17px; height: 17px; }
+  .lab-capability-label { flex-wrap: nowrap; }
+  .lab-capability h3 { font-size: 22px; }
+  .lab-capability > p { font-size: 14px; }
+  .lab-capability > ul > li { font-size: 12px; }
+  .lab-services > h3 { font-size: 21px; line-height: 1.5; }
+  .lab-services > div { grid-template-columns: 1fr; gap: 25px; }
+  .lab-services h4 { font-size: 14px; }
+  .lab-services article p { font-size: 12px; }
+  .lab-process { grid-template-columns: 1fr; gap: 40px; }
+  .lab-process .lunar-steps p { font-size: 13px; }
+  .lab-handoff { padding: 25px 22px; margin: 0 4px; transform: none; }
+  .lab-handoff h3 { font-size: 23px; }
+  .lab-infrastructure-panel { padding: 27px; gap: 22px; flex-direction: column; }
+  .lab-infrastructure-icon { padding: 12px; }
+  .lab-home .lab-infrastructure h2 { font-size: 28px; line-height: 1.3; }
+  .lab-infrastructure p { font-size: 13px; }
+  .lab-infrastructure ul { display: grid; gap: 13px; }
+  .lab-technology { grid-template-columns: 1fr; gap: 30px; }
+  .lab-technology figcaption { font-size: 9px; }
+  .lab-home .lunar-last-cta p { font-size: 13px; }
+}
+@media (max-width: 380px) {
+  .lab-home .hero-copy h1 { font-size: 40px; }
+  .lab-project-tabs { gap: 12px; padding-inline: 12px; }
+  .lab-project-tabs button { font-size: 9px; }
+  .lab-project-content { padding-inline: 12px; }
+  .lab-scope > div { gap: 18px 9px; }
+  .lab-scope > div > span { font-size: 10px; }
+}

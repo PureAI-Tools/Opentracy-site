@@ -22,12 +22,12 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   if (!post) {
     return {
-      title: "Post Not Found — OpenTracy",
+      title: "Post Not Found — Lunar",
     };
   }
 
   return {
-    title: `${post.title} — OpenTracy`,
+    title: `${post.title} — Lunar`,
     description: post.summary,
   };
 }
@@ -212,7 +212,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <header className="blog-header">
             <h1 className="blog-title">{post.title}</h1>
             <div className="blog-meta">
-              <span className="blog-author">OpenTracy Team</span>
+              <span className="blog-author">Lunar Team</span>
               <span className="blog-meta-sep">/</span>
               <time className="blog-date">
                 {new Date(post.date).toLocaleDateString(locale, {

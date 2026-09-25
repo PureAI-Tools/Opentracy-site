@@ -1,6 +1,6 @@
 "use client";
 
-import { usePostHog } from "posthog-js/react";
+import { useAnalytics } from "@/lib/analytics";
 
 interface TrackedAnchorProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   posthogEvent?: string;
@@ -13,7 +13,7 @@ export default function TrackedAnchor({
   onClick,
   ...props
 }: TrackedAnchorProps) {
-  const posthog = usePostHog();
+  const posthog = useAnalytics();
 
   return (
     <a

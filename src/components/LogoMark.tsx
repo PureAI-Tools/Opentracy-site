@@ -1,37 +1,25 @@
-interface LogoMarkProps {
-  className?: string;
-  size?: number;
+import brand from "@/lib/brand.json";
+
+function SymbolPaths() {
+  return <><path d={brand.moon} fill="currentColor" /><circle className="lunar-logo-satellite" cx="44" cy="19" r="10" fill={brand.yellow} stroke="currentColor" strokeWidth="2.5" /></>;
 }
 
-export default function LogoMark({ className = "", size = 24 }: LogoMarkProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      {/* Ghost body */}
-      <path
-        d="M12 2C7.58 2 4 5.58 4 10v7c0 0.8 0.6 1.2 1.2 0.8l1.6-1.6c0.4-0.4 1-0.4 1.4 0l1.4 1.4c0.4 0.4 1 0.4 1.4 0l1-1c0.4-0.4 1-0.4 1.4 0l1 1c0.4 0.4 1 0.4 1.4 0l1.4-1.4c0.4-0.4 1-0.4 1.4 0l1.6 1.6c0.6 0.4 1.2 0 1.2-0.8V10c0-4.42-3.58-8-8-8z"
-        fill="currentColor"
-        opacity="0.15"
-      />
-      <path
-        d="M12 2C7.58 2 4 5.58 4 10v7c0 0.8 0.6 1.2 1.2 0.8l1.6-1.6c0.4-0.4 1-0.4 1.4 0l1.4 1.4c0.4 0.4 1 0.4 1.4 0l1-1c0.4-0.4 1-0.4 1.4 0l1 1c0.4 0.4 1 0.4 1.4 0l1.4-1.4c0.4-0.4 1-0.4 1.4 0l1.6 1.6c0.6 0.4 1.2 0 1.2-0.8V10c0-4.42-3.58-8-8-8z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        fill="none"
-      />
-      {/* Left eye */}
-      <circle cx="9.5" cy="10" r="1.5" fill="currentColor" />
-      {/* Right eye */}
-      <circle cx="14.5" cy="10" r="1.5" fill="currentColor" />
-      {/* Monocle on right eye */}
-      <circle cx="14.5" cy="10" r="2.5" stroke="currentColor" strokeWidth="0.75" fill="none" />
-      <line x1="17" y1="10" x2="18.5" y2="12" stroke="currentColor" strokeWidth="0.75" />
-    </svg>
-  );
+export default function LogoMark({ className = "", size = 32 }: { className?: string; size?: number }) {
+  return <svg width={size} height={size} viewBox="0 0 64 64" fill="none" className={className} aria-hidden="true"><SymbolPaths /></svg>;
+}
+
+export function LunarWordmark() {
+  return <svg className="lunar-logo-lockup" width="152" height="36" viewBox="0 0 270 64" fill="none" aria-hidden="true">
+    <SymbolPaths />
+    <g transform="translate(79 4)" stroke="currentColor" strokeWidth="9" strokeLinecap="round" strokeLinejoin="round">{brand.letters.map(path => <path key={path} d={path} />)}</g>
+  </svg>;
+}
+export function LunarMoon({ className = "" }: { className?: string }) {
+  return <svg viewBox="0 0 160 160" className={className} fill="none" aria-hidden="true">
+    <path d="M122 119A64 64 0 0 1 51 25C13 40 11 95 39 121c24 23 61 26 83-2Z" fill="#FFDC70" stroke="#282832" strokeWidth="2.5" />
+    <ellipse cx="52" cy="87" rx="3.3" ry="5" fill="#282832" /><ellipse cx="77" cy="95" rx="3.3" ry="5" fill="#282832" />
+    <path d="M56 105q6 9 13 2" stroke="#282832" strokeWidth="2.5" strokeLinecap="round" />
+    <ellipse cx="43" cy="100" rx="7" ry="4" fill="#F2A782" /><ellipse cx="83" cy="107" rx="7" ry="4" fill="#F2A782" />
+    <path d="m110 33 3 10 10 3-10 3-3 10-3-10-10-3 10-3 3-10Z" fill="#B1A3DE" /><path d="m137 75 2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6Z" fill="#282832" />
+  </svg>;
 }

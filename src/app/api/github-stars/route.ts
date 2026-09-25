@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
-const REPO_OWNER = "OpenTracy";
-const REPO_NAME = "OpenTracy";
+const REPO_OWNER = "lunar-org-ai";
+const REPO_NAME = "lunar-router";
 const GITHUB_API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}`;
 
 export const revalidate = 3600;
@@ -11,7 +11,7 @@ export async function GET() {
     const response = await fetch(GITHUB_API_URL, {
       headers: {
         Accept: "application/vnd.github+json",
-        "User-Agent": "OpenTracy-Website",
+        "User-Agent": "Lunar-Website",
       },
       next: { revalidate },
     });

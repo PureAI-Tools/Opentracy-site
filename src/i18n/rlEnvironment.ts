@@ -1,0 +1,70 @@
+import type { Locale } from "./config";
+
+const pt = {
+  label: "Ciclo de reinforcement learning",
+  episode: "Episódio", example: "Simulação ilustrativa",
+  phases: ["Observar", "Agir", "Recompensa", "Aprender"],
+  agent: "Agente", task: "Demanda", team: "Equipe", capacity: "Capacidade",
+  full: "Lotada", available: "Com vaga", allocated: "Alocada", rejected: "Sem vaga",
+  environment: "Alterar restrição do ambiente",
+  scenarios: ["Equipe A lotada", "Equipe B lotada"],
+  policy: "Valor das ações", policyHelp: "O agente escolhe a ação de maior valor. No empate, escolhe A.",
+  messages: [
+    "O agente observa a demanda e a capacidade de cada equipe.",
+    "A política escolhe uma equipe e envia a demanda.",
+    "A recompensa volta para o agente e orienta a próxima atualização.",
+    "O valor da ação é atualizado. O próximo episódio começa com a mesma capacidade.",
+  ],
+  positive: "Há capacidade. A demanda foi alocada.",
+  negative: "Equipe lotada. A demanda foi recusada.",
+  done: "Ciclo concluído. Inverta a restrição ou reinicie para explorar.",
+  play: "Reproduzir", pause: "Pausar", step: "Próxima etapa", reset: "Reiniciar", replay: "Repetir",
+  note: "Exemplo simplificado: +1 ao alocar com vaga; −1 ao escolher uma equipe lotada.",
+};
+
+export type RLEnvironmentCopy = typeof pt;
+export const rlEnvironmentCopy: Record<Locale, RLEnvironmentCopy> = {
+  pt,
+  en: {
+    label: "Reinforcement learning loop",
+    episode: "Episode", example: "Illustrative simulation",
+    phases: ["Observe", "Act", "Reward", "Learn"],
+    agent: "Agent", task: "Request", team: "Team", capacity: "Capacity",
+    full: "Full", available: "Available", allocated: "Allocated", rejected: "No capacity",
+    environment: "Change the environment constraint",
+    scenarios: ["Team A is full", "Team B is full"],
+    policy: "Action values", policyHelp: "The agent chooses the highest-value action. Ties go to A.",
+    messages: [
+      "The agent observes the request and each team’s capacity.",
+      "The policy chooses a team and sends the request.",
+      "The reward returns to the agent to guide the next update.",
+      "The action value is updated. The next episode starts with the same capacity.",
+    ],
+    positive: "Capacity available. The request was allocated.",
+    negative: "Team full. The request was rejected.",
+    done: "Loop complete. Switch the constraint or restart to explore.",
+    play: "Play", pause: "Pause", step: "Next step", reset: "Restart", replay: "Replay",
+    note: "Simplified example: +1 for allocating with capacity; −1 for choosing a full team.",
+  },
+  es: {
+    label: "Ciclo de reinforcement learning",
+    episode: "Episodio", example: "Simulación ilustrativa",
+    phases: ["Observar", "Actuar", "Recompensa", "Aprender"],
+    agent: "Agente", task: "Solicitud", team: "Equipo", capacity: "Capacidad",
+    full: "Lleno", available: "Disponible", allocated: "Asignada", rejected: "Sin espacio",
+    environment: "Cambiar la restricción del entorno",
+    scenarios: ["Equipo A lleno", "Equipo B lleno"],
+    policy: "Valor de las acciones", policyHelp: "El agente elige la acción de mayor valor. En un empate, elige A.",
+    messages: [
+      "El agente observa la solicitud y la capacidad de cada equipo.",
+      "La política elige un equipo y envía la solicitud.",
+      "La recompensa vuelve al agente para orientar la próxima actualización.",
+      "Se actualiza el valor de la acción. El próximo episodio parte de la misma capacidad.",
+    ],
+    positive: "Hay capacidad. La solicitud fue asignada.",
+    negative: "Equipo lleno. La solicitud fue rechazada.",
+    done: "Ciclo completo. Cambia la restricción o reinicia para explorar.",
+    play: "Reproducir", pause: "Pausar", step: "Siguiente paso", reset: "Reiniciar", replay: "Repetir",
+    note: "Ejemplo simplificado: +1 al asignar con espacio; −1 al elegir un equipo lleno.",
+  },
+};

@@ -6,7 +6,7 @@
     "pricing": "Preços",
     "blog": "Blog",
     "github": "GitHub",
-    "getStarted": "Começar grátis →",
+    "getStarted": "Começar",
     "toggleMenu": "Abrir menu"
   },
   "hero": {
@@ -25,11 +25,11 @@
   },
   "howItWorks": {
     "title": "Como funciona",
-    "subtitle": "Seu app se conecta ao OpenTracy. O OpenTracy se conecta a todos os provedores de LLM.",
+    "subtitle": "Seu app se conecta à Lunar. A Lunar se conecta a todos os provedores de LLM.",
     "yourApp": "Seu App",
     "yourAppSub": "Uma única chamada de API",
-    "opentracy": "OpenTracy",
-    "opentracySub": "Roteamento + Traces + Eval"
+    "lunar": "Lunar",
+    "lunarSub": "Roteamento + Traces + Eval"
   },
   "metrics": {
     "providers": "10+",
@@ -81,14 +81,14 @@
   },
   "sdk": {
     "title": "Simples por design",
-    "subtitle": "Se você já usou o SDK da OpenAI, você já conhece o OpenTracy.",
+    "subtitle": "Se você já usou o SDK da OpenAI, você já conhece a Lunar.",
     "openaiCompatible": {
       "title": "Compatível com OpenAI",
       "description": "O mesmo formato que você já usa. Mude uma linha para começar."
     },
     "automaticFallbacks": {
       "title": "Fallbacks automáticos",
-      "description": "Se um provedor cair, o OpenTracy muda para seu backup."
+      "description": "Se um provedor cair, a Lunar muda para seu backup."
     },
     "costOnResponse": {
       "title": "Custo em cada resposta",
@@ -108,7 +108,7 @@
     "footnote": "Plano gratuito disponível. Sem cartão de crédito."
   },
   "dashboard": {
-    "title": "OpenTracy — Painel",
+    "title": "Lunar — Painel",
     "requestsToday": "Requisições hoje",
     "totalCost": "Custo total",
     "avgQuality": "Qualidade média",
@@ -161,11 +161,11 @@
     "faqs": [
       {
         "question": "O que conta como uma requisição?",
-        "answer": "Cada chamada de API pelo OpenTracy conta como uma requisição. Tanto chamadas bem-sucedidas quanto com falha são contabilizadas."
+        "answer": "Cada chamada de API pela Lunar conta como uma requisição. Tanto chamadas bem-sucedidas quanto com falha são contabilizadas."
       },
       {
-        "question": "Posso fazer self-host do OpenTracy?",
-        "answer": "Sim. O OpenTracy é código aberto (MIT). Você pode hospedar todo o stack com Docker. Os planos Starter e Enterprise adicionam recursos gerenciados."
+        "question": "Posso fazer self-host da Lunar?",
+        "answer": "Sim. A Lunar é código aberto (MIT). Você pode hospedar todo o stack com Docker. Os planos Starter e Enterprise adicionam recursos gerenciados."
       },
       {
         "question": "Quais provedores são suportados?",
@@ -177,7 +177,7 @@
       },
       {
         "question": "Meus dados estão seguros?",
-        "answer": "Sim. Certificação SOC 2 Type II, conformidade com GDPR. Planos Enterprise incluem deploy em VPC e criptografia BYOK."
+        "answer": "Você pode hospedar a Lunar para controlar onde seus dados ficam. Veja a arquitetura na página de segurança e fale com o time sobre seus requisitos de implantação."
       },
       {
         "question": "Posso trocar de plano a qualquer momento?",
@@ -191,13 +191,13 @@
   },
   "docs": {
     "title": "Documentação",
-    "subtitle": "Tudo que você precisa para começar com o OpenTracy.",
+    "subtitle": "Tudo que você precisa para começar com a Lunar.",
     "quickstart": "Início rápido",
     "exploreTitle": "Explorar a documentação",
     "categories": {
       "gettingStarted": {
         "title": "Primeiros passos",
-        "description": "Instale o OpenTracy, configure sua primeira rota e envie sua primeira requisição."
+        "description": "Instale a Lunar, configure sua primeira rota e envie sua primeira requisição."
       },
       "modelsProviders": {
         "title": "Modelos e provedores",
@@ -223,10 +223,10 @@
   },
   "testimonials": {
     "title": "Times de IA confiam em nós",
-    "subtitle": "De startups a grandes empresas, times usam o OpenTracy para simplificar seu stack de LLMs.",
+    "subtitle": "De startups a grandes empresas, times usam a Lunar para simplificar seu stack de LLMs.",
     "items": [
       {
-        "quote": "O OpenTracy nos permitiu consolidar 4 integrações de LLM em uma única API. Nosso time entrega funcionalidades 3x mais rápido agora.",
+        "quote": "A Lunar nos permitiu consolidar 4 integrações de LLM em uma única API. Nosso time entrega funcionalidades 3x mais rápido agora.",
         "name": "Sarah Chen",
         "role": "Head de IA",
         "company": "Nexus Labs"
@@ -238,7 +238,7 @@
         "company": "BuildAI"
       },
       {
-        "quote": "Migramos de uma camada de roteamento customizada para o OpenTracy em uma tarde. O sistema de fallback detectou duas quedas de provedor na primeira semana.",
+        "quote": "Migramos de uma camada de roteamento customizada para a Lunar em uma tarde. O sistema de fallback detectou duas quedas de provedor na primeira semana.",
         "name": "Anja Kowalski",
         "role": "Engenheira Staff",
         "company": "DataFlow"
@@ -257,9 +257,9 @@
     }
   },
   "platform": {
-    "title": "A plataforma completa de operações LLM",
-    "subtitle": "Tudo o que o OpenTracy entrega -- de um gateway unificado de modelos a roteamento, rastreamento, avaliações e destilação. Feita para equipes em produção com arquitetura real, qualidade mensurável e controle de custos.",
-    "badge": "Plataforma de código aberto",
+    "title": "A engenharia por trás do AI Lab.",
+    "subtitle": "Infraestrutura própria para acompanhar experimentos de reinforcement learning, avaliar Small Language Models e operar as soluções entregues pelo AI Lab. Do treinamento às integrações e ao serving.",
+    "badge": "Lunar Router · open source",
     "pills": [
       "Gateway unificado",
       "Roteamento inteligente",
@@ -267,9 +267,9 @@
       "Auto-hospedável"
     ],
     "overview": {
-      "eyebrow": "Plataforma",
-      "title": "Capacidades centrais",
-      "subtitle": "Tudo em um só lugar, seguindo o mesmo sistema visual e os mesmos padrões de interação da página inicial."
+      "eyebrow": "Nossa infraestrutura",
+      "title": "Da integração à avaliação.",
+      "subtitle": "Ferramentas para conectar modelos, acompanhar o comportamento em produção e comparar os resultados de cada experimento."
     },
     "sections": {
       "gateway": {
@@ -373,15 +373,15 @@
           "Deploy completo com Docker: ClickHouse + engine Go + API Python + UI React",
           "Opção de self-host com licença MIT -- seus dados ficam na sua infraestrutura",
           "Engine em Go para roteamento de alta performance (<2ms de overhead por requisição)",
-          "SDK Python: pip install opentracy",
-          "Drop-in do SDK OpenAI: só mude base_url para sua instância OpenTracy"
+          "SDK Python: pip install openai",
+          "Drop-in do SDK OpenAI: só mude base_url para sua instância Lunar"
         ]
       }
     },
     "cta": {
-      "title": "Pronto para assumir o controle do seu stack LLM?",
-      "subtitle": "Código aberto, self-hostável, licença MIT. Comece em 5 minutos.",
-      "primary": "Começar grátis",
+      "title": "Vamos construir a solução para sua operação.",
+      "subtitle": "Conte o seu desafio. Definimos juntos a arquitetura, as integrações e os critérios de sucesso do projeto.",
+      "primary": "Converse sobre seu projeto",
       "secondary": "Ver no GitHub"
     }
   },
@@ -396,12 +396,12 @@
     }
   },
   "footer": {
-    "tagline": "Uma API para todos os LLMs. Roteie, observe, avalie e otimize sua infraestrutura de IA.",
+    "tagline": "O toolkit open source para seu stack de LLMs. Conecte, observe e continue criando.",
     "product": "Produto",
     "resources": "Recursos",
     "legal": "Legal",
     "features": "Recursos",
-    "platform": "Plataforma",
+    "platform": "Infraestrutura",
     "pricing": "Preços",
     "docs": "Docs",
     "security": "Segurança",
@@ -411,74 +411,73 @@
     "discord": "Discord",
     "privacy": "Privacidade",
     "terms": "Termos",
-    "copyright": "OpenTracy. Licença MIT."
+    "copyright": "Lunar. Licença MIT."
   },
   "enterprise": {
     "meta": {
-      "title": "Enterprise - OpenTracy",
-      "description": "Seu Laboratório de IA para sua empresa. RL de Ambiente personalizado e agentes de autoaperfeiçoamento, criados para reduzir custos dentro da sua infraestrutura."
+      "title": "RL environments & Small Language Models — Lunar",
+      "description": "Construímos ambientes de reinforcement learning e treinamos modelos de linguagem compactos para tarefas do seu negócio. Do desenho do experimento à implantação, com os seus dados e o seu time."
     },
     "hero": {
       "badge": "Laboratório de IA Empresarial",
-      "title1": "Seu Laboratório de IA para",
-      "title2": "Sua Empresa",
-      "subtitle": "Aprendizado por reforço de ambiente personalizado e agentes de autoaperfeiçoamento — criados para reduzir custos e rodar dentro da sua própria infraestrutura.",
+      "title1": "RL environments.",
+      "title2": "Small language models.",
+      "subtitle": "Construímos ambientes de reinforcement learning e treinamos modelos de linguagem compactos para tarefas do seu negócio. Do desenho do experimento à implantação, com os seus dados e o seu time.",
       "ctaPrimary": "Agende sua Chamada de IA Lab",
       "ctaSecondary": "Ver O Que Construímos",
       "trust": [
-        "Environment RL",
-        "Agentes de Autoaperfeiçoamento",
-        "Self-hosted por design"
+        "RL environments",
+        "Small Language Models",
+        "Implantação na sua infraestrutura"
       ]
     },
     "capabilities": {
-      "eyebrow": "Capacidades Principais",
-      "title": "Dois sistemas. Uma vantagem composta.",
-      "subtitle": "RL de ambiente e agentes de autoaperfeiçoamento trabalham juntos — cada ciclo torna seus modelos mais precisos, rápidos e baratos.",
+      "eyebrow": "RL environments & SLMs",
+      "title": "Seu ambiente de treino. Seu modelo especializado.",
+      "subtitle": "Projetos de RL environments e Small Language Models (SLMs), contratados de forma independente ou combinados conforme o desafio. Cada frente tem entregas e critérios de avaliação definidos.",
       "rl": {
-        "tag": "Ambientes RL Personalizados",
-        "title": "IA que aprende com sua operação.",
-        "desc": "Loops de RL treinados com seus dados reais de produção — não simulações. Precificação, agendamento, roteamento, alocação — agentes que geram valor a cada turno e superam modelos genéricos.",
+        "tag": "RL environments",
+        "title": "O contexto certo para aprender a decidir.",
+        "desc": "Transformamos regras, dados e interações do seu negócio em ambientes de reinforcement learning. Definimos observações, ações, recompensas e cenários para treinar e avaliar agentes ou políticas.",
         "outcomes": [
-          "Decisões treinadas em resultados reais, não simulações",
-          "Implantado dentro da sua infraestrutura",
-          "Acumula valor em cada episódio"
+          "Ambientes e cenários de treinamento versionados",
+          "Recompensas e restrições alinhadas à tarefa",
+          "Avaliação de políticas frente a um baseline"
         ]
       },
       "envDesign": {
-        "tag": "Design de Ambiente",
-        "title": "Construído em torno da sua lógica de negócio.",
-        "desc": "Ambientes de simulação personalizados modelados em seus sistemas reais — motores de precificação, camadas de agendamento, pipelines de alocação. O agente treina dentro das suas restrições operacionais reais, não problemas simplificados."
+        "tag": "Design de ambientes",
+        "title": "Estados, ações e cenários do seu negócio.",
+        "desc": "Modelamos as observações disponíveis, as ações permitidas e as transições entre estados. Criamos cenários de treino e teste a partir de regras e dados operacionais, incluindo casos de falha e restrições."
       },
       "rewardEng": {
-        "tag": "Engenharia de Recompensas",
-        "title": "Otimiza seus KPIs reais.",
-        "desc": "Funções de recompensa alinhadas com o que seu negócio valoriza — margem, throughput, latência, precisão. Sem benchmarks genéricos. Cada episódio direciona para resultados que se acumulam no chão de produção."
+        "tag": "Reward engineering",
+        "title": "Uma recompensa que reflita a tarefa.",
+        "desc": "Definimos sinais de recompensa e penalidades para orientar o aprendizado. Avaliamos comportamentos indesejados e comparamos as políticas com regras existentes antes da implantação."
       },
-      "agents": {
-        "tag": "Agentes de Autoaperfeiçoamento",
-        "title": "Agentes que ficam mais inteligentes a cada semana.",
-        "desc": "A maioria dos agentes de IA para de melhorar no Dia 1. Os nossos não. Eles aprendem com seu tráfego de produção, se especializam nos seus fluxos de trabalho e substituem chamadas frontier caras — automaticamente.",
+      "slm": {
+        "tag": "Small Language Models",
+        "title": "Modelos compactos. Tarefas bem definidas.",
+        "desc": "Selecionamos e especializamos modelos de linguagem menores para o seu domínio. Com curadoria, fine-tuning e destilação, buscamos o equilíbrio entre qualidade, custo e latência nas tarefas que você precisa executar.",
         "outcomes": [
-          "Mais preciso a cada semana, sem operações de retreinamento",
-          "Até 40× mais barato por chamada após destilação",
-          "Zero mudanças de código — o agente simplesmente melhora"
+          "Datasets curados e conjuntos de teste separados",
+          "Fine-tuning e destilação de modelos",
+          "Avaliação e serving no hardware definido"
         ]
       },
       "distillation": {
-        "tag": "Pipeline de Destilação",
-        "statValue": "40×",
-        "statLabel": "mais barato por chamada após destilação",
-        "desc": "Modelos estudante treinados nos seus traces de produção substituem chamadas frontier caras — automaticamente. Os custos caem continuamente à medida que o modelo se especializa no seu tráfego."
+        "tag": "Fine-tuning e destilação",
+        "title": "Especializar o modelo para o seu domínio.",
+        "desc": "Curamos exemplos e saídas de modelos de referência para treinar o SLM. Comparamos versões em um conjunto de teste separado e validamos os ganhos nas condições de uso do projeto."
       },
-      "zeroRetrain": {
-        "tag": "Zero Operações de Retreinamento",
-        "title": "O loop de melhoria roda sozinho.",
-        "desc": "O ciclo de feedback opera continuamente no seu tráfego de produção. Sem equipe MLOps, sem gatilhos manuais. O agente se especializa — e sua estrutura de custos acompanha.",
+      "evaluation": {
+        "tag": "Avaliação e serving",
+        "title": "Qualidade medida no seu ambiente.",
+        "desc": "O modelo precisa atender aos requisitos da tarefa e do hardware disponível. Avaliamos os resultados antes de integrar o SLM aos seus sistemas.",
         "bullets": [
-          "Melhoria contínua, sem sprints de retreinamento",
-          "Zero mudanças de código — o agente simplesmente melhora",
-          "Acumula no seu tráfego, não em benchmarks gerais"
+          "Qualidade por tarefa e análise de falhas",
+          "Custo, latência e uso de memória",
+          "Versionamento e monitoramento em produção"
         ]
       }
     },
@@ -517,8 +516,8 @@
     },
     "industries": {
       "eyebrow": "Indústrias",
-      "title": "Construído para times em toda a empresa.",
-      "subtitle": "Implantamos em cada vertical onde decisões de IA se acumulam com o tempo e a redução de custos é estrutural.",
+      "title": "Onde aplicar RL environments e SLMs.",
+      "subtitle": "Exemplos de tarefas para orientar a conversa. O diagnóstico define a abordagem adequada aos dados e às restrições do projeto.",
       "items": [
         {
           "title": "Operations & Logistics",
@@ -556,56 +555,32 @@
     },
     "services": {
       "eyebrow": "Serviços",
-      "title": "O que construímos com seu time.",
-      "subtitle": "Da estratégia à produção — cada camada do stack de IA, do início ao fim.",
+      "title": "Do dataset ao deploy, com o seu time.",
+      "subtitle": "Definimos juntos o que o ambiente ou o modelo precisa fazer, como medir o resultado e quando está pronto para entrar na operação.",
       "items": [
         {
-          "title": "Estratégia e Arquitetura de IA",
-          "description": "Roadmap, build-vs-buy, ROI para seu programa de IA."
+          "title": "Dados para treinar",
+          "description": "Curadoria de exemplos, trajetórias e critérios de qualidade para cada experimento."
         },
         {
-          "title": "Design de Ambiente RL Personalizado",
-          "description": "Sinais de recompensa, treinamento de políticas, loops de produção."
+          "title": "Avaliações reproduzíveis",
+          "description": "Baselines, cenários de teste e relatórios para decidir o que levar à produção."
         },
         {
-          "title": "Desenvolvimento de Agentes de Aprendizagem Contínua",
-          "description": "Agentes end-to-end que acumulam valor desde o dia um."
+          "title": "Infraestrutura e serving",
+          "description": "Pipelines de treinamento e inferência dimensionados para o seu ambiente."
         },
         {
-          "title": "Treinamento de Modelos Personalizados",
-          "description": "Modelos estudante destilados treinados no seu tráfego."
-        },
-        {
-          "title": "Pipelines RAG e de Conhecimento",
-          "description": "Recuperação sobre seus docs, ajustado para precisão."
-        },
-        {
-          "title": "Implantação de Stack Self-Hosted",
-          "description": "Infraestrutura de IA completa dentro do seu perímetro."
-        },
-        {
-          "title": "LLM Ops e Monitoramento",
-          "description": "Detecção de drift, escaneamento de alucinações, plantão."
-        },
-        {
-          "title": "Conformidade e Segurança",
-          "description": "LGPD, GDPR, HIPAA, SOC 2. Configurações air-gapped."
-        },
-        {
-          "title": "Integrações Personalizadas",
-          "description": "ERPs, CRMs, APIs internas, conectadas à camada de IA."
-        },
-        {
-          "title": "Treinamento e Capacitação",
-          "description": "Sessões práticas para seus times de ML e produto."
+          "title": "Integração na operação",
+          "description": "Modelos e políticas conectados a agentes, ferramentas e sistemas internos."
         }
       ]
     },
     "cta": {
-      "title": "Vamos construir seu Laboratório de IA Empresarial.",
-      "subtitle": "Uma chamada de estratégia para mapear seu RL de ambiente, agentes de autoaperfeiçoamento e roteiro de redução de custos.",
+      "title": "O que você precisa treinar?",
+      "subtitle": "Um ambiente para aprender a decidir. Um modelo para dominar uma tarefa. Traga seu contexto e vamos definir o projeto.",
       "primary": "Iniciar seu Programa de IA Lab",
-      "footnote": "Sem preparação prévia · Participantes executivos e técnicos bem-vindos · saia com um plano concreto de construção"
+      "footnote": "RL environments e SLMs, da pesquisa à implantação."
     }
   }
 }

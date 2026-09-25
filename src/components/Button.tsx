@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePostHog } from "posthog-js/react";
+import { useAnalytics } from "@/lib/analytics";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -24,7 +24,7 @@ export default function Button({
   type = "button",
   posthogProps,
 }: ButtonProps) {
-  const posthog = usePostHog();
+  const posthog = useAnalytics();
   const baseStyles = "btn inline-flex items-center justify-center gap-2";
 
   function trackCta(label: string) {
@@ -60,7 +60,7 @@ export default function Button({
   return (
     <button
       type={type}
-      onClick={(e) => {
+      onClick={() => {
         trackCta(typeof children === "string" ? children : type);
         onClick?.();
       }}

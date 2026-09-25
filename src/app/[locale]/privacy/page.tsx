@@ -1,14 +1,16 @@
+import Link from "next/link";
 import { Metadata } from "next";
 import Container from "@/components/Container";
 import Badge from "@/components/Badge";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — OpenTracy",
+  title: "Privacy Policy — Lunar",
   description:
-    "Learn how OpenTracy collects, uses, and protects your personal data.",
+    "Learn how Lunar collects, uses, and protects your personal data.",
 };
 
-export default function PrivacyPage() {
+export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <div className="pt-24 pb-16 bg-grid min-h-screen">
       <Container>
@@ -30,10 +32,10 @@ export default function PrivacyPage() {
           {/* Introduction */}
           <section>
             <p className="text-sm text-[#444444] leading-relaxed">
-              This Privacy Policy describes how OpenTracy (&quot;we,&quot;
+              This Privacy Policy describes how Lunar (&quot;we,&quot;
               &quot;us,&quot; or &quot;our&quot;) collects, uses, and shares
-              your personal information when you use our website (opentracy.com),
-              console (app.opentracy.com), APIs, documentation, and related
+              your personal information when you use our Lunar website,
+              Lunar console, APIs, documentation, and related
               services (collectively, the &quot;Services&quot;). By using our
               Services, you agree to the practices described in this policy.
             </p>
@@ -41,13 +43,13 @@ export default function PrivacyPage() {
 
           {/* Section 1 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">01.</span> Information We Collect
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6 space-y-6">
               <div>
-                <h3 className="font-mono text-sm uppercase tracking-wider text-[#0070f3] mb-3">
-                  /// Account Information
+                <h3 className="text-sm font-semibold text-[#0070f3] mb-3">
+                  Account Information
                 </h3>
                 <p className="text-sm text-[#444444] leading-relaxed">
                   When you create an account, we collect your name, email
@@ -57,8 +59,8 @@ export default function PrivacyPage() {
                 </p>
               </div>
               <div>
-                <h3 className="font-mono text-sm uppercase tracking-wider text-[#0070f3] mb-3">
-                  /// Usage Data
+                <h3 className="text-sm font-semibold text-[#0070f3] mb-3">
+                  Usage Data
                 </h3>
                 <p className="text-sm text-[#444444] leading-relaxed">
                   We automatically collect information about how you interact
@@ -68,8 +70,8 @@ export default function PrivacyPage() {
                 </p>
               </div>
               <div>
-                <h3 className="font-mono text-sm uppercase tracking-wider text-[#0070f3] mb-3">
-                  /// Customer Data
+                <h3 className="text-sm font-semibold text-[#0070f3] mb-3">
+                  Customer Data
                 </h3>
                 <p className="text-sm text-[#444444] leading-relaxed">
                   When you use our platform for model distillation, evaluation,
@@ -80,8 +82,8 @@ export default function PrivacyPage() {
                 </p>
               </div>
               <div>
-                <h3 className="font-mono text-sm uppercase tracking-wider text-[#0070f3] mb-3">
-                  /// Payment Information
+                <h3 className="text-sm font-semibold text-[#0070f3] mb-3">
+                  Payment Information
                 </h3>
                 <p className="text-sm text-[#444444] leading-relaxed">
                   Payment processing is handled by third-party processors. We do
@@ -90,8 +92,8 @@ export default function PrivacyPage() {
                 </p>
               </div>
               <div>
-                <h3 className="font-mono text-sm uppercase tracking-wider text-[#0070f3] mb-3">
-                  /// Cookies &amp; Tracking
+                <h3 className="text-sm font-semibold text-[#0070f3] mb-3">
+                  Cookies &amp; Tracking
                 </h3>
                 <p className="text-sm text-[#444444] leading-relaxed">
                   We use cookies and similar technologies for authentication,
@@ -104,7 +106,7 @@ export default function PrivacyPage() {
 
           {/* Section 2 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">02.</span> How We Use Your
               Information
             </h2>
@@ -133,7 +135,7 @@ export default function PrivacyPage() {
 
           {/* Section 3 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">03.</span> How We Share Your
               Information
             </h2>
@@ -180,7 +182,7 @@ export default function PrivacyPage() {
 
           {/* Section 4 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">04.</span> Data Retention
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6">
@@ -199,7 +201,7 @@ export default function PrivacyPage() {
 
           {/* Section 5 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">05.</span> Data Security
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6">
@@ -208,22 +210,22 @@ export default function PrivacyPage() {
                 data. All data is encrypted at rest (AES-256) and in transit (TLS
                 1.2+). We maintain strict access controls, audit logging, and
                 tenant isolation. For more details, see our{" "}
-                <a
-                  href="/security"
+                <Link
+                  href={`/${locale}/security`}
                   className="text-[#0070f3] hover:underline"
                 >
                   Security page
-                </a>
+                </Link>
                 . No method of transmission or storage is 100% secure. If you
                 have concerns, contact us at{" "}
-                <span className="text-[#0070f3]">privacy@opentracy.com</span>.
+                <a className="text-accent underline" href="mailto:privacy@opentracy.com">Lunar privacy team</a>.
               </p>
             </div>
           </section>
 
           {/* Section 6 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">06.</span> Your Rights
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6">
@@ -251,7 +253,7 @@ export default function PrivacyPage() {
               </ul>
               <p className="text-sm text-[#666666] leading-relaxed mt-4">
                 To exercise any of these rights, contact us at{" "}
-                <span className="text-[#0070f3]">privacy@opentracy.com</span>.
+                <a className="text-accent underline" href="mailto:privacy@opentracy.com">Lunar privacy team</a>.
                 We will respond within 30 days.
               </p>
             </div>
@@ -259,7 +261,7 @@ export default function PrivacyPage() {
 
           {/* Section 7 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">07.</span> International Data
               Transfers
             </h2>
@@ -276,7 +278,7 @@ export default function PrivacyPage() {
 
           {/* Section 8 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">08.</span> Children&apos;s
               Privacy
             </h2>
@@ -287,14 +289,14 @@ export default function PrivacyPage() {
                 children. If we learn we have collected data from a child under
                 16, we will delete it promptly. If you believe a child has
                 provided us with personal data, please contact us at{" "}
-                <span className="text-[#0070f3]">privacy@opentracy.com</span>.
+                <a className="text-accent underline" href="mailto:privacy@opentracy.com">Lunar privacy team</a>.
               </p>
             </div>
           </section>
 
           {/* Section 9 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">09.</span> Changes to This Policy
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6">
@@ -310,7 +312,7 @@ export default function PrivacyPage() {
 
           {/* Section 10 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">10.</span> Contact Us
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6">
@@ -321,11 +323,11 @@ export default function PrivacyPage() {
               <div className="mt-4 space-y-2 font-mono text-sm">
                 <div className="flex items-center gap-3">
                   <span className="text-[#666666]">Email</span>
-                  <span className="text-[#0070f3]">privacy@opentracy.com</span>
+                  <a className="text-accent underline" href="mailto:privacy@opentracy.com">Lunar privacy team</a>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-[#666666]">Web</span>
-                  <span className="text-[#0070f3]">opentracy.com</span>
+                  <span className="text-accent">Lunar</span>
                 </div>
               </div>
             </div>

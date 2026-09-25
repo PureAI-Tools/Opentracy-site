@@ -1,13 +1,13 @@
 "use client";
 
-import { usePostHog } from "posthog-js/react";
+import { useAnalytics } from "@/lib/analytics";
 
 export default function DiscordCommunityCard({
   label,
 }: {
   label: string;
 }) {
-  const posthog = usePostHog();
+  const posthog = useAnalytics();
 
   return (
     <a

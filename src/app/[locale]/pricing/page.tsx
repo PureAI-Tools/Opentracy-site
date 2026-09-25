@@ -1,3 +1,4 @@
+import { site } from "@/lib/site";
 import Container from "@/components/Container";
 import Button from "@/components/Button";
 import { getDictionary } from "@/i18n/getDictionary";
@@ -17,7 +18,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
   return {
-    title: `${dict.pricing.title} — OpenTracy`,
+    title: `${dict.pricing.title} — Lunar`,
     description: dict.pricing.subtitle,
   };
 }
@@ -34,14 +35,14 @@ const planConfig = [
     key: "starter" as const,
     price: "$10",
     period: "/mo",
-    ctaHref: "https://app.opentracy.cloud/traces",
+    ctaHref: site.app,
     ctaVariant: "primary" as const,
     highlighted: true,
   },
   {
     key: "enterprise" as const,
     price: "Custom",
-    ctaHref: "https://cal.com/opentracy/30min-demo",
+    ctaHref: site.demo,
     ctaVariant: "secondary" as const,
     highlighted: false,
   },
@@ -76,31 +77,31 @@ export default async function PricingPage({
             return (
               <div
                 key={plan.key}
-                className={`relative rounded-3xl border p-8 md:p-9 bg-[rgba(255,255,255,0.62)] dark:bg-[rgba(20,20,20,0.6)] backdrop-blur-sm ${
+                className={`relative rounded-xl border p-8 md:p-9 bg-[rgba(255,255,255,0.62)] dark:bg-[rgba(20,20,20,0.6)] backdrop-blur-sm ${
                   plan.highlighted
-                    ? "border-[rgba(34,197,94,0.8)]"
+                    ? "border-[#b69aca]"
                     : "border-border"
                 }`}
               >
                 {plan.highlighted && (
-                  <span className="absolute left-1/2 -translate-x-1/2 -top-3.5 px-4 py-1 rounded-full bg-accent text-white text-xs font-extrabold tracking-[0.12em] uppercase shadow-[0_10px_24px_rgba(34,197,94,0.35)]">
-                    Most Popular
+                  <span className="absolute left-1/2 -translate-x-1/2 -top-3.5 px-4 py-1 rounded-full bg-accent text-white text-xs font-semibold">
+                    {dict.pricing.bestValue}
                   </span>
                 )}
-                <h2 className="text-[22px] font-bold uppercase tracking-[0.08em] text-muted">
+                <h2 className="text-[22px] font-semibold tracking-tight text-muted">
                   {planDict.name}
                 </h2>
                 <div className="mt-4 flex items-end gap-1">
-                  <span className="text-6xl leading-none font-bold tracking-[-0.03em] text-foreground">
-                    {plan.price}
+                  <span className={`${plan.key === "enterprise" ? "text-4xl" : "text-6xl"} leading-none font-bold tracking-[-0.03em] text-foreground`}>
+                    {plan.key === "enterprise" && locale !== "en" ? locale === "es" ? "A medida" : "Sob consulta" : plan.price}
                   </span>
                   {plan.period && (
                     <span className="mb-1 text-2xl text-muted">
-                      {plan.period}
+                      {locale === "pt" ? "/mês" : locale === "es" ? "/mes" : plan.period}
                     </span>
                   )}
                 </div>
-                <p className="mt-4 text-xl leading-relaxed text-muted">
+                <p className="mt-4 text-sm leading-relaxed text-muted">
                   {planDict.description}
                 </p>
                 <div className="mt-7 h-px bg-border" />
@@ -108,9 +109,9 @@ export default async function PricingPage({
                   {planDict.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-start gap-3 text-lg leading-snug"
+                      className="flex items-start gap-3 text-sm leading-snug"
                     >
-                      <span className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-[rgba(34,197,94,0.13)] text-accent text-sm font-bold shrink-0">
+                      <span className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-[#f0e9f7] text-accent text-sm font-bold shrink-0">
                         ✓
                       </span>
                       {feature}
@@ -120,13 +121,13 @@ export default async function PricingPage({
                 <div className="mt-8">
                   <Button
                     href={
-                      plan.key === "starter"
-                        ? "https://app.opentracy.cloud/traces"
+                      plan.key !== "enterprise"
+                        ? `/${locale}/start-free-trial`
                         : plan.ctaHref
                     }
                     variant={plan.ctaVariant}
-                    newTab={plan.key === "starter"}
-                    className="w-full h-12 justify-center text-lg font-semibold rounded-xl"
+                    newTab={false}
+                    className="w-full h-12 justify-center text-sm font-semibold rounded-lg"
                   >
                     {planDict.cta}
                   </Button>
@@ -147,7 +148,7 @@ export default async function PricingPage({
           <p className="mt-4 text-muted">{dict.pricing.ctaSubtitle}</p>
           <div className="mt-8 flex items-center justify-center gap-3">
             <Button
-              href="https://app.opentracy.cloud/traces"
+              href={site.app}
               variant="primary"
               newTab
               posthogProps={{

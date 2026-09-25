@@ -7,9 +7,9 @@ import SectionHeading from "@/components/SectionHeading";
 import AsciiWindow, { AsciiPanel } from "@/components/AsciiWindow";
 
 export const metadata: Metadata = {
-  title: "Security — OpenTracy",
+  title: "Security — Lunar",
   description:
-    "Learn about OpenTracy's security architecture, encryption, tenant isolation, and data protection measures.",
+    "Learn about Lunar's security architecture, encryption, tenant isolation, and data protection measures.",
 };
 
 const securityStats = [
@@ -41,7 +41,7 @@ const architectureFeatures = [
   {
     title: "Private Deployment",
     description:
-      "Deploy OpenTracy entirely within your own network. Data never leaves your perimeter. Air-gapped mode available for regulated environments.",
+      "Deploy Lunar entirely within your own network. Data never leaves your perimeter. Air-gapped mode available for regulated environments.",
     badge: "ENTERPRISE",
   },
 ];
@@ -117,7 +117,8 @@ const trustDocuments = [
   { name: "Tenant Isolation Whitepaper" },
 ];
 
-export default function SecurityPage() {
+export default async function SecurityPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <div className="pt-24 pb-16 bg-grid min-h-screen">
       <Container>
@@ -132,7 +133,7 @@ export default function SecurityPage() {
           </h1>
           <p className="mt-6 text-lg text-[#666666] max-w-2xl mx-auto">
             Everything is encrypted, isolated, and auditable. Security isn&apos;t
-            a feature we added — it&apos;s how OpenTracy was built from day one.
+            a feature we added — it&apos;s how Lunar was built from day one.
           </p>
         </div>
 
@@ -276,8 +277,8 @@ export default function SecurityPage() {
                 key={section.title}
                 className="border border-[#e0e0e0] p-6 bg-[#f8f8f8]"
               >
-                <h3 className="font-mono text-sm uppercase tracking-wider text-[#0070f3] mb-5 flex items-center gap-2">
-                  <span>///</span> {section.title}
+                <h3 className="text-sm font-semibold text-[#0070f3] mb-5 flex items-center gap-2">
+                  {section.title}
                 </h3>
                 <ul className="space-y-3">
                   {section.items.map((item) => (
@@ -329,8 +330,8 @@ export default function SecurityPage() {
         <div className="mt-24 border border-[#e0e0e0] bg-[#f8f8f8]">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="p-8 lg:border-r border-[#e0e0e0]">
-              <h3 className="font-mono text-sm uppercase tracking-wider text-[#0070f3] mb-2">
-                /// Trust Center
+              <h3 className="text-sm font-semibold text-[#0070f3] mb-2">
+                Trust Center
               </h3>
               <p className="text-sm text-[#666666] mb-6">
                 Available to customers and qualified prospects.
@@ -379,7 +380,7 @@ export default function SecurityPage() {
             meet them.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button href="/pricing" variant="primary">
+            <Button href={`/${locale}/pricing`} variant="primary">
               Start Enterprise trial
             </Button>
             <Button href="#" variant="secondary">
@@ -387,12 +388,12 @@ export default function SecurityPage() {
             </Button>
           </div>
           <div className="mt-16 border-t border-[#e0e0e0] pt-8">
-            <h3 className="font-mono text-sm uppercase tracking-wider text-[#666666]">
+            <h3 className="text-sm font-semibold text-[#666666]">
               Responsible Disclosure
             </h3>
             <p className="mt-2 text-sm text-[#666666]">
               Found a vulnerability? Email{" "}
-              <span className="text-[#0070f3]">security@opentracy.com</span>
+              <a className="text-accent underline" href="mailto:security@opentracy.com">Lunar security team</a>
             </p>
           </div>
         </div>

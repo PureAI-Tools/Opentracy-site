@@ -35,8 +35,8 @@ export type Dictionary = {
     subtitle: string;
     yourApp: string;
     yourAppSub: string;
-    opentracy: string;
-    opentracySub: string;
+    lunar: string;
+    lunarSub: string;
   };
   metrics: {
     providers: string;
@@ -258,14 +258,13 @@ export type Dictionary = {
       rl: { tag: string; title: string; desc: string; outcomes: string[] };
       envDesign: { tag: string; title: string; desc: string };
       rewardEng: { tag: string; title: string; desc: string };
-      agents: { tag: string; title: string; desc: string; outcomes: string[] };
+      slm: { tag: string; title: string; desc: string; outcomes: string[] };
       distillation: {
         tag: string;
-        statValue: string;
-        statLabel: string;
+        title: string;
         desc: string;
       };
-      zeroRetrain: {
+      evaluation: {
         tag: string;
         title: string;
         desc: string;

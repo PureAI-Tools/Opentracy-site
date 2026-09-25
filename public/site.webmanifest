@@ -1,6 +1,6 @@
 {
-  "name": "OpenTracy",
-  "short_name": "OpenTracy",
+  "name": "Lunar",
+  "short_name": "Lunar",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#ffdc70",
   "background_color": "#ffffff",
   "display": "standalone"
 }

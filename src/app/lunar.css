@@ -1,0 +1,222 @@
+/* Lunar: paper, ink, moonlight. Scoped components keep existing routes coherent. */
+:root { --lunar-ink: #24242c; --lunar-yellow: #ffdc70; --lunar-lilac: #f3f0fa; --lunar-stroke: #e8e8ed; --lunar-muted: #6b6b78; }
+body::before { display: none; }
+body { overflow-x: clip; }
+::selection { color: #24242c; background: #ffe99d; }
+:focus-visible { outline: 3px solid #7862b3; outline-offset: 4px; }
+button, select, summary { cursor: pointer; }
+button:disabled { cursor: wait; opacity: .65; }
+svg { flex-shrink: 0; }
+section[id] { scroll-margin-top: 100px; }
+.lunar-container { max-width: 1240px; width: 100%; padding-inline: 40px; margin-inline: auto; }
+.lunar-header { position: fixed; inset: 0 0 auto; z-index: 50; height: 78px; border-bottom: 1px solid var(--lunar-stroke); background: #ffffffed; backdrop-filter: blur(16px); }
+.lunar-nav { height: 100%; display: flex; align-items: center; gap: 44px; }
+.lunar-wordmark { display: inline-flex; align-items: center; gap: 5px; font-size: 30px; font-weight: 800; letter-spacing: -1.7px; color: var(--lunar-ink); line-height: 1; text-decoration: none; }
+.lunar-logo-lockup { display: block; width: 152px; height: 36px; }
+.lunar-logo-satellite { transition: transform .25s ease; }
+.lunar-wordmark:hover .lunar-logo-satellite { transform: translate(1px, -1px); }
+@media (max-width: 720px) { .lunar-logo-lockup { width: 135px; height: 32px; } }
+.lunar-desktop-links { display: flex; align-items: center; gap: 28px; flex: 1; }
+.lunar-desktop-links a { font-size: 13px; font-weight: 550; color: #62616b; padding-block: 12px; transition: color .18s; }
+.lunar-desktop-links a:hover, .lunar-desktop-links a[aria-current] { color: #24242c; }
+.lunar-nav-actions { display: flex; gap: 22px; align-items: center; }
+.lunar-language { display: inline-flex; align-items: center; gap: 4px; color: #656471; }
+.lunar-language select { border: 0; background: transparent; font: inherit; font-size: 11px; min-height: 36px; padding: 4px 0; }
+.lunar-github { display: inline-flex; gap: 7px; align-items: center; font-size: 12px; font-weight: 600; }
+.lunar-button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 13px 20px; border: 1px solid transparent; border-radius: 8px; min-height: 46px; font-size: 12px; font-weight: 650; line-height: 1.5; transition: background .18s, border-color .18s, transform .18s; text-decoration: none; white-space: nowrap; }
+.lunar-button:hover { transform: translateY(-2px); }
+.lunar-button:active { transform: translateY(0); }
+.lunar-button-yellow { background: var(--lunar-yellow); border-color: #edca65; color: #29251d; box-shadow: 0 2px 0 #e9c661; }
+.lunar-button-yellow:hover { background: #ffcf45; }
+.lunar-button-dark { color: #fff; background: var(--lunar-ink); border-color: var(--lunar-ink); }
+.lunar-button-dark:hover { background: #41414e; }
+.lunar-button-outline { background: white; color: #3c3b45; border-color: #dedde4; }
+.lunar-button-outline:hover { background: #f8f7fb; border-color: #b5aec4; }
+.lunar-nav-actions .lunar-button { min-height: 38px; padding: 9px 15px; font-size: 11px; }
+.lunar-menu-button { display: none; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--lunar-stroke); border-radius: 8px; background: white; }
+.skip-link { position: fixed; top: 10px; left: 15px; transform: translateY(-150%); z-index: 200; background: #24242c; color: white; padding: 12px; border-radius: 6px; }
+.skip-link:focus { transform: none; }
+.lunar-mobile-dialog { position: fixed; inset: 0 0 0 auto; margin: 0; width: min(88vw, 370px); max-width: none; height: 100dvh; max-height: none; padding: 0; border: none; background: white; color: #24242c; }
+.lunar-mobile-dialog::backdrop { background: #24242c66; backdrop-filter: blur(3px); }
+.lunar-mobile-content { padding: 25px; display: flex; flex-direction: column; min-height: 100%; }
+.lunar-mobile-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 36px; }
+.lunar-mobile-top button { width: 44px; height: 44px; display: grid; place-items: center; background: #f6f5f9; border: 0; border-radius: 8px; }
+.lunar-mobile-content nav { display: grid; }
+.lunar-mobile-content nav a { padding: 19px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--lunar-stroke); font-size: 17px; }
+.lunar-mobile-bottom { margin-top: auto; padding-top: 40px; display: grid; gap: 20px; }
+
+.lunar-hero { padding-top: 148px; background: #fff; }
+.hero-content { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 48px; padding-bottom: 75px; }
+.hero-copy { padding-bottom: 12px; }
+.lunar-announcement { display: inline-flex; align-items: center; gap: 9px; color: #635a39; background: #fff9e9; border: 1px solid #f1e5bc; border-radius: 6px; padding: 6px 10px; font-size: 10px; font-weight: 500; }
+.announcement-spark { color: #ad8423; font-size: 17px; line-height: 1; }
+.hero-copy h1 { margin: 25px 0 22px; font-size: clamp(42px, 4.7vw, 65px); line-height: 1.11; letter-spacing: -.06em; font-weight: 750; color: var(--lunar-ink); }
+.hero-intro { max-width: 445px; font-size: 15px; line-height: 1.85; color: var(--lunar-muted); text-wrap: pretty; }
+.hero-actions { display: flex; gap: 10px; margin-top: 30px; }
+.hero-note { display: flex; align-items: center; gap: 6px; margin-top: 15px; color: #85838c; font-size: 10px; }
+.hero-note svg { color: #7a7564; }
+.hero-mini-proof { display: flex; gap: 19px; margin-top: 35px; color: #777480; font-size: 10px; }
+.hero-mini-proof > span { display: inline-flex; align-items: center; gap: 5px; }
+.hero-product { position: relative; min-width: 0; }
+.hero-moon { position: absolute; width: 98px; height: 98px; top: -71px; right: 9px; z-index: 3; transform: rotate(10deg); }
+.lunar-demo-wrap { position: relative; padding: 13px; background: #f3f0fa; border: 1px solid #e9e3f2; border-radius: 17px; }
+.lunar-demo { border-radius: 9px; border: 1px solid #dfdce8; background: #fff; overflow: hidden; box-shadow: 0 10px 26px #382d4f0b; }
+.demo-top { display: flex; align-items: center; justify-content: space-between; padding: 13px 14px; gap: 8px; border-bottom: 1px solid #eeecf2; font-size: 9px; }
+.demo-project { display: flex; align-items: center; gap: 7px; font-weight: 600; }
+.demo-sample { display: inline-flex; gap: 5px; align-items: center; font-size: 8px; color: #77727f; }
+.demo-sample > span { width: 5px; height: 5px; border-radius: 50%; background: #9e8bc9; }
+.demo-tabs { display: flex; gap: 19px; padding: 0 18px; border-bottom: 1px solid #eeecf2; }
+.demo-tabs button { display: flex; align-items: center; gap: 6px; padding: 12px 0 10px; background: transparent; color: #8a8493; font-size: 10px; border: 0; border-bottom: 2px solid transparent; }
+.demo-tabs button[aria-selected="true"] { color: #655282; border-bottom-color: #9c85c1; }
+.demo-tabs button:hover { color: #3e324f; }
+.demo-body { padding: 20px 18px 15px; min-height: 335px; }
+.demo-heading h3 { margin: 0; font-size: 13px; letter-spacing: -.3px; font-weight: 650; }
+.demo-heading > span { font-size: 9px; color: #71687c; }
+.route-diagram { display: flex; align-items: center; margin-block: 22px; }
+.route-app { width: 47px; display: flex; flex-direction: column; align-items: center; gap: 6px; color: #686270; }
+.route-app span { font-size: 8px; white-space: nowrap; }
+.route-line { height: 1px; flex: 1; background: #d9d4e2; display: flex; align-items: center; justify-content: flex-end; color: #c2b6d5; margin: 0 6px; }
+.route-lunar { border: 1px solid #d8c9f1; border-radius: 11px; background: #f6f0ff; padding: 10px 14px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 0 0 4px #f9f5ff; }
+.route-lunar > span { font-size: 9px; font-weight: 700; }
+.route-branches { width: 46px; height: 75px; display: flex; flex-direction: column; justify-content: space-between; position: relative; margin-left: 6px; }
+.route-branches::before { content: ""; position: absolute; left: 12px; width: 1px; background: #d9d4e2; top: 0; bottom: 0; }
+.route-branches i { height: 1px; background: #d9d4e2; margin-left: 12px; }
+.route-branches i:nth-child(2) { margin-left: 0; }
+.route-providers { display: grid; gap: 7px; width: 112px; }
+.route-providers > span { display: flex; align-items: center; gap: 7px; padding: 5px 8px; border: 1px solid #eae7ef; border-radius: 5px; font-size: 9px; background: #fff; transition: border-color .2s, background .2s; }
+.route-providers > span.provider-selected { border-color: #a8c6b8; background: #f5fbf6; }
+.provider-symbol { font-size: 17px; line-height: 1; }
+.anthropic-symbol { color: #b18a6d; font-family: Georgia, serif; }
+.google-symbol { color: #749cd2; }
+.route-providers i { width: 4px; height: 4px; border-radius: 50%; background: #8cbaa6; margin-left: auto; }
+.route-providers i.status-warning { background: #e3a05c; }
+.is-routing .route-lunar { animation: route-pulse .65s ease-in-out infinite alternate; }
+@keyframes route-pulse { to { box-shadow: 0 0 0 8px #efe4ff; } }
+.demo-code { background: #282631; border-radius: 6px; padding: 13px 15px; color: #e4e0ed; font-family: var(--font-code), monospace; font-size: 9px; line-height: 1.9; white-space: pre; overflow-x: auto; }
+.syntax-purple { color: #c8aff7; }.syntax-yellow { color: #e9cd91; }.syntax-green { color: #b6d8ba; }.syntax-comment { color: #a7a2b3; }
+.demo-result { margin-top: 14px; border: 1px solid #eeecf1; border-radius: 6px; padding: 10px 12px; background: #fdfdfe; }
+.demo-result-label { display: flex; justify-content: space-between; gap: 10px; font-family: var(--font-code), monospace; font-size: 8px; color: #817b8a; }
+.demo-result-label > span:first-child { display: flex; align-items: center; gap: 5px; }
+.status-dot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: #88ac95; }
+.result-success { color: #398661 !important; }
+.demo-result p { margin: 7px 0 0; font-size: 9px; color: #81798b; min-height: 15px; }
+.demo-controls { display: flex; justify-content: space-between; gap: 8px; align-items: center; margin-top: 13px; }
+.demo-controls label { display: flex; align-items: center; gap: 5px; font-size: 8px; color: #837c8c; cursor: pointer; }
+.demo-controls input { width: 11px; height: 11px; accent-color: #8a73ac; }
+.demo-controls button { display: inline-flex; align-items: center; gap: 5px; border: 1px solid #ded6e8; border-radius: 5px; padding: 7px 8px; font-size: 8px; font-weight: 600; color: #625273; background: #f6f1fc; }
+.demo-controls button:hover { background: #eee5fa; }
+.demo-foot { padding: 9px 12px; background: #faf9fc; border-top: 1px solid #eeecf2; display: flex; justify-content: space-between; gap: 8px; color: #71687c; font-size: 7px; }
+.demo-foot > span { display: inline-flex; align-items: center; gap: 4px; }
+.demo-version { font-family: var(--font-code), monospace; }
+.demo-sticker { position: absolute; display: inline-flex; align-items: center; gap: 6px; bottom: -14px; right: 25px; background: #fffbed; border: 1px solid #e8dbaa; color: #71623d; border-radius: 5px; padding: 7px 10px; font-size: 9px; box-shadow: 0 3px 5px #30252008; transform: rotate(-4deg); }
+.demo-sticker svg { background: #ead894; border-radius: 50%; padding: 1px; }
+.demo-traces { margin-top: 18px; display: grid; gap: 6px; }
+.demo-traces button { display: flex; align-items: center; gap: 9px; padding: 9px; background: #fff; border: 1px solid #ece9f0; border-radius: 6px; text-align: left; font-size: 9px; }
+.demo-traces button[aria-pressed="true"] { background: #f6f2fc; border-color: #c9b9df; }
+.demo-traces button > span:nth-child(2) { display: grid; flex: 1; }
+.demo-traces strong { font-weight: 500; }.demo-traces small { font-size: 8px; color: #71687c; }
+.trace-check { background: #e7f3eb; color: #508361; padding: 3px; border-radius: 50%; }
+.trace-metadata { display: grid; grid-template-columns: repeat(3, 1fr); margin: 20px 0; font-size: 9px; }
+.trace-metadata dt { color: #71687c; margin-bottom: 4px; }.trace-metadata dd { font-family: var(--font-code), monospace; font-size: 11px; }
+.trace-message { background: #f8f7fa; border-radius: 7px; padding: 12px; font-size: 10px; }.trace-message span { font-size: 8px; color: #71687c; }.trace-message p { margin: 4px 0 10px; }
+.cost-summary { display: flex; flex-direction: column; margin: 20px 0; gap: 3px; }.cost-summary > span { font-size: 9px; color: #71687c; }.cost-summary strong { font-size: 30px; letter-spacing: -1px; font-weight: 600; }
+.cost-bars { display: grid; gap: 15px; }.cost-bars > div > div:first-child { display: flex; justify-content: space-between; font-size: 10px; }.cost-bars strong { font-weight: 500; font-family: var(--font-code), monospace; }.cost-bar-track { background: #f3f0f7; height: 9px; border-radius: 3px; margin: 6px 0 2px; }.cost-bar-track span { display: block; height: 100%; border-radius: 3px; }.cost-bars small { color: #71687c; font-size: 8px; }
+
+.lunar-providers { padding: 30px 0 39px; border-top: 1px solid var(--lunar-stroke); }
+.lunar-providers p { text-align: center; color: #94919b; font-size: 11px; margin-bottom: 24px; }
+.provider-wordmarks { display: flex; align-items: center; justify-content: center; gap: 55px; color: #64626a; }
+.provider-wordmarks > span { display: flex; gap: 6px; align-items: center; font-size: 21px; font-weight: 650; letter-spacing: -.8px; }
+.openai-mark { font-size: 30px; line-height: 1; }.provider-wordmarks .anthropic-wordmark { font-size: 16px; letter-spacing: -.8px; }.gemini-mark { color: #8c87a1; font-size: 27px; }.provider-wordmarks .mistral-wordmark { font-family: var(--font-code), monospace; font-size: 20px; letter-spacing: -.8px; }.mistral-wordmark > span { color: #9b8e73; font-size: 32px; }.provider-wordmarks .groq-wordmark { font-size: 31px; font-weight: 500; letter-spacing: -2px; }.provider-wordmarks .provider-more { font-weight: 400; font-size: 11px; letter-spacing: 0; color: #71687c; }
+.lunar-section { padding-block: 86px; }
+.lunar-home h2, .lunar-start h1, .lunar-docs h1 { font-weight: 700; color: var(--lunar-ink); letter-spacing: -.045em; line-height: 1.22; text-wrap: balance; }
+.lunar-home h2 { font-size: clamp(29px, 3vw, 39px); }
+.lunar-section-heading { text-align: center; margin-inline: auto; max-width: 650px; margin-bottom: 40px; }
+.lunar-section-heading p { font-size: 13px; line-height: 1.9; color: var(--lunar-muted); max-width: 520px; margin: 17px auto 0; }
+.lunar-features { background: #fbfafc; border-top: 1px solid #eeedf0; border-bottom: 1px solid #eeedf0; }
+.lunar-feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
+.lunar-feature { background: white; border: 1px solid #e6e3eb; padding: 26px; border-radius: 11px; display: flex; flex-direction: column; align-items: flex-start; }
+.lunar-feature-icon { display: inline-flex; padding: 10px; border: 1px solid #e9dfc0; border-radius: 10px; background: #fff7df; color: #8a7544; margin-bottom: 22px; }
+.feature-1 .lunar-feature-icon { border-color: #e0d5ee; background: #f3edfc; color: #9380b3; }.feature-2 .lunar-feature-icon { border-color: #d8e6df; background: #eef7f2; color: #6a9988; }
+.lunar-feature h3 { font-size: 18px; font-weight: 650; letter-spacing: -.55px; margin-bottom: 12px; }
+.lunar-feature > p { color: #7c7784; font-size: 12px; line-height: 1.9; }
+.feature-mini { height: 80px; width: 100%; display: flex; align-items: center; border-block: 1px dashed #eae6ef; margin: 25px 0 20px; margin-top: auto; padding-top: 18px; padding-bottom: 18px; }
+.lunar-feature > p { margin-bottom: 25px; }
+.mini-models { display: flex; flex-wrap: wrap; gap: 5px; }.mini-models span { border: 1px solid #e8e4ed; background: #faf9fc; border-radius: 4px; padding: 4px 6px; font-size: 8px; font-family: var(--font-code), monospace; color: #71687c; }
+.mini-trace { display: flex; gap: 10px; font-size: 9px; font-family: var(--font-code), monospace; color: #71687c; align-items: center; }.mini-trace > span { white-space: nowrap; }.mini-trace-line { height: 23px; width: 3px; border-radius: 2px; background: #c5b3df; }
+.mini-cost { display: flex; align-items: flex-end; gap: 7px; height: 48px; width: 100%; padding-bottom: 0; }.mini-cost span { flex: 1; background: #d7e7df; border-radius: 2px 2px 0 0; }.mini-cost span:nth-child(n+7) { background: #a3c5b4; }
+.lunar-text-link { display: inline-flex; gap: 8px; align-items: center; font-size: 11px; color: #61536d; font-weight: 600; text-decoration: none; }
+.lunar-text-link:hover { color: #27222e; text-decoration: underline; text-underline-offset: 4px; }.lunar-text-link svg { transition: transform .18s; }.lunar-text-link:hover svg { transform: translateX(3px); }
+.workflow-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 75px; align-items: center; }
+.lunar-section-label { display: flex; align-items: center; gap: 7px; margin-bottom: 18px; color: #71687c; font-size: 11px; font-weight: 500; }
+.workflow-intro { font-size: 13px; line-height: 1.9; color: var(--lunar-muted); margin-top: 17px; max-width: 400px; }
+.lunar-steps { padding: 0; margin: 26px 0; list-style: none; display: grid; gap: 23px; }
+.lunar-steps li { display: flex; gap: 15px; }.lunar-steps li > span { flex: 0 0 26px; height: 26px; display: grid; place-items: center; border: 1px solid #e4e0e9; border-radius: 50%; color: #71687c; font-size: 10px; background: #faf8fd; }.lunar-steps h3 { font-size: 12px; font-weight: 650; margin-bottom: 5px; }.lunar-steps p { color: #71687c; font-size: 11px; line-height: 1.8; }
+.lunar-code-window { min-width: 0; background: #282631; border: 1px solid #393441; border-radius: 11px; overflow: hidden; box-shadow: 0 12px 35px #2d243b0b; }
+.lunar-code-toolbar { display: flex; justify-content: space-between; border-bottom: 1px solid #403949; padding: 0 18px; gap: 8px; }
+.lunar-code-toolbar > div { display: flex; gap: 20px; }.lunar-code-toolbar button { border: none; background: none; color: #a49bac; font-family: inherit; font-size: 10px; padding: 15px 0; }.lunar-code-toolbar button[role="tab"] { border-bottom: 2px solid transparent; }.lunar-code-toolbar button[aria-selected="true"] { color: #f1e8f7; border-bottom-color: #e6cc80; }.lunar-code-toolbar button:hover { color: white; }.lunar-code-toolbar .copy-code { display: inline-flex; gap: 6px; align-items: center; font-size: 9px; }
+.lunar-code-window pre { color: #e2dce9; font-size: 10px; padding: 24px 21px; overflow: auto; line-height: 2; font-family: var(--font-code), monospace; min-height: 310px; margin: 0; }
+.code-line { display: flex; }.line-number { width: 25px; flex-shrink: 0; user-select: none; color: #6f657d; }
+.lunar-code-note { display: flex; gap: 8px; align-items: center; padding: 14px 20px; border-top: 1px solid #403949; color: #a69bac; font-size: 9px; }
+
+.lunar-product-section { background: #fbfafc; border-block: 1px solid #eeedf0; }
+.product-heading { display: flex; justify-content: space-between; gap: 30px; align-items: center; margin-bottom: 37px; }.product-heading > div { max-width: 620px; }.product-heading p { font-size: 13px; color: var(--lunar-muted); line-height: 1.9; margin-top: 14px; max-width: 510px; }
+.showcase-tabs { display: flex; gap: 10px; margin-bottom: 20px; }.showcase-tabs button { display: inline-flex; align-items: center; gap: 8px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: #71687c; padding: 9px 14px; font: inherit; font-size: 11px; }.showcase-tabs button[aria-selected="true"] { color: #5a4a6b; background: #f0eafa; border-color: #dfd3ee; }
+.showcase-frame { border: 1px solid #dcd5e6; background: #e9e2f2; border-radius: 10px; padding: 8px; overflow: hidden; box-shadow: 0 14px 30px #3b234707; }.showcase-chrome { display: flex; align-items: center; justify-content: space-between; color: #8b7a9a; font-size: 9px; padding: 8px 7px 14px; }.showcase-chrome > span:first-child { display: flex; gap: 4px; }.showcase-chrome i { width: 6px; height: 6px; border-radius: 50%; background: #c5b8d3; }.showcase-frame button { width: 100%; display: block; }.lunar-product-image { width: 100%; height: auto; display: block; border-radius: 4px; aspect-ratio: 1560 / 878; object-fit: contain; background: #0a0a0a; }.showcase-caption { text-align: center; font-size: 10px; color: #71687c; margin-top: 15px; }
+.lunar-open-section { padding: 85px 0 0; }
+.lunar-open-panel { border: 1px solid #e6dcef; background: #f7f3fc; border-radius: 15px; padding: 50px; display: grid; grid-template-columns: .75fr 1.25fr; align-items: center; gap: 45px; overflow: hidden; }.open-copy h2 { margin-bottom: 16px; }.open-copy > p { font-size: 13px; line-height: 1.9; color: #71687c; max-width: 490px; }
+.open-tags { display: flex; gap: 15px; margin-top: 21px; flex-wrap: wrap; }.open-tags span { display: inline-flex; gap: 5px; align-items: center; font-size: 9px; color: #71687c; }.open-tags svg { color: #8a9d7f; }.open-actions { display: flex; gap: 23px; align-items: center; margin-top: 25px; }
+.open-art { position: relative; min-height: 245px; display: flex; align-items: center; justify-content: center; }.open-moon { width: 200px; height: 200px; transform: rotate(-9deg); }.orbit-ring { position: absolute; width: 260px; height: 220px; border-radius: 50%; border: 1px dashed #d9cce8; transform: rotate(-28deg); }.ring-two { width: 320px; height: 290px; border-style: solid; border-color: #e9e0f1; }.orbit-code { position: absolute; top: 17px; left: 27px; background: white; border: 1px solid #e4d8ef; padding: 9px 12px; border-radius: 10px; font-size: 14px; color: #a591b6; transform: rotate(-10deg); }.orbit-git { position: absolute; right: 25px; bottom: 32px; background: white; padding: 13px; border: 1px solid #e4d8ef; border-radius: 12px; transform: rotate(8deg); }.orbit-star { position: absolute; top: 20px; right: 29px; font-size: 25px; color: #b09ac4; }
+.faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 90px; }.faq-grid h2 { font-size: 31px; max-width: 350px; }.faq-grid > div > p { font-size: 12px; color: var(--lunar-muted); margin-top: 20px; }.faq-grid > div > p a { display: inline-flex; align-items: center; gap: 5px; color: #695678; text-decoration: underline; text-underline-offset: 3px; }.lunar-faq details { border-bottom: 1px solid #e7e2ec; }.lunar-faq details:first-child { border-top: 1px solid #e7e2ec; }.lunar-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; list-style: none; padding: 21px 0; font-size: 12px; font-weight: 600; }.lunar-faq summary::-webkit-details-marker { display: none; }.lunar-faq summary > span { font-size: 19px; font-weight: 400; color: #71687c; transition: transform .2s; }.lunar-faq details[open] summary > span { transform: rotate(45deg); }.lunar-faq details p { font-size: 12px; color: #71687c; line-height: 1.9; padding: 0 25px 22px 0; }
+.lunar-last-cta { text-align: center; background: #fff9e9; border-top: 1px solid #f1e7c9; padding-block: 68px; }.cta-star { display: inline-block; color: #c39f45; font-size: 34px; line-height: 1; margin-bottom: 18px; }.lunar-last-cta h2 { font-size: 35px; }.lunar-last-cta p { color: #75654e; font-size: 13px; margin: 16px 0 25px; }.lunar-last-cta .lunar-container > div { display: flex; justify-content: center; gap: 10px; }.lunar-last-cta .lunar-button-outline { background: transparent; border-color: #ded3b9; }
+.lunar-footer { padding: 56px 0 24px; background: white; border-top: 1px solid #eeedf0; }.lunar-footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 45px; padding-bottom: 47px; }.lunar-footer-brand > p { max-width: 260px; color: #71687c; font-size: 11px; line-height: 1.9; margin-top: 18px; }.lunar-open-source { display: inline-flex; gap: 7px; align-items: center; color: #71687c; font-size: 10px; margin-top: 20px; }.lunar-footer h3 { font-size: 11px; font-weight: 650; margin: 5px 0 18px; }.lunar-footer ul { padding: 0; list-style: none; display: grid; gap: 10px; }.lunar-footer li a { color: #71687c; font-size: 11px; }.lunar-footer li a:hover { color: #3f3348; text-decoration: underline; text-underline-offset: 4px; }.lunar-footer-bottom { border-top: 1px solid #eeebf1; display: flex; justify-content: space-between; padding-top: 23px; color: #71687c; font-size: 9px; }.lunar-footer-bottom > span:last-child { display: flex; align-items: center; gap: 10px; }.lunar-footer-bottom > span:last-child > span { font-size: 16px; color: #bfa468; }
+
+/* Shared styles bring the supporting routes into the same visual system. */
+.btn { border-radius: 8px; transition-duration: .18s; font-weight: 600; }.btn-primary { background: #292630; color: #fff; }.btn-primary:hover, .btn-primary:active { background: #47404f; box-shadow: none; }.btn-secondary { background: white; border-color: #dfd9e6; }.btn-secondary:hover { border-color: #b1a0c3; box-shadow: none; }
+.section-eyebrow, .platform-eyebrow { letter-spacing: 0; text-transform: none; color: #7c6691; border-color: #e4d7ef; background: #f5effa; }.section-title { font-weight: 700; letter-spacing: -.045em; }.pricing-card.featured { border-color: #bca9d1; }.pricing-card { box-shadow: none; }.pricing-check { color: #75866b; }
+.lunar-start, .lunar-docs { padding: 150px 0 85px; min-height: 70vh; }.lunar-start h1, .lunar-docs h1 { font-size: clamp(35px, 4vw, 52px); }.lunar-page-intro { max-width: 630px; font-size: 16px; color: #71687c; line-height: 1.8; margin: 20px auto 0; }.lunar-page-heading { text-align: center; max-width: 780px; margin: 0 auto 55px; }.lunar-page-heading > svg { margin: 0 auto 18px; }.start-options { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; max-width: 850px; margin: 0 auto; }.start-option { padding: 35px; border: 1px solid #e1d9e9; border-radius: 12px; display: flex; flex-direction: column; align-items: flex-start; }.start-option:first-child { background: #fffaf0; border-color: #ecdfbd; }.start-option h2 { font-size: 23px; font-weight: 650; letter-spacing: -.7px; margin: 20px 0 12px; }.start-option p { font-size: 14px; line-height: 1.8; color: #71687c; margin-bottom: 25px; }.start-option .lunar-button { margin-top: auto; }.start-help { display: flex; justify-content: center; margin-top: 35px; }.docs-quickstart { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: center; }.docs-quickstart h2 { font-size: 27px; font-weight: 650; }.docs-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 55px; }.docs-links a { padding: 24px; border: 1px solid #e5dfea; border-radius: 10px; }.docs-links h3 { font-size: 14px; font-weight: 650; margin-bottom: 10px; }.docs-links p { color: #71687c; font-size: 12px; line-height: 1.8; }
+
+@media (min-width: 1400px) { .lunar-container { max-width: 1320px; padding-inline: 60px; }.hero-content { gap: 65px; }.hero-copy h1 { font-size: 67px; }.hero-intro { font-size: 16px; } }
+@media (max-width: 1100px) { .lunar-container { padding-inline: 30px; }.lunar-nav { gap: 28px; }.lunar-desktop-links { gap: 22px; }.lunar-nav-actions { gap: 15px; }.hero-content { gap: 28px; }.hero-copy h1 { font-size: 49px; }.hero-actions { flex-wrap: wrap; }.provider-wordmarks { gap: 35px; }.workflow-grid { gap: 40px; }.lunar-feature { padding: 22px; }.mini-trace { gap: 6px; }.open-art .ring-two { width: 270px; }.lunar-open-panel { padding: 35px; }.lunar-code-window pre { font-size: 9px; } }
+@media (max-width: 959px) { .lunar-desktop-links, .lunar-nav-actions { display: none; }.lunar-nav { justify-content: space-between; }.lunar-menu-button { display: inline-flex; }.lunar-header { height: 70px; }.lunar-hero { padding-top: 130px; }.hero-content { gap: 28px; }.hero-copy h1 { font-size: 43px; }.hero-intro { font-size: 13px; }.hero-mini-proof { gap: 10px; flex-wrap: wrap; }.hero-note { font-size: 9px; }.hero-moon { width: 80px; top: -58px; }.demo-body { padding: 15px 12px; }.demo-top { padding: 11px 9px; }.demo-sample { font-size: 7px; }.demo-project { font-size: 8px; }.route-branches { width: 28px; }.route-lunar { padding: 9px; }.demo-controls { align-items: flex-start; flex-direction: column; }.demo-foot .demo-version { display: none; }.demo-sticker { right: 10px; }.provider-wordmarks { gap: 25px; }.provider-wordmarks > span { font-size: 17px; }.provider-wordmarks .anthropic-wordmark { font-size: 13px; }.provider-wordmarks .mistral-wordmark { font-size: 16px; }.lunar-feature-grid { gap: 12px; }.lunar-feature { padding: 20px 16px; }.lunar-feature h3 { font-size: 16px; }.lunar-feature > p { font-size: 11px; }.mini-trace { font-size: 7px; }.lunar-text-link { font-size: 10px; }.workflow-grid { gap: 30px; }.lunar-code-toolbar { padding: 0 12px; }.lunar-code-toolbar > div { gap: 14px; }.lunar-code-toolbar .copy-code span { display: none; }.lunar-code-window pre { padding: 19px 12px; font-size: 9px; }.open-tags { gap: 8px; }.open-actions { flex-wrap: wrap; gap: 14px; }.faq-grid { gap: 40px; }.lunar-footer-grid { gap: 25px; }.docs-quickstart { gap: 30px; } }
+@media (max-width: 720px) { .lunar-container { padding-inline: 23px; }.lunar-header { height: 66px; }.lunar-wordmark { font-size: 28px; }.lunar-hero { padding-top: 110px; }.hero-content { grid-template-columns: 1fr; gap: 80px; padding-bottom: 45px; }.hero-copy { max-width: 540px; padding-bottom: 0; }.hero-copy h1 { font-size: clamp(44px, 8.7vw, 60px); margin-block: 25px 20px; }.hero-intro { font-size: 15px; max-width: 450px; }.lunar-announcement { font-size: 9px; }.hero-actions { flex-wrap: nowrap; }.lunar-button { font-size: 11px; padding: 12px 15px; min-height: 46px; }.hero-note { font-size: 10px; }.hero-mini-proof { font-size: 10px; margin-top: 25px; gap: 20px; }.hero-product { margin: 0 2px; }.hero-moon { width: 90px; right: 10px; top: -65px; }.lunar-demo-wrap { padding: 11px; }.demo-body { min-height: 350px; padding: 20px 18px 17px; }.demo-top { padding: 12px; }.demo-project { font-size: 10px; }.demo-sample { font-size: 8px; }.demo-heading h3 { font-size: 14px; }.demo-code { font-size: 10px; }.demo-result p { font-size: 10px; }.demo-controls { flex-direction: row; align-items: center; }.route-branches { width: 48px; }.route-lunar { padding: 12px 18px; }.route-providers { width: 120px; }.route-providers > span { font-size: 10px; }.demo-foot { font-size: 8px; padding-block: 11px; }.lunar-providers { padding: 27px 0 35px; }.lunar-providers p { font-size: 10px; }.provider-wordmarks { flex-wrap: wrap; gap: 18px 29px; max-width: 500px; margin-inline: auto; }.provider-wordmarks > span { font-size: 18px; }.provider-wordmarks .anthropic-wordmark { font-size: 14px; }.provider-wordmarks .provider-more { font-size: 10px; }.lunar-section { padding-block: 58px; }.lunar-home h2 { font-size: 30px; }.lunar-section-heading { text-align: left; margin-bottom: 28px; }.lunar-section-heading p { margin-left: 0; font-size: 13px; }.lunar-feature-grid { grid-template-columns: 1fr; gap: 16px; }.lunar-feature { padding: 26px; }.lunar-feature-icon { margin-bottom: 17px; }.lunar-feature h3 { font-size: 21px; }.lunar-feature > p { font-size: 13px; max-width: 480px; }.feature-mini { height: 65px; margin-top: 0; }.mini-models span { font-size: 10px; }.mini-trace { font-size: 11px; gap: 16px; }.mini-cost { height: 44px; }.lunar-text-link { font-size: 12px; }.workflow-grid, .docs-quickstart { grid-template-columns: 1fr; gap: 30px; }.workflow-intro { font-size: 14px; }.lunar-steps h3 { font-size: 13px; }.lunar-steps p { font-size: 12px; }.lunar-code-window pre { font-size: 10px; padding: 20px 14px; min-height: 305px; }.lunar-code-toolbar { padding-inline: 15px; }.lunar-code-toolbar button { font-size: 11px; }.lunar-code-toolbar .copy-code span { display: inline; }.lunar-code-note { font-size: 9px; padding-inline: 14px; }.product-heading { display: block; margin-bottom: 28px; }.product-heading .lunar-text-link { margin-top: 16px; }.showcase-tabs { gap: 5px; }.showcase-tabs button { font-size: 9px; padding: 9px 7px; gap: 5px; }.showcase-tabs svg { width: 14px; height: 14px; }.showcase-frame { padding: 5px; }.showcase-chrome { font-size: 8px; padding: 6px 5px 10px; }.lunar-open-section { padding-top: 50px; }.lunar-open-panel { grid-template-columns: 1fr; padding: 30px 26px; gap: 15px; }.open-art { min-height: 200px; }.open-moon { width: 165px; height: 165px; }.orbit-ring { width: 220px; height: 190px; }.open-art .ring-two { width: 275px; height: 245px; }.orbit-code { left: calc(50% - 120px); top: 8px; }.orbit-git { right: calc(50% - 115px); bottom: 15px; }.orbit-star { right: calc(50% - 112px); top: 12px; }.open-copy { position: relative; }.open-copy .lunar-section-label { margin-top: 20px; }.open-copy > p { font-size: 13px; }.open-tags { gap: 10px; }.open-actions { flex-direction: column; align-items: flex-start; gap: 20px; }.faq-grid { grid-template-columns: 1fr; gap: 28px; }.faq-grid h2 { max-width: 430px; }.lunar-faq summary { font-size: 13px; }.lunar-faq details p { font-size: 13px; }.lunar-last-cta { padding-block: 53px; }.lunar-last-cta h2 { font-size: 31px; }.lunar-last-cta p { font-size: 13px; max-width: 310px; margin-inline: auto; }.lunar-last-cta .lunar-container > div { flex-wrap: wrap; }.lunar-footer { padding-top: 38px; }.lunar-footer-grid { grid-template-columns: repeat(3, 1fr); gap: 30px 16px; padding-bottom: 32px; }.lunar-footer-brand { grid-column: 1 / -1; }.lunar-footer-brand > p { max-width: 340px; font-size: 12px; }.lunar-footer h3 { font-size: 12px; }.lunar-footer li a { font-size: 11px; }.lunar-footer ul { gap: 13px; }.lunar-footer-bottom { font-size: 8px; gap: 12px; }.lunar-start, .lunar-docs { padding: 110px 0 60px; }.lunar-page-intro { font-size: 14px; }.start-options { grid-template-columns: 1fr; }.docs-links { grid-template-columns: 1fr; }.lunar-page-heading { margin-bottom: 35px; } }
+@media (max-width: 380px) { .lunar-container { padding-inline: 18px; }.hero-copy h1 { font-size: 40px; }.hero-actions { flex-direction: column; align-items: stretch; }.hero-note { align-items: flex-start; font-size: 9px; }.hero-mini-proof { gap: 12px; font-size: 9px; }.demo-body { padding-inline: 12px; }.demo-code { font-size: 8px; }.demo-controls { align-items: flex-start; flex-direction: column; }.demo-heading h3 { font-size: 12px; }.demo-sample { font-size: 7px; }.route-lunar { padding: 8px 10px; }.route-branches { width: 28px; }.route-providers { width: 100px; }.route-providers > span { font-size: 9px; }.lunar-footer-bottom { flex-direction: column; }.showcase-tabs button { font-size: 8px; }.lunar-code-window pre { font-size: 9px; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+.lunar-image-trigger { position: relative; display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
+.image-expand-hint { position: absolute; bottom: 14px; right: 14px; display: inline-flex; align-items: center; gap: 6px; padding: 8px 11px; border: 1px solid #ffffff30; background: #282631dd; color: white; border-radius: 6px; font-size: 10px; opacity: 0; transition: opacity .18s; }
+.lunar-image-trigger:hover .image-expand-hint, .lunar-image-trigger:focus-visible .image-expand-hint { opacity: 1; }
+.lunar-image-dialog { padding: 50px 20px 20px; border: 0; background: transparent; margin: auto; max-width: 98vw; max-height: 98dvh; overflow: visible; }
+.lunar-image-dialog::backdrop { background: #1d1828cc; backdrop-filter: blur(6px); }
+.lunar-image-expanded { display: block; width: auto; height: auto; max-width: 94vw; max-height: 82dvh; object-fit: contain; border: 1px solid #6f627c; border-radius: 8px; }
+.lunar-image-close { position: absolute; right: 22px; top: 0; display: flex; align-items: center; gap: 6px; padding: 10px 12px; border: 1px solid #ffffff50; background: #302939; color: white; border-radius: 7px; font-size: 12px; }
+
+/* Demo controls stay readable and comfortable to use at every breakpoint. */
+.demo-sample { font-size: 9px; }
+.demo-project { font-size: 11px; }
+.demo-tabs button { font-size: 11px; min-height: 42px; }
+.demo-heading > span { font-size: 10px; color: #797181; }
+.demo-code { font-size: 10px; }
+.demo-result-label { font-size: 9px; color: #72677e; }
+.demo-result p { font-size: 10px; color: #72677e; }
+.demo-controls label { font-size: 9px; color: #746a80; min-height: 30px; }
+.demo-controls button { font-size: 9px; min-height: 32px; }
+.demo-foot { font-size: 8px; color: #746a80; }
+.hero-note, .hero-mini-proof { color: #797180; }
+.provider-wordmarks .provider-more { color: #7e7587; }
+.lunar-providers p { color: #797180; }
+.showcase-caption { color: #7e7388; }
+.lunar-footer-bottom { color: #807587; }
+@media (max-width: 959px) { .demo-top { flex-wrap: wrap; }.demo-sample { font-size: 8px; }.demo-code { font-size: 9px; } }
+@media (max-width: 720px) { .demo-controls button { min-height: 36px; }.demo-controls label { font-size: 9px; }.demo-project { font-size: 10px; }.demo-tabs button { min-height: 44px; }.demo-code { font-size: 10px; } }
+@media (max-width: 380px) { .demo-code { font-size: 9px; } }
+.community-moon { width: 125px; height: 125px; margin: -25px auto 10px; }
+.community-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.community-links > a { padding: 30px; border: 1px solid #e4ddea; border-radius: 12px; display: flex; flex-direction: column; align-items: flex-start; transition: border-color .2s, background .2s; }
+.community-links > a:hover { background: #faf7fd; border-color: #bda8d0; }
+.community-links > a > svg { color: #95819f; }
+.community-links h2 { font-size: 22px; font-weight: 650; letter-spacing: -.5px; margin: 20px 0 12px; }
+.community-links p { color: #71687c; font-size: 13px; line-height: 1.9; margin-bottom: 25px; }
+.community-links .lunar-text-link { margin-top: auto; }
+.community-contribute { margin-top: 40px; padding: 35px; background: #fff9e9; border: 1px solid #eee0b8; border-radius: 12px; display: flex; gap: 35px; align-items: center; justify-content: space-between; }
+.community-contribute h2 { font-size: 23px; font-weight: 650; letter-spacing: -.6px; }
+.community-contribute p { max-width: 620px; color: #75654e; line-height: 1.9; font-size: 13px; margin-top: 12px; }
+@media (max-width: 720px) { .community-links { grid-template-columns: 1fr; }.community-contribute { padding: 27px; flex-direction: column; align-items: flex-start; gap: 22px; } }

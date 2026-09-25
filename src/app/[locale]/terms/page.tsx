@@ -3,9 +3,9 @@ import Container from "@/components/Container";
 import Badge from "@/components/Badge";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — OpenTracy",
+  title: "Terms of Service — Lunar",
   description:
-    "Terms and conditions governing the use of OpenTracy's platform and services.",
+    "Terms and conditions governing the use of Lunar's platform and services.",
 };
 
 export default function TermsPage() {
@@ -31,9 +31,9 @@ export default function TermsPage() {
           <section>
             <p className="text-sm text-[#444444] leading-relaxed">
               These Terms of Service (&quot;Terms&quot;) govern your access to
-              and use of the services provided by OpenTracy (&quot;we,&quot;
+              and use of the services provided by Lunar (&quot;we,&quot;
               &quot;us,&quot; or &quot;our&quot;), including our website
-              (opentracy.com), console (app.opentracy.com), APIs,
+              and Lunar console, APIs,
               documentation, and related services (collectively, the
               &quot;Services&quot;). By accessing or using the Services, you
               agree to be bound by these Terms. If you do not agree, do not use
@@ -43,7 +43,7 @@ export default function TermsPage() {
 
           {/* Section 1 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">01.</span> Eligibility
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6">
@@ -59,7 +59,7 @@ export default function TermsPage() {
 
           {/* Section 2 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">02.</span> Account Registration
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6 space-y-4">
@@ -91,13 +91,13 @@ export default function TermsPage() {
 
           {/* Section 3 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">03.</span> Use of Services
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6 space-y-6">
               <div>
-                <h3 className="font-mono text-sm uppercase tracking-wider text-[#0070f3] mb-3">
-                  /// Permitted Use
+                <h3 className="text-sm font-semibold text-[#0070f3] mb-3">
+                  Permitted Use
                 </h3>
                 <p className="text-sm text-[#444444] leading-relaxed">
                   You may use the Services for lawful purposes in accordance
@@ -107,8 +107,8 @@ export default function TermsPage() {
                 </p>
               </div>
               <div>
-                <h3 className="font-mono text-sm uppercase tracking-wider text-[#0070f3] mb-3">
-                  /// Restrictions
+                <h3 className="text-sm font-semibold text-[#0070f3] mb-3">
+                  Restrictions
                 </h3>
                 <p className="text-sm text-[#444444] leading-relaxed mb-3">
                   You agree not to:
@@ -137,7 +137,7 @@ export default function TermsPage() {
 
           {/* Section 4 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">04.</span> Customer Data
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6 space-y-4">
@@ -168,7 +168,7 @@ export default function TermsPage() {
 
           {/* Section 5 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">05.</span> Payment &amp; Billing
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6 space-y-4">
@@ -197,24 +197,24 @@ export default function TermsPage() {
 
           {/* Section 6 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">06.</span> Intellectual Property
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6 space-y-6">
               <div>
-                <h3 className="font-mono text-sm uppercase tracking-wider text-[#0070f3] mb-3">
-                  /// Our IP
+                <h3 className="text-sm font-semibold text-[#0070f3] mb-3">
+                  Our IP
                 </h3>
                 <p className="text-sm text-[#444444] leading-relaxed">
                   The Services, including all software, algorithms, interfaces,
-                  documentation, and branding, are owned by OpenTracy and protected
+                  documentation, and branding, are owned by Lunar and protected
                   by intellectual property laws. Nothing in these Terms grants
                   you ownership of any part of the Services.
                 </p>
               </div>
               <div>
-                <h3 className="font-mono text-sm uppercase tracking-wider text-[#0070f3] mb-3">
-                  /// Your Models
+                <h3 className="text-sm font-semibold text-[#0070f3] mb-3">
+                  Your Models
                 </h3>
                 <p className="text-sm text-[#444444] leading-relaxed">
                   Models you create, fine-tune, or distill using the Services
@@ -224,8 +224,8 @@ export default function TermsPage() {
                 </p>
               </div>
               <div>
-                <h3 className="font-mono text-sm uppercase tracking-wider text-[#0070f3] mb-3">
-                  /// Feedback
+                <h3 className="text-sm font-semibold text-[#0070f3] mb-3">
+                  Feedback
                 </h3>
                 <p className="text-sm text-[#444444] leading-relaxed">
                   If you provide feedback, suggestions, or ideas about the
@@ -239,7 +239,7 @@ export default function TermsPage() {
 
           {/* Section 7 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">07.</span> Service Availability
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6">
@@ -256,7 +256,7 @@ export default function TermsPage() {
 
           {/* Section 8 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">08.</span> Limitation of
               Liability
             </h2>
@@ -278,7 +278,7 @@ export default function TermsPage() {
 
           {/* Section 9 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">09.</span> Disclaimer of
               Warranties
             </h2>
@@ -296,12 +296,12 @@ export default function TermsPage() {
 
           {/* Section 10 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">10.</span> Indemnification
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6">
               <p className="text-sm text-[#444444] leading-relaxed">
-                You agree to indemnify, defend, and hold harmless OpenTracy and its
+                You agree to indemnify, defend, and hold harmless Lunar and its
                 officers, directors, employees, and agents from any claims,
                 losses, damages, liabilities, and expenses (including legal
                 fees) arising from your use of the Services, violation of these
@@ -312,7 +312,7 @@ export default function TermsPage() {
 
           {/* Section 11 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">11.</span> Termination
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6 space-y-4">
@@ -333,13 +333,13 @@ export default function TermsPage() {
 
           {/* Section 12 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">12.</span> Governing Law
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6">
               <p className="text-sm text-[#444444] leading-relaxed">
                 These Terms are governed by and construed in accordance with the
-                laws of the jurisdiction in which OpenTracy is incorporated, without
+                laws of the jurisdiction in which Lunar is incorporated, without
                 regard to conflict of law principles. Any disputes arising from
                 these Terms shall be resolved in the competent courts of that
                 jurisdiction.
@@ -349,7 +349,7 @@ export default function TermsPage() {
 
           {/* Section 13 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">13.</span> Changes to These Terms
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6">
@@ -366,7 +366,7 @@ export default function TermsPage() {
 
           {/* Section 14 */}
           <section>
-            <h2 className="font-mono text-lg font-bold uppercase tracking-tight mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold tracking-tight mb-4 flex items-center gap-2">
               <span className="text-[#0070f3]">14.</span> Contact Us
             </h2>
             <div className="border border-[#e0e0e0] bg-[#f8f8f8] p-6">
@@ -376,11 +376,11 @@ export default function TermsPage() {
               <div className="mt-4 space-y-2 font-mono text-sm">
                 <div className="flex items-center gap-3">
                   <span className="text-[#666666]">Email</span>
-                  <span className="text-[#0070f3]">legal@opentracy.com</span>
+                  <a className="text-accent underline" href="mailto:legal@opentracy.com">Lunar legal team</a>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-[#666666]">Web</span>
-                  <span className="text-[#0070f3]">opentracy.com</span>
+                  <span className="text-accent">Lunar</span>
                 </div>
               </div>
             </div>

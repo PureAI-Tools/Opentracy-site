@@ -5,16 +5,16 @@
   --font-sans: var(--font-sans), "Plus Jakarta Sans", "Segoe UI", sans-serif;
 
   --color-background: #ffffff;
-  --color-foreground: #1a1a18;
-  --color-muted: #696962;
-  --color-border: #e8e6de;
-  --color-accent: #19b88d;
-  --color-accent-light: #8de0c8;
+  --color-foreground: #24242c;
+  --color-muted: #716b7c;
+  --color-border: #e8e3ed;
+  --color-accent: #806393;
+  --color-accent-light: #d7c4e9;
   --color-blue: #2563eb;
-  --color-orange: #1fae86;
-  --color-surface: #fafaf8;
-  --color-surface-hover: #f2f1ec;
-  --color-surface-alt: #f7f6f2;
+  --color-orange: #b59a51;
+  --color-surface: #faf9fc;
+  --color-surface-hover: #f0ebf6;
+  --color-surface-alt: #f7f4fa;
   --color-success: #1fae86;
 }
 

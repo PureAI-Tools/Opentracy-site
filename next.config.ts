@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const docsOrigin = (process.env.DOCS_ORIGIN || "https://opentracy.mintlify.app").replace(/\/$/, "");
+
 const nextConfig: NextConfig = {
   async redirects() {
     return [
@@ -34,19 +36,19 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/docs",
-        destination: "https://opentracy.mintlify.app",
+        destination: docsOrigin,
       },
       {
         source: "/docs/:path*",
-        destination: "https://opentracy.mintlify.app/:path*",
+        destination: `${docsOrigin}/:path*`,
       },
       {
         source: "/mintlify-assets/:path*",
-        destination: "https://opentracy.mintlify.app/mintlify-assets/:path*",
+        destination: `${docsOrigin}/mintlify-assets/:path*`,
       },
       {
         source: "/static/:path*",
-        destination: "https://opentracy.mintlify.app/static/:path*",
+        destination: `${docsOrigin}/static/:path*`,
       },
       {
         source: "/ingest/static/:path*",

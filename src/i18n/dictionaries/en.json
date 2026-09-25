@@ -6,7 +6,7 @@
     "pricing": "Pricing",
     "blog": "Blog",
     "github": "GitHub",
-    "getStarted": "Start free →",
+    "getStarted": "Get started",
     "toggleMenu": "Toggle menu"
   },
   "hero": {
@@ -25,11 +25,11 @@
   },
   "howItWorks": {
     "title": "How it works",
-    "subtitle": "Your app talks to OpenTracy. OpenTracy talks to every LLM provider.",
+    "subtitle": "Your app talks to Lunar. Lunar talks to every LLM provider.",
     "yourApp": "Your App",
     "yourAppSub": "Single API call",
-    "opentracy": "OpenTracy",
-    "opentracySub": "Route + Trace + Eval"
+    "lunar": "Lunar",
+    "lunarSub": "Route + Trace + Eval"
   },
   "metrics": {
     "providers": "10+",
@@ -81,14 +81,14 @@
   },
   "sdk": {
     "title": "Simple by design",
-    "subtitle": "If you've used the OpenAI SDK, you already know OpenTracy.",
+    "subtitle": "If you've used the OpenAI SDK, you already know Lunar.",
     "openaiCompatible": {
       "title": "OpenAI-compatible",
       "description": "Same format you already use. Change one line to start."
     },
     "automaticFallbacks": {
       "title": "Automatic fallbacks",
-      "description": "If a provider goes down, OpenTracy switches to your backup."
+      "description": "If a provider goes down, Lunar switches to your backup."
     },
     "costOnResponse": {
       "title": "Cost on every response",
@@ -108,7 +108,7 @@
     "footnote": "Free tier available. No credit card required."
   },
   "dashboard": {
-    "title": "OpenTracy — Dashboard",
+    "title": "Lunar — Dashboard",
     "requestsToday": "Requests Today",
     "totalCost": "Total Cost",
     "avgQuality": "Avg Quality",
@@ -160,11 +160,11 @@
     "faqs": [
       {
         "question": "What counts as a request?",
-        "answer": "Each API call through OpenTracy counts as one request. Both successful and failed calls are counted."
+        "answer": "Each API call through Lunar counts as one request. Both successful and failed calls are counted."
       },
       {
-        "question": "Can I self-host OpenTracy?",
-        "answer": "Yes. OpenTracy is open source (MIT). You can self-host the full stack with Docker. Starter and Enterprise plans add managed features on top."
+        "question": "Can I self-host Lunar?",
+        "answer": "Yes. Lunar is open source (MIT). You can self-host the full stack with Docker. Starter and Enterprise plans add managed features on top."
       },
       {
         "question": "Which providers are supported?",
@@ -176,7 +176,7 @@
       },
       {
         "question": "Is my data secure?",
-        "answer": "Yes. SOC 2 Type II certified, GDPR compliant. Enterprise plans include VPC deployment and BYOK encryption."
+        "answer": "You can self-host Lunar to control where your data lives. See the security page for architecture details and contact the team to discuss your deployment requirements."
       },
       {
         "question": "Can I switch plans anytime?",
@@ -190,13 +190,13 @@
   },
   "docs": {
     "title": "Documentation",
-    "subtitle": "Everything you need to get started with OpenTracy.",
+    "subtitle": "Everything you need to get started with Lunar.",
     "quickstart": "Quickstart",
     "exploreTitle": "Explore the docs",
     "categories": {
       "gettingStarted": {
         "title": "Getting Started",
-        "description": "Install OpenTracy, set up your first route, and send your first request."
+        "description": "Install Lunar, set up your first route, and send your first request."
       },
       "modelsProviders": {
         "title": "Models & Providers",
@@ -222,10 +222,10 @@
   },
   "testimonials": {
     "title": "Trusted by AI teams",
-    "subtitle": "From startups to enterprise, teams use OpenTracy to simplify their LLM stack.",
+    "subtitle": "From startups to enterprise, teams use Lunar to simplify their LLM stack.",
     "items": [
       {
-        "quote": "OpenTracy let us consolidate 4 different LLM integrations into a single API. Our team ships features 3x faster now.",
+        "quote": "Lunar let us consolidate 4 different LLM integrations into a single API. Our team ships features 3x faster now.",
         "name": "Sarah Chen",
         "role": "Head of AI",
         "company": "Nexus Labs"
@@ -237,7 +237,7 @@
         "company": "BuildAI"
       },
       {
-        "quote": "Switched from a custom routing layer to OpenTracy in one afternoon. The fallback system caught two provider outages in the first week.",
+        "quote": "Switched from a custom routing layer to Lunar in one afternoon. The fallback system caught two provider outages in the first week.",
         "name": "Anja Kowalski",
         "role": "Staff Engineer",
         "company": "DataFlow"
@@ -256,9 +256,9 @@
     }
   },
   "platform": {
-    "title": "The Complete LLM Operations Platform",
-    "subtitle": "Everything OpenTracy ships — from a unified model gateway to routing, tracing, evaluations, and distillation. Built for production teams with real architecture, measurable quality, and cost control.",
-    "badge": "Open source platform",
+    "title": "The engineering behind the AI lab.",
+    "subtitle": "Our infrastructure tracks reinforcement learning experiments, evaluates Small Language Models, and operates the solutions delivered by the AI lab. From training to integrations and serving.",
+    "badge": "Lunar Router · open source",
     "pills": [
       "Unified Gateway",
       "Smart Routing",
@@ -266,9 +266,9 @@
       "Self-hostable"
     ],
     "overview": {
-      "eyebrow": "Platform",
-      "title": "Core capabilities",
-      "subtitle": "Everything in one place, following the same visual system and interaction patterns as the home page."
+      "eyebrow": "Our infrastructure",
+      "title": "From integration to evaluation.",
+      "subtitle": "Tools to connect models, inspect production behavior, and compare the results of each experiment."
     },
     "sections": {
       "gateway": {
@@ -372,15 +372,15 @@
           "Full stack Docker deployment: ClickHouse + Go engine + Python API + React UI",
           "Self-host option with MIT license -- your data stays on your infrastructure",
           "Go engine for high-performance routing (<2ms overhead per request)",
-          "Python SDK: pip install opentracy",
-          "OpenAI SDK drop-in: just change base_url to your OpenTracy instance"
+          "Python SDK: pip install openai",
+          "OpenAI SDK drop-in: just change base_url to your Lunar instance"
         ]
       }
     },
     "cta": {
-      "title": "Ready to take control of your LLM stack?",
-      "subtitle": "Open source, self-hostable, MIT licensed. Start in 5 minutes.",
-      "primary": "Start for free",
+      "title": "Let’s build for your operation.",
+      "subtitle": "Tell us about your challenge. Together, we define the architecture, integrations, and criteria for a successful project.",
+      "primary": "Talk about your project",
       "secondary": "View on GitHub"
     }
   },
@@ -395,12 +395,12 @@
     }
   },
   "footer": {
-    "tagline": "One API for every LLM. Route, observe, evaluate, and optimize your AI infrastructure.",
+    "tagline": "The open-source toolkit for your LLM stack. Connect, observe, and keep building.",
     "product": "Product",
     "resources": "Resources",
     "legal": "Legal",
     "features": "Features",
-    "platform": "Platform",
+    "platform": "Infrastructure",
     "pricing": "Pricing",
     "docs": "Docs",
     "security": "Security",
@@ -410,74 +410,73 @@
     "discord": "Discord",
     "privacy": "Privacy",
     "terms": "Terms",
-    "copyright": "OpenTracy. MIT License."
+    "copyright": "Lunar. MIT License."
   },
   "enterprise": {
     "meta": {
-      "title": "Enterprise - OpenTracy",
-      "description": "Your AI Lab for your enterprise. Custom Environment RL and self-improving agents, built to cut costs inside your infrastructure."
+      "title": "RL environments & Small Language Models — Lunar",
+      "description": "We build reinforcement learning environments and train compact language models for your business tasks. From experiment design to deployment, with your data and your team."
     },
     "hero": {
       "badge": "Enterprise AI Lab",
-      "title1": "Your AI Lab for",
-      "title2": "Your Enterprise",
-      "subtitle": "Custom Environment Reinforcement Learning and Self-Improving Agents — built to cut costs and run inside your own infrastructure.",
+      "title1": "RL environments.",
+      "title2": "Small language models.",
+      "subtitle": "We build reinforcement learning environments and train compact language models for your business tasks. From experiment design to deployment, with your data and your team.",
       "ctaPrimary": "Book Your AI Lab Call",
       "ctaSecondary": "See What We Build",
       "trust": [
-        "Environment RL",
-        "Self-Improving Agents",
-        "Self-hosted by design"
+        "RL environments",
+        "Small Language Models",
+        "Deployment in your infrastructure"
       ]
     },
     "capabilities": {
-      "eyebrow": "Core Capabilities",
-      "title": "Two systems. One compounding advantage.",
-      "subtitle": "Environment RL and self-improving agents work together — each cycle makes your models more accurate, faster, and cheaper.",
+      "eyebrow": "RL environments & SLMs",
+      "title": "Your training environment. Your specialized model.",
+      "subtitle": "RL environments and Small Language Model (SLM) projects, delivered independently or combined to fit the challenge. Each workstream has defined deliverables and evaluation criteria.",
       "rl": {
-        "tag": "Custom RL Environments",
-        "title": "AI that learns from your operation.",
-        "desc": "RL loops trained on your real production data — not simulations. Pricing, scheduling, routing, allocation — agents that compound value every shift and outperform generic models.",
+        "tag": "RL environments",
+        "title": "The right context for learning to decide.",
+        "desc": "We turn your business rules, data, and interactions into reinforcement learning environments. We define observations, actions, rewards, and scenarios to train and evaluate agents or policies.",
         "outcomes": [
-          "Decisions trained on real outcomes, not simulations",
-          "Deployed inside your infrastructure",
-          "Compounds value across every episode"
+          "Versioned environments and training scenarios",
+          "Task-specific rewards and constraints",
+          "Policy evaluation against a baseline"
         ]
       },
       "envDesign": {
-        "tag": "Environment Design",
-        "title": "Built around your business logic.",
-        "desc": "Custom simulation environments modeled on your real systems — pricing engines, scheduling layers, allocation pipelines. The agent trains inside your actual operating constraints, not toy problems."
+        "tag": "Environment design",
+        "title": "Your business states, actions, and scenarios.",
+        "desc": "We model available observations, permitted actions, and state transitions. Training and test scenarios reflect operational rules and data, including failure cases and constraints."
       },
       "rewardEng": {
-        "tag": "Reward Engineering",
-        "title": "Optimizes your actual KPIs.",
-        "desc": "Reward functions aligned with what your business cares about — margin, throughput, latency, accuracy. Not generic benchmarks. Every episode drives toward outcomes that compound on the production floor."
+        "tag": "Reward engineering",
+        "title": "A reward that reflects the task.",
+        "desc": "We define reward signals and penalties to guide learning. We evaluate unwanted behavior and compare policies with existing rules before deployment."
       },
-      "agents": {
-        "tag": "Self-Improving Agents",
-        "title": "Agents that get smarter every week.",
-        "desc": "Most AI agents stop improving on Day 1. Ours don't. They learn from your production traffic, specialize on your workflows, and replace expensive frontier calls — automatically.",
+      "slm": {
+        "tag": "Small Language Models",
+        "title": "Compact models. Well-defined tasks.",
+        "desc": "We select and specialize smaller language models for your domain. Through curation, fine-tuning, and distillation, we target the right balance of quality, cost, and latency for your tasks.",
         "outcomes": [
-          "More accurate every week, no retraining ops",
-          "Up to 40× cheaper per call after distillation",
-          "Zero code changes — the agent just gets better"
+          "Curated datasets and separate test sets",
+          "Model fine-tuning and distillation",
+          "Evaluation and serving on the selected hardware"
         ]
       },
       "distillation": {
-        "tag": "Distillation Pipeline",
-        "statValue": "40×",
-        "statLabel": "cheaper per call after distillation",
-        "desc": "Student models trained on your production traces replace expensive frontier API calls — automatically. Costs drop continuously as the model specializes on your traffic."
+        "tag": "Fine-tuning and distillation",
+        "title": "Specialize the model for your domain.",
+        "desc": "We curate examples and reference-model outputs to train the SLM. Versions are compared on a separate test set and improvements are validated under the project’s operating conditions."
       },
-      "zeroRetrain": {
-        "tag": "Zero Retraining Ops",
-        "title": "The improvement loop runs itself.",
-        "desc": "The feedback cycle operates continuously on your production traffic. No MLOps team, no manual triggers. The agent specializes — and your cost structure follows.",
+      "evaluation": {
+        "tag": "Evaluation and serving",
+        "title": "Quality measured in your environment.",
+        "desc": "The model needs to meet the task requirements on the available hardware. We evaluate results before integrating the SLM into your systems.",
         "bullets": [
-          "Continuous improvement, no retraining sprints",
-          "Zero code changes — the agent just gets better",
-          "Compounds on your traffic, not general benchmarks"
+          "Task-level quality and failure analysis",
+          "Cost, latency, and memory usage",
+          "Versioning and production monitoring"
         ]
       }
     },
@@ -516,8 +515,8 @@
     },
     "industries": {
       "eyebrow": "Industries",
-      "title": "Built for teams across the enterprise.",
-      "subtitle": "We deploy in every vertical where AI decisions compound over time and cost reduction is structural.",
+      "title": "Where RL environments and SLMs fit.",
+      "subtitle": "Example tasks to start the conversation. The initial assessment identifies an approach that fits the project’s data and constraints.",
       "items": [
         {
           "title": "Operations & Logistics",
@@ -555,56 +554,32 @@
     },
     "services": {
       "eyebrow": "Services",
-      "title": "What we build with your team.",
-      "subtitle": "From strategy to production — every layer of the AI stack, end to end.",
+      "title": "From dataset to deployment, with your team.",
+      "subtitle": "Together, we define what the environment or model needs to do, how to measure the result, and when it is ready for deployment.",
       "items": [
         {
-          "title": "AI Strategy & Architecture",
-          "description": "Roadmap, build-vs-buy, ROI for your AI program."
+          "title": "Training data",
+          "description": "Curation of examples, trajectories, and quality criteria for each experiment."
         },
         {
-          "title": "Custom RL Environment Design",
-          "description": "Reward signals, policy training, production loops."
+          "title": "Reproducible evaluations",
+          "description": "Baselines, test scenarios, and reports to decide what goes into production."
         },
         {
-          "title": "Self-Learning Agent Development",
-          "description": "End-to-end agents that compound from day one."
+          "title": "Infrastructure and serving",
+          "description": "Training and inference pipelines sized for your environment."
         },
         {
-          "title": "Custom Model Training",
-          "description": "Distilled student models trained on your traffic."
-        },
-        {
-          "title": "RAG & Knowledge Pipelines",
-          "description": "Retrieval over your docs, tuned for accuracy."
-        },
-        {
-          "title": "Self-Hosted Stack Deployment",
-          "description": "Full AI infrastructure inside your perimeter."
-        },
-        {
-          "title": "LLM Ops & Monitoring",
-          "description": "Drift detection, hallucination scanning, on-call."
-        },
-        {
-          "title": "Compliance & Security",
-          "description": "LGPD, GDPR, HIPAA, SOC 2. Air-gapped configs."
-        },
-        {
-          "title": "Custom Integrations",
-          "description": "ERPs, CRMs, internal APIs, wired into the AI layer."
-        },
-        {
-          "title": "Training & Enablement",
-          "description": "Hands-on sessions for your ML and product teams."
+          "title": "Operational integration",
+          "description": "Models and policies connected to agents, tools, and internal systems."
         }
       ]
     },
     "cta": {
-      "title": "Let's build your enterprise AI Lab.",
-      "subtitle": "One strategy call to map your Environment RL, self-improving agents, and cost-cut roadmap.",
+      "title": "What do you need to train?",
+      "subtitle": "An environment for learning to decide. A model for mastering a task. Bring your context and let’s define the project.",
       "primary": "Start Your AI Lab Program",
-      "footnote": "No prep needed · Executive and technical attendees welcome · leave with a concrete build plan"
+      "footnote": "RL environments and SLMs, from research to deployment."
     }
   }
 }

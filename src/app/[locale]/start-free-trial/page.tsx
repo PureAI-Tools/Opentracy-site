@@ -1,71 +1,19 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import type { Locale } from "@/i18n/config";
-import { i18n } from "@/i18n/config";
-import Container from "@/components/Container";
-import Badge from "@/components/Badge";
-import Button from "@/components/Button";
+import { lunarCopy } from "@/i18n/lunar";
+import { site } from "@/lib/site";
+import LogoMark from "@/components/LogoMark";
+import Icon from "@/components/Icon";
 
-export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ locale }));
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params; const c = lunarCopy[locale as Locale] || lunarCopy.en;
+  return { title: `${c.startTitle} — Lunar`, description: c.startIntro };
 }
-
-export const metadata: Metadata = {
-  title: "Start free trial - Coming soon | OpenTracy",
-  description:
-    "The free trial flow is almost ready. Join the community, read docs, or open OpenTracy on GitHub.",
-};
-
-export default async function StartFreeTrialComingSoonPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-
-  return (
-    <div className="pt-24 pb-20 min-h-screen">
-      <Container>
-        <div className="max-w-2xl mx-auto text-center">
-          <Badge variant="accent" className="mb-4">
-            Coming Soon
-          </Badge>
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
-            Start free trial will be ready soon.
-          </h1>
-          <p className="mt-5 text-lg text-muted leading-relaxed">
-            We are finishing the trial onboarding flow. In the meantime, choose
-            one of the options below.
-          </p>
-
-          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <Button
-              href="https://discord.gg/gDNPhQ347V"
-              variant="primary"
-              className="justify-center"
-              newTab
-            >
-              Join community
-            </Button>
-            <Button href="/docs" variant="secondary" className="justify-center">
-              Read the docs
-            </Button>
-            <Button
-              href="https://github.com/lunar-org-ai/lunar-router"
-              variant="secondary"
-              className="justify-center"
-              newTab
-            >
-              Open on GitHub
-            </Button>
-          </div>
-
-          <div className="mt-8">
-            <Button href={`/${locale}`} variant="ghost">
-              Back to home
-            </Button>
-          </div>
-        </div>
-      </Container>
-    </div>
-  );
+export default async function StartPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params; const c = lunarCopy[locale as Locale] || lunarCopy.en;
+  return <div className="lunar-start"><div className="lunar-container"><div className="lunar-page-heading"><LogoMark size={50} /><h1>{c.startTitle}</h1><p className="lunar-page-intro">{c.startIntro}</p></div>
+    <div className="start-options"><article className="start-option"><Icon name="globe" size={30} /><h2>{c.cloud}</h2><p>{c.cloudText}</p><a href={site.app} className="lunar-button lunar-button-dark">{c.cloudCta}<Icon name="external" size={16} /></a></article><article className="start-option"><Icon name="terminal" size={30} /><h2>{c.selfhost}</h2><p>{c.selfhostText}</p><a href={site.github + "#readme"} className="lunar-button lunar-button-outline">{c.selfhostCta}<Icon name="arrow" size={16} /></a></article></div>
+    <div className="start-help"><Link href={`/${locale}/docs`} className="lunar-text-link"><Icon name="book" size={16} />{c.docs}<Icon name="arrow" size={16} /></Link></div>
+  </div></div>;
 }

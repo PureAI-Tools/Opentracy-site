@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePostHog } from "posthog-js/react";
+import { useAnalytics } from "@/lib/analytics";
 import type { Post } from "@/data/posts";
 
 export default function BlogList({
@@ -11,7 +11,7 @@ export default function BlogList({
   posts: Post[];
   locale: string;
 }) {
-  const posthog = usePostHog();
+  const posthog = useAnalytics();
 
   return (
     <div className="blog-list">

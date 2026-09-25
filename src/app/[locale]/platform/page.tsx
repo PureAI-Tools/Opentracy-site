@@ -1,3 +1,4 @@
+import { site } from "@/lib/site";
 import Container from "@/components/Container";
 import Button from "@/components/Button";
 import TrackedAnchor from "@/components/TrackedAnchor";
@@ -24,17 +25,18 @@ export async function generateMetadata({
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
   return {
-    title: `${dict.platform.title} — OpenTracy`,
+    title: `${dict.platform.title} — Lunar`,
     description: dict.platform.subtitle,
   };
 }
 
-const gatewayCode = `import openai
+const gatewayCode = `import os
+import openai
 
 # Just change the base URL — everything else stays the same
 client = openai.OpenAI(
-    base_url="https://api.opentracy.com/v1",
-    api_key="your-opentracy-key"
+    base_url=os.environ["LUNAR_BASE_URL"],
+    api_key=os.environ["LUNAR_API_KEY"]
 )
 
 response = client.chat.completions.create(
@@ -44,26 +46,23 @@ response = client.chat.completions.create(
 
 print(response.choices[0].message.content)`;
 
-const routerCode = `import opentracy as ot
+const routerCode = `import os
+from openai import OpenAI
 
-# Semantic routing: simple -> cheap, complex -> powerful
-router = ot.Router(
-    strategy="semantic",
-    models={
-        "simple": "openai/gpt-4o-mini",
-        "complex": "anthropic/claude-sonnet-4-20250514",
-    },
-    fallbacks=["google/gemini-2.0-flash"]
+client = OpenAI(
+    base_url=os.environ["LUNAR_BASE_URL"],
+    api_key=os.environ["LUNAR_API_KEY"],
 )
 
-response = router.completion(
-    messages=[{"role": "user", "content": prompt}]
+# Switch providers through the same API
+response = client.chat.completions.create(
+    model="anthropic/claude-haiku-4-5",
+    messages=[{"role": "user", "content": "Hello, Lunar!"}],
 )
-print(f"Routed to: {response.model}")
-print(f"Cost: \${response._cost:.6f}")`;
+print(response.choices[0].message.content)`;
 
 const sdkInstallCode = `# Install the SDK
-pip install opentracy
+pip install openai
 
 # Or self-host the full stack
 git clone https://github.com/lunar-org-ai/lunar-router.git
@@ -280,19 +279,19 @@ export default async function PlatformPage({
             <FadeIn delay={0.32} y={10}>
               <div className="mt-10 mx-auto flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center">
                 <Button
-                  href="https://app.opentracy.cloud/traces"
+                  href={site.demo}
                   variant="primary"
                   newTab
                   className="w-full justify-center sm:w-auto"
                   posthogProps={{
-                    destination: "console",
+                    destination: "ai_lab_contact",
                     source: "platform_hero",
                   }}
                 >
                   {dict.platform.cta.primary}
                 </Button>
                 <Button
-                  href="/docs"
+                  href={`/${locale}/docs`}
                   variant="secondary"
                   className="w-full justify-center sm:w-auto"
                 >
@@ -415,12 +414,12 @@ export default async function PlatformPage({
               </p>
               <div className="mt-10 mx-auto grid w-full max-w-md grid-cols-1 gap-3 sm:max-w-xl sm:grid-cols-2">
                 <Button
-                  href="https://app.opentracy.cloud/traces"
+                  href={site.demo}
                   variant="primary"
                   newTab
                   className="w-full justify-center"
                   posthogProps={{
-                    destination: "console",
+                    destination: "ai_lab_contact",
                     source: "platform_bottom_cta",
                   }}
                 >

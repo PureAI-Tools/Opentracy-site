@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { DM_Mono, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import "./lunar.css";
+import "./ai-lab.css";
+import "./rl-environment.css";
+import "./research-lab.css";
+import { site } from "@/lib/site";
 import { PostHogProvider } from "@/components/PostHogProvider";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -20,36 +25,33 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://opentracy.com"),
-  title: "OpenTracy — One API for Every LLM",
+  metadataBase: new URL(site.url),
+  title: "Lunar — RL environments & Small Language Models",
   description:
-    "Route requests to 13+ LLM providers through a single API. Track costs, measure quality, and optimize your AI infrastructure. Open source.",
+    "Custom reinforcement learning environments and Small Language Models for your business tasks. From environment design and training to evaluation and deployment.",
   keywords: [
-    "LLM",
-    "LLM router",
-    "AI gateway",
-    "LLM proxy",
-    "OpenAI alternative",
+    "Small Language Models",
+    "Enterprise AI lab",
+    "custom AI development",
+    "reinforcement learning",
+    "RL environments",
     "AI infrastructure",
-    "LLM observability",
+    "model distillation",
     "model evaluation",
   ],
   openGraph: {
-    title: "OpenTracy — One API for Every LLM",
+    title: "Lunar — RL environments & Small Language Models",
     description:
-      "Route to 13+ providers, track costs, measure quality. Open source AI infrastructure.",
+      "Your AI lab for custom RL environments and Small Language Models. Built with your team, on your data and infrastructure.",
     type: "website",
-    url: "https://opentracy.com",
-    siteName: "OpenTracy",
+    url: site.url,
+    siteName: "Lunar",
   },
   twitter: {
     card: "summary_large_image",
-    title: "OpenTracy — One API for Every LLM",
+    title: "Lunar — RL environments & Small Language Models",
     description:
-      "Route to 13+ providers, track costs, measure quality. Open source AI infrastructure.",
-  },
-  alternates: {
-    canonical: "https://opentracy.com",
+      "Your AI lab for custom RL environments and Small Language Models. Built with your team, on your data and infrastructure.",
   },
   manifest: "/site.webmanifest",
   icons: {
@@ -82,11 +84,11 @@ export default function RootLayout({
                 "@graph": [
                   {
                     "@type": "Organization",
-                    "@id": "https://opentracy.com/#organization",
-                    name: "OpenTracy",
-                    url: "https://opentracy.com",
+                    "@id": `${site.url}/#organization`,
+                    name: "Lunar",
+                    url: site.url,
                     description:
-                      "Open source LLM gateway. Route, observe, evaluate, and optimize AI infrastructure.",
+                      "Enterprise AI lab specializing in reinforcement learning environments and Small Language Models, from training to evaluation and deployment.",
                     sameAs: [
                       "https://github.com/lunar-org-ai/lunar-router",
                       "https://discord.gg/gDNPhQ347V",
@@ -94,11 +96,11 @@ export default function RootLayout({
                   },
                   {
                     "@type": "WebSite",
-                    "@id": "https://opentracy.com/#website",
-                    url: "https://opentracy.com",
-                    name: "OpenTracy",
+                    "@id": `${site.url}/#website`,
+                    url: site.url,
+                    name: "Lunar",
                     publisher: {
-                      "@id": "https://opentracy.com/#organization",
+                      "@id": `${site.url}/#organization`,
                     },
                   },
                 ],
