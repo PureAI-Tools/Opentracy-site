@@ -62,11 +62,7 @@ response = client.chat.completions.create(
 print(response.choices[0].message.content)`;
 
 const sdkInstallCode = `# Install the SDK
-pip install openai
-
-# Or self-host the full stack
-git clone https://github.com/lunar-org-ai/lunar-router.git
-cd lunar-router && docker compose up -d`;
+pip install openai`;
 
 const sectionIcons: Record<string, React.ReactNode> = {
   gateway: (
@@ -241,7 +237,8 @@ export default async function PlatformPage({
           <div className="max-w-4xl mx-auto text-center">
             <FadeIn delay={0} y={16}>
               <TrackedAnchor
-                href="https://github.com/lunar-org-ai/lunar-router"
+                locale={locale as Locale}
+                href={site.github}
                 className="badge badge-new inline-flex items-center gap-2 mb-8 hover:border-muted transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -279,6 +276,7 @@ export default async function PlatformPage({
             <FadeIn delay={0.32} y={10}>
               <div className="mt-10 mx-auto flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:max-w-none sm:flex-row sm:items-center">
                 <Button
+                  locale={locale as Locale}
                   href={site.demo}
                   variant="primary"
                   newTab
@@ -291,6 +289,7 @@ export default async function PlatformPage({
                   {dict.platform.cta.primary}
                 </Button>
                 <Button
+                  locale={locale as Locale}
                   href={`/${locale}/docs`}
                   variant="secondary"
                   className="w-full justify-center sm:w-auto"
@@ -298,7 +297,8 @@ export default async function PlatformPage({
                   {dict.nav.docs}
                 </Button>
                 <Button
-                  href="https://github.com/lunar-org-ai/lunar-router"
+                  locale={locale as Locale}
+                  href={site.github}
                   variant="secondary"
                   className="w-full justify-center sm:w-auto"
                 >
@@ -414,6 +414,7 @@ export default async function PlatformPage({
               </p>
               <div className="mt-10 mx-auto grid w-full max-w-md grid-cols-1 gap-3 sm:max-w-xl sm:grid-cols-2">
                 <Button
+                  locale={locale as Locale}
                   href={site.demo}
                   variant="primary"
                   newTab
@@ -426,7 +427,8 @@ export default async function PlatformPage({
                   {dict.platform.cta.primary}
                 </Button>
                 <Button
-                  href="https://github.com/lunar-org-ai/lunar-router"
+                  locale={locale as Locale}
+                  href={site.github}
                   variant="secondary"
                   className="w-full justify-center"
                 >

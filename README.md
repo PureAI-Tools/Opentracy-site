@@ -48,12 +48,11 @@ Public branding is Lunar. Existing service destinations are preserved until new 
 
 - `NEXT_PUBLIC_SITE_URL`: canonical website origin.
 - `NEXT_PUBLIC_APP_URL`: cloud console destination.
-- `NEXT_PUBLIC_DEMO_URL`: contact/demo scheduling destination.
 - `DOCS_ORIGIN`: origin used by the documentation proxy.
 - `NEXT_PUBLIC_POSTHOG_ENABLED`: set to `true` to turn on PostHog analytics. Off by default; when off, PostHog is not bundled and no events are sent.
 - `NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN`: PostHog project token, required when analytics is enabled.
 
-Defaults live in `src/lib/site.ts` and `next.config.ts`. The GitHub repository is `lunar-org-ai/lunar-router`. Existing legal/security email addresses remain valid destinations behind Lunar contact labels.
+Defaults live in `src/lib/site.ts` and `next.config.ts`. GitHub and scheduling are temporarily unavailable: `site.github` and `site.demo` are deliberately `null`, including when an old `NEXT_PUBLIC_DEMO_URL` is present in the deployment environment. Their links display a localized “Coming soon” status without an `href` or click action. Set these two fields to the confirmed URLs to reactivate them. The GitHub stars endpoint returns no repository or star count while GitHub is unavailable, and the repository is omitted from organization metadata. Existing legal/security email addresses remain valid destinations behind Lunar contact labels.
 
 The Python and TypeScript examples use `LUNAR_BASE_URL` and `LUNAR_API_KEY`; set these to the endpoint (including `/v1`) and key from your workspace. Provider charges are separate from platform plans.
 

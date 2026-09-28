@@ -90,8 +90,8 @@ export default function RootLayout({
                     description:
                       "Enterprise AI lab specializing in reinforcement learning environments and Small Language Models, from training to evaluation and deployment.",
                     sameAs: [
-                      "https://github.com/lunar-org-ai/lunar-router",
-                      "https://discord.gg/gDNPhQ347V",
+                      ...(site.github ? [site.github] : []),
+                      site.discord,
                     ],
                   },
                   {

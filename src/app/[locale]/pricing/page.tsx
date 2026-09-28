@@ -27,7 +27,7 @@ const planConfig = [
   {
     key: "free" as const,
     price: "$0",
-    ctaHref: "https://github.com/lunar-org-ai/lunar-router",
+    ctaHref: site.github,
     ctaVariant: "secondary" as const,
     highlighted: false,
   },
@@ -120,6 +120,7 @@ export default async function PricingPage({
                 </ul>
                 <div className="mt-8">
                   <Button
+                    locale={locale as Locale}
                     href={
                       plan.key !== "enterprise"
                         ? `/${locale}/start-free-trial`
@@ -148,6 +149,7 @@ export default async function PricingPage({
           <p className="mt-4 text-muted">{dict.pricing.ctaSubtitle}</p>
           <div className="mt-8 flex items-center justify-center gap-3">
             <Button
+              locale={locale as Locale}
               href={site.app}
               variant="primary"
               newTab
@@ -159,7 +161,8 @@ export default async function PricingPage({
               {dict.pricing.ctaPrimary}
             </Button>
             <Button
-              href="https://github.com/lunar-org-ai/lunar-router"
+              locale={locale as Locale}
+              href={site.github}
               variant="secondary"
               posthogProps={{
                 destination: "github",

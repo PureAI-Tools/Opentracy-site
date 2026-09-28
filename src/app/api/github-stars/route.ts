@@ -1,14 +1,14 @@
 import { NextResponse } from "next/server";
-
-const REPO_OWNER = "lunar-org-ai";
-const REPO_NAME = "lunar-router";
-const GITHUB_API_URL = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}`;
+import { site } from "@/lib/site";
 
 export const revalidate = 3600;
 
 export async function GET() {
+  if (!site.github) return NextResponse.json({ stars: null, repoUrl: null });
+
   try {
-    const response = await fetch(GITHUB_API_URL, {
+    const repoPath = new URL(site.github).pathname.replace(/\/$/, "");
+    const response = await fetch(`https://api.github.com/repos${repoPath}`, {
       headers: {
         Accept: "application/vnd.github+json",
         "User-Agent": "Lunar-Website",
@@ -20,7 +20,7 @@ export async function GET() {
       return NextResponse.json(
         {
           stars: null,
-          repoUrl: `https://github.com/${REPO_OWNER}/${REPO_NAME}`,
+          repoUrl: site.github,
         },
         { status: 200 },
       );
@@ -33,11 +33,11 @@ export async function GET() {
         typeof data.stargazers_count === "number"
           ? data.stargazers_count
           : null,
-      repoUrl: `https://github.com/${REPO_OWNER}/${REPO_NAME}`,
+      repoUrl: site.github,
     });
   } catch {
     return NextResponse.json(
-      { stars: null, repoUrl: `https://github.com/${REPO_OWNER}/${REPO_NAME}` },
+      { stars: null, repoUrl: site.github },
       { status: 200 },
     );
   }

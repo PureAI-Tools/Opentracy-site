@@ -7,6 +7,7 @@ import { i18n } from "@/i18n/config";
 import { site } from "@/lib/site";
 import { aiLabCopy } from "@/i18n/aiLab";
 import { LunarWordmark } from "./LogoMark";
+import OptionalLink from "./OptionalLink";
 import Icon from "./Icon";
 export default function Navbar({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const [open, setOpen] = useState(false);
@@ -45,13 +46,13 @@ export default function Navbar({ locale, dict }: { locale: Locale; dict: Diction
     <header className="lunar-header"><nav className="lunar-container lunar-nav" aria-label={locale === "en" ? "Main navigation" : "Menu principal"}>
       <Link href={`/${locale}`} className="lunar-wordmark" aria-label="Lunar"><LunarWordmark /></Link>
       <div className="lunar-desktop-links">{links.map(link => <Link key={link.href} href={link.href} aria-current={pathname === link.href ? "page" : undefined}>{link.name}</Link>)}</div>
-      <div className="lunar-nav-actions">{language}<Link className="lunar-button lunar-button-dark" href={site.demo}>{c.nav.contact}<Icon name="arrow" size={15} /></Link></div>
+      <div className="lunar-nav-actions">{language}<OptionalLink locale={locale} className="lunar-button lunar-button-dark" href={site.demo}>{c.nav.contact}<Icon name="arrow" size={15} /></OptionalLink></div>
       <button ref={trigger} className="lunar-menu-button" onClick={() => setOpen(true)} aria-label={dict.nav.toggleMenu} aria-expanded={open} aria-controls="mobile-navigation"><Icon name="menu" size={22} /></button>
     </nav></header>
     <dialog ref={dialog} id="mobile-navigation" className="lunar-mobile-dialog" onCancel={event => { event.preventDefault(); close(); }} onClose={() => setOpen(false)} onClick={e => { if (e.target === e.currentTarget) close(); }} aria-label={dict.nav.toggleMenu}>
       <div className="lunar-mobile-content"><div className="lunar-mobile-top"><span className="lunar-wordmark" role="img" aria-label="Lunar"><LunarWordmark /></span><button onClick={close} aria-label={labels.close}><Icon name="close" size={22} /></button></div>
         <nav>{links.map(link => <Link key={link.href} href={link.href} onClick={close} aria-current={pathname === link.href ? "page" : undefined}>{link.name}<Icon name="arrow" /></Link>)}</nav>
-        <div className="lunar-mobile-bottom">{language}<Link className="lunar-button lunar-button-dark" href={site.demo} onClick={close}>{c.nav.contact}<Icon name="arrow" /></Link></div>
+        <div className="lunar-mobile-bottom">{language}<OptionalLink locale={locale} className="lunar-button lunar-button-dark" href={site.demo} onClick={close}>{c.nav.contact}<Icon name="arrow" /></OptionalLink></div>
       </div>
     </dialog>
   </>;

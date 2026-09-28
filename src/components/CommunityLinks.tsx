@@ -2,6 +2,7 @@
 import { useAnalytics } from "@/lib/analytics";
 import type { Locale } from "@/i18n/config";
 import { site } from "@/lib/site";
+import OptionalLink from "./OptionalLink";
 import Icon, { type IconName } from "./Icon";
 export default function CommunityLinks({ locale = "en" }: { locale?: Locale }) {
   const posthog = useAnalytics();
@@ -12,5 +13,5 @@ export default function CommunityLinks({ locale = "en" }: { locale?: Locale }) {
   }[locale];
   const urls = [site.github, site.discord, `/${locale}/docs`];
   const icons: IconName[] = ["github", "globe", "book"];
-  return <div className="community-links">{copy.map(([title, description, cta], i) => <a key={title} href={urls[i]} onClick={() => posthog?.capture("community_link_clicked", { href: urls[i], label: title })}><Icon name={icons[i]} size={27} /><h2>{title}</h2><p>{description}</p><span className="lunar-text-link">{cta}<Icon name="arrow" size={16} /></span></a>)}</div>;
+  return <div className="community-links">{copy.map(([title, description, cta], i) => <OptionalLink block locale={locale} key={title} href={urls[i]} onClick={() => posthog?.capture("community_link_clicked", { href: urls[i], label: title })}><Icon name={icons[i]} size={27} /><h2>{title}</h2><p>{description}</p><span className="lunar-text-link">{cta}<Icon name="arrow" size={16} /></span></OptionalLink>)}</div>;
 }

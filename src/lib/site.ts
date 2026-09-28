@@ -3,7 +3,9 @@ export const site = {
   name: "Lunar",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://lunar-sys.com",
   app: process.env.NEXT_PUBLIC_APP_URL || "https://app.opentracy.cloud/traces",
-  demo: process.env.NEXT_PUBLIC_DEMO_URL || "https://cal.com/opentracy/30min-demo",
-  github: "https://github.com/lunar-org-ai/lunar-router",
+  // Keep these unavailable until the final URLs are confirmed.
+  // Null also prevents stale deployment environment variables from enabling them.
+  demo: null as string | null,
+  github: null as string | null,
   discord: "https://discord.gg/gDNPhQ347V",
 };

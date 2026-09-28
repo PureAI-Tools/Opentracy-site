@@ -3,6 +3,7 @@ import { site } from "@/lib/site";
 import { i18n, type Locale } from "@/i18n/config";
 import { researchLabCopy } from "@/i18n/researchLab";
 import { rlEnvironmentCopy } from "@/i18n/rlEnvironment";
+import OptionalLink from "@/components/OptionalLink";
 import Icon from "@/components/Icon";
 import { LunarMoon } from "@/components/LogoMark";
 import ResearchMotion from "@/components/research/ResearchMotion";
@@ -36,7 +37,7 @@ export default async function EnterprisePage({ params }: { params: Promise<{ loc
           <h1>Super cool<br /><span>AI lab<span className="research-title-star" aria-hidden="true"><Icon name="asterisk" size="1em" /></span></span></h1>
           <p className="research-belief">{c.belief}</p>
           <p className="research-intro">{c.intro}</p>
-          <div className="research-hero-actions"><a className="lunar-button lunar-button-dark" href={site.demo}>{c.primary}<Icon name="arrow" size={17} /></a><a className="research-explore" href="#core-delivery">{c.explore}<span aria-hidden="true"><Icon name="arrow-down-right" size="1em" /></span></a></div>
+          <div className="research-hero-actions"><OptionalLink locale={locale as Locale} className="lunar-button lunar-button-dark" href={site.demo}>{c.primary}<Icon name="arrow" size={17} /></OptionalLink><a className="research-explore" href="#core-delivery">{c.explore}<span aria-hidden="true"><Icon name="arrow-down-right" size="1em" /></span></a></div>
         </div>
         <div className="research-hero-art"><span className="research-sticker">{c.sticker}<span aria-hidden="true"><Icon name="star" size="1em" /></span></span><LabOrbit copy={c.orbit} /></div>
       </div>
@@ -55,6 +56,6 @@ export default async function EnterprisePage({ params }: { params: Promise<{ loc
       </div>
     </section>
 
-    <section className="research-contact" id="contact"><div className="lunar-container research-contact-grid research-reveal"><div><h2>{c.closing[0]}<br />{c.closing[1]}</h2><p>{c.closingText}</p><div className="research-contact-actions"><a href={site.demo} className="lunar-button lunar-button-dark">{c.contact}<Icon name="arrow" /></a><a href={site.github} className="research-explore"><Icon name="github" size={18} />{c.github}</a></div><span className="research-contact-note">{c.footnote}</span></div><div className="research-contact-moon" aria-hidden="true"><LunarMoon /><span>stay curious.</span><i><Icon name="spark" size="1em" /></i></div></div></section>
+    <section className="research-contact" id="contact"><div className="lunar-container research-contact-grid research-reveal"><div><h2>{c.closing[0]}<br />{c.closing[1]}</h2><p>{c.closingText}</p><div className="research-contact-actions"><OptionalLink locale={locale as Locale} href={site.demo} className="lunar-button lunar-button-dark">{c.contact}<Icon name="arrow" /></OptionalLink><OptionalLink locale={locale as Locale} href={site.github} className="research-explore"><Icon name="github" size={18} />{c.github}</OptionalLink></div><span className="research-contact-note">{c.footnote}</span></div><div className="research-contact-moon" aria-hidden="true"><LunarMoon /><span>stay curious.</span><i><Icon name="spark" size="1em" /></i></div></div></section>
   </ResearchMotion>;
 }

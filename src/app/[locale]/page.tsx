@@ -4,6 +4,7 @@ import { i18n, type Locale } from "@/i18n/config";
 import { aiLabCopy } from "@/i18n/aiLab";
 import { rlEnvironmentCopy } from "@/i18n/rlEnvironment";
 import { site } from "@/lib/site";
+import OptionalLink from "@/components/OptionalLink";
 import Icon, { type IconName } from "@/components/Icon";
 import { LunarMoon } from "@/components/LogoMark";
 import AILabProject from "@/components/AILabProject";
@@ -30,7 +31,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <h1>{c.headline[0]}<br />{c.headline[1]}</h1>
             <p className="hero-intro">{c.intro}</p>
             <div className="hero-actions">
-              <a href={site.demo} className="lunar-button lunar-button-yellow">{c.primary}<Icon name="arrow" /></a>
+              <OptionalLink locale={locale as Locale} href={site.demo} className="lunar-button lunar-button-yellow">{c.primary}<Icon name="arrow" /></OptionalLink>
               <a href="#what-we-build" className="lunar-button lunar-button-outline">{c.secondary}</a>
             </div>
             <p className="hero-note">{c.note}</p>
@@ -70,8 +71,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <div className="lunar-container lab-technology"><div><span className="lunar-section-label"><Icon name="terminal" size={16} />{c.nav.technology}</span><h2>{c.technologyTitle}</h2><p>{c.technologyText}</p><Link href={`/${locale}/platform`} className="lunar-text-link">{c.technologyLink}<Icon name="arrow" size={16} /></Link></div><figure><div className="lab-technology-image"><FullscreenImage src="/screenshots/eval-overview.png" alt={c.screenshotAlt} className="lunar-product-image" /></div><figcaption>{c.screenshotCaption}</figcaption></figure></div>
     </section>
 
-    <section className="lunar-section lunar-faq lab-faq"><div className="lunar-container faq-grid"><div><h2>{c.faqTitle}</h2><p><a href={site.demo}>{c.nav.contact}<Icon name="external" size={13} /></a></p></div><div>{c.faqs.map(faq => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</div></div></section>
+    <section className="lunar-section lunar-faq lab-faq"><div className="lunar-container faq-grid"><div><h2>{c.faqTitle}</h2><p><OptionalLink locale={locale as Locale} href={site.demo}>{c.nav.contact}<Icon name="external" size={13} /></OptionalLink></p></div><div>{c.faqs.map(faq => <details key={faq.question}><summary>{faq.question}<span aria-hidden="true">+</span></summary><p>{faq.answer}</p></details>)}</div></div></section>
 
-    <section className="lunar-last-cta" id="contact"><div className="lunar-container"><span className="cta-star" aria-hidden="true"><Icon name="asterisk" size="1em" /></span><h2>{c.ctaTitle}</h2><p>{c.ctaText}</p><div><a href={site.demo} className="lunar-button lunar-button-dark">{c.primary}<Icon name="arrow" size={17} /></a></div><p className="lab-cta-note">{c.ctaNote}</p></div></section>
+    <section className="lunar-last-cta" id="contact"><div className="lunar-container"><span className="cta-star" aria-hidden="true"><Icon name="asterisk" size="1em" /></span><h2>{c.ctaTitle}</h2><p>{c.ctaText}</p><div><OptionalLink locale={locale as Locale} href={site.demo} className="lunar-button lunar-button-dark">{c.primary}<Icon name="arrow" size={17} /></OptionalLink></div><p className="lab-cta-note">{c.ctaNote}</p></div></section>
   </div>;
 }
